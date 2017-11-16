@@ -1,22 +1,22 @@
 {
     "docs": [
         {
-            "location": "/GCE/", 
+            "location": "/", 
             "text": "Run-Galaxy\n\n\nRun Galaxy training course\n\n\nGoogle Cloud Engine\n\n\n\n\nPrerequisite: a Google account / Gmail account\n\n\nConnect to \nGoogle Cloud Engine\n\n\nClick on \nEssai Gratuit\n / \nFree Trial\n\n\nEnter your Gmail mail address and password\n\n\nReview conditions and accept\n\n\nInscription Form:\n\n\nEntreprise\n / \nCompany\n : put anything like \"Perso\" or \"foo/bar\"\n\n\nAjouter une carte de paiement\n / \nAdd credit Card\n or optionally \nAjouter un compte bancaire\n / \nBank account\n\n\nYou are in for a free trial of 12 months / 300 $\n\n\ngo to your \nGoogle Cloud Console\n to control your spin off / control your Virtual Machines", 
             "title": "Prerequites"
         }, 
         {
-            "location": "/GCE/#run-galaxy", 
+            "location": "/#run-galaxy", 
             "text": "", 
             "title": "Run-Galaxy"
         }, 
         {
-            "location": "/GCE/#run-galaxy-training-course", 
+            "location": "/#run-galaxy-training-course", 
             "text": "", 
             "title": "Run Galaxy training course"
         }, 
         {
-            "location": "/GCE/#google-cloud-engine", 
+            "location": "/#google-cloud-engine", 
             "text": "Prerequisite: a Google account / Gmail account  Connect to  Google Cloud Engine  Click on  Essai Gratuit  /  Free Trial  Enter your Gmail mail address and password  Review conditions and accept  Inscription Form:  Entreprise  /  Company  : put anything like \"Perso\" or \"foo/bar\"  Ajouter une carte de paiement  /  Add credit Card  or optionally  Ajouter un compte bancaire  /  Bank account  You are in for a free trial of 12 months / 300 $  go to your  Google Cloud Console  to control your spin off / control your Virtual Machines", 
             "title": "Google Cloud Engine"
         }, 
