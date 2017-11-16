@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Spin off a Virtual Machine - Run-Galaxy</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Spin off a Virtual Machine";
+    var mkdocs_page_input_path = "spin_off_VM.md";
+    var mkdocs_page_url = "/spin_off_VM/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../GCE/" class="icon icon-home"> Run-Galaxy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../GCE/">Prerequites</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Spin off a Virtual Machine</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#spin-off-a-virtual-machine">Spin off a virtual Machine</a></li>
+    
+
+    <li class="toctree-l2"><a href="#connect-to-the-started-virtual-machine">Connect to the started virtual Machine</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../GCE/">Run-Galaxy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../GCE/">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Spin off a Virtual Machine</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="spin-off-a-virtual-machine">Spin off a virtual Machine</h3>
+<ol>
+<li>Go to the Google Cloud Dashboard and select "Compute Engine" on the left hand menu bar</li>
+<li>Select the submenu "Instances de VM"
+<img alt="Créer une instance" src="../images/IntancesVM.png" /></li>
+<li>Click on the top bar menu the "CREER UNE INSTANCE" panel</li>
+<li>Put name "bare-galaxy"</li>
+<li>Choose a Zone (suggestion: <code>europe-west1-c</code>)</li>
+<li>Type de machine: choose 2 vCPU with 7.5 Memory</li>
+<li>Disque de Démarrage: Click on <code>Modifier</code></li>
+<li>Select <code>Ubuntu 14.04 LTS</code></li>
+<li>At the bottom of the form, put 100 Go for the Disk Size (Taille)</li>
+<li>Leave the selection <code>Disque persistant standard</code> / <code>Standard persistant drive</code></li>
+<li>Click <code>Select</code> / <code>Sélectionner</code></li>
+<li>Click <code>Authorize HTTP traffic</code> / <code>Autoriser le traffic HTTP</code></li>
+<li>Click <code>Créer</code> / <code>Create</code></li>
+</ol>
+<h3 id="connect-to-the-started-virtual-machine">Connect to the started virtual Machine</h3>
+<p>After a few seconds, the VM turns on "green" and an <code>ssh</code> menu becomes selectable
+<img alt="Running instance" src="../images/Running_instance.png" /></p>
+<ol>
+<li>Roll down this <code>ssh</code> menu and select the first option <code>Ouvrir dans la fenêtre du navigateur</code>
+<img alt="Select ssh session in browser" src="../images/Select_ssh_option.png" /></li>
+<li>A shell console pop out and you should now be ready to control your VM with linux command lines
+<img alt="OpenningSSH" src="../images/OpeningSSHconnection.png" />
+<img alt="OpenningSSH" src="../images/SSHConsole.png" /></li>
+<li>Try to enter the drosofff@bare-galaxy:~$ <code>sudo -i</code> command and hit the return key.</li>
+<li>The unix prompt become <code>root@bare-galaxy:~#</code>, you are mastering your VM as root administrator !</li>
+<li>[Optional] Here, if you do not have to work with the VM, you can turn off the VM and even trash it:</li>
+<li>in one shot, go back to your VM control panel in the web browser, ensure that the running VM is checked, and press the Trash button in the top menu.</li>
+<li>Confirm that you want to trash the VM and loose everything.</li>
+<li>after a few seconds the VM disappears from the Dashboard.</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../GCE/" class="btn btn-neutral" title="Prerequites"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../GCE/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
