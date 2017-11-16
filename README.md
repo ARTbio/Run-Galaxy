@@ -1,6 +1,8 @@
 # Run-Galaxy
 ## Run Galaxy training course
 
+This doc should be soon available as a [ReadTheDocs web site](https://artbio.github.io/Run-Galaxy/)
+
 
 ### Google Cloud Engine
 1. Prerequisite: a Google account / Gmail account
