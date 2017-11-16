@@ -1,5 +1,4 @@
-# Run-Galaxy
-## Run Galaxy training course
+# Run Galaxy training course
 
 This doc should be soon available as a [ReadTheDocs web site](https://artbio.github.io/Run-Galaxy/)
 
