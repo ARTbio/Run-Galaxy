@@ -1,23 +1,7 @@
-# Run-Galaxy
-## Run Galaxy training course
-
-
-### Google Cloud Engine
-1. Prerequisite: a Google account / Gmail account
-2. Connect to [Google Cloud Engine](https://cloud.google.com/)
-3. Click on `Essai Gratuit` / `Free Trial`
-4. Enter your Gmail mail address and password
-5. Review conditions and accept
-6. Inscription Form:
-  - `Entreprise` / `Company` : put anything like "Perso" or "foo/bar"
-  - `Ajouter une carte de paiement` / `Add credit Card` or optionally `Ajouter un compte bancaire` / `Bank account`
-7. You are in for a free trial of 12 months / 300 $
-8. go to your [Google Cloud Console](https://console.cloud.google.com/home/dashboard) to control your spin off / control your Virtual Machines
-
 ### Spin off a virtual Machine
 1. Go to the Google Cloud Dashboard and select "Compute Engine" on the left hand menu bar
 2. Select the submenu "Instances de VM"
-![Créer une instance](docs/images/IntancesVM.png)
+![Créer une instance](images/IntancesVM.png)
 3. Click on the top bar menu the "CREER UNE INSTANCE" panel
 4. Put name "bare-galaxy"
 5. Choose a Zone (suggestion: `europe-west1-c`)
@@ -32,13 +16,13 @@
 
 ### Connect to the started virtual Machine
 After a few seconds, the VM turns on "green" and an `ssh` menu becomes selectable
-![Running instance](docs/images/Running_instance.png)
+![Running instance](images/Running_instance.png)
 
 10. Roll down this `ssh` menu and select the first option `Ouvrir dans la fenêtre du navigateur`
-![Select ssh session in browser](docs/images/Select_ssh_option.png)
+![Select ssh session in browser](images/Select_ssh_option.png)
 11. A shell console pop out and you should now be ready to control your VM with linux command lines
-![OpenningSSH](docs/images/OpeningSSHconnection.png)
-![OpenningSSH](docs/images/SSHConsole.png)
+![OpenningSSH](images/OpeningSSHconnection.png)
+![OpenningSSH](images/SSHConsole.png)
 12. Try to enter the drosofff@bare-galaxy:~$ `sudo -i` command and hit the return key.
 13. The unix prompt become `root@bare-galaxy:~# `, you are mastering your VM as root administrator !
 14. [Optional] Here, if you do not have to work with the VM, you can turn off the VM and even trash it:
