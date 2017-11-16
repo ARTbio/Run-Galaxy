@@ -1,6 +1,0 @@
-site_name: Run-Galaxy
-pages:
-  - Prerequites: GCE.md
-  - Spin off a Virtual Machine: spin_off_VM.md
-
-theme: readthedocs
