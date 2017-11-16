@@ -1,6 +1,6 @@
 # Run Galaxy training course
 
-This doc should be soon available as a [ReadTheDocs web site](https://artbio.github.io/Run-Galaxy/)
+This doc is available as a [ReadTheDocs web site](https://artbio.github.io/Run-Galaxy/index.html)
 
 
 ### Google Cloud Engine
