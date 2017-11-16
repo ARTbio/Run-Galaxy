@@ -44,4 +44,4 @@ After a few seconds, the VM turns on "green" and an `ssh` menu becomes selectabl
 14. [Optional] Here, if you do not have to work with the VM, you can turn off the VM and even trash it:
   - in one shot, go back to your VM control panel in the web browser, ensure that the running VM is checked, and press the Trash button in the top menu.
   - Confirm that you want to trash the VM and loose everything.
-  - after a few seconds the VM disappears from the Dashbord.
+  - after a few seconds the VM disappears from the Dashboard.
