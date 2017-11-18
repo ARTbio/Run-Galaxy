@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Install a minimal standalone galaxy server - Run-Galaxy</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Install a minimal standalone galaxy server";
+    var mkdocs_page_input_path = "bare-galaxy.md";
+    var mkdocs_page_url = "/bare-galaxy/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Run-Galaxy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Prerequites</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../spin_off_VM/">Spin off a Virtual Machine</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Install a minimal standalone galaxy server</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#install-a-minimal-galaxy-server-with-git">Install a minimal galaxy server with git</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#spin-off-a-virtual-machine-bare-galaxy">Spin off a virtual Machine bare-galaxy</a></li>
+        
+            <li><a class="toctree-l3" href="#connect-to-the-vm-as-explained-in-previous-section-using-the-ssh-web-console">Connect to the VM as explained in previous section using the ssh web console</a></li>
+        
+            <li><a class="toctree-l3" href="#installation-of-dependencies">Installation of dependencies</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Run-Galaxy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Install a minimal standalone galaxy server</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="install-a-minimal-galaxy-server-with-git">Install a minimal galaxy server with git</h2>
+<h3 id="spin-off-a-virtual-machine-bare-galaxy">Spin off a virtual Machine <code>bare-galaxy</code></h3>
+<p>You may have already done this in the <a href="../spin_off_VM/">previous section</a>. If not, refer to this section
+We are going to use a GCE VM 
+- under Ubuntu 14.04
+- 2 processors
+- 7.5 Gb RAM
+- a 100 Gb Volume (more than enough)</p>
+<h3 id="connect-to-the-vm-as-explained-in-previous-section-using-the-ssh-web-console">Connect to the VM as explained in <a href="../spin_off_VM/">previous section</a> using the ssh web console</h3>
+<h3 id="installation-of-dependencies">Installation of dependencies</h3>
+<p>To install Galaxy, we only need the <code>git</code> program installed and a limited number of command line.
+We are going to execute these instruction as the <code>root</code> unix user. This is easier because installation
+of new programs as well as manipulations of network interfaces is generally permitted only
+to users with administration rights.</p>
+<p>So let's do this step by step:</p>
+<ol>
+<li><code>sudo -i</code></li>
+</ol>
+<p>This command open a new "shell" where you are root. You can check this by typing <code>pwd</code> that
+should return <code>/root/</code>, meaning that you are now working in the directory of the <code>root</code> user.</p>
+<ol>
+<li><code>apt-get install -y git</code></li>
+</ol>
+<p>This command install the <code>git program</code>. The <code>-y</code> option specifies to the <code>apt-get</code> package
+installer that no confirmation is needed for this command.</p>
+<ol>
+<li><code>git clone https://github.com/galaxyproject/galaxy.git</code></li>
+</ol>
+<p>This command says to <code>git</code> to <code>clone</code> the code repository located at <code>https://github.com/galaxyproject/galaxy.git</code>.
+You may try to visualize this URL <a href="https://github.com/galaxyproject/galaxy.git">https://github.com/galaxyproject/galaxy.git</a>
+in your web browser.</p>
+<ol>
+<li><code>cd galaxy</code></li>
+</ol>
+<p>This command shift you in the <code>galaxy</code> directory that was created by git</p>
+<ol>
+<li><code>cp config/galaxy.ini.sample config/galaxy.ini</code></li>
+</ol>
+<p>This command makes a copie of the <code>galaxy.ini.sample</code> file into <code>galaxy.ini</code> - in the
+directory <code>config</code> that is in the <code>galaxy</code> directory.</p>
+<ol>
+<li><code>nano config/galaxy.ini</code></li>
+</ol>
+<p>With this command, we are going to edit some important settings that are required to run our galaxy instance.</p>
+<ul>
+<li>Find the line <code>#port = 8080</code> and edit it to <code>port = 80</code></li>
+</ul>
+<p>By doing this, we uncomment the line that becomes active to specify that the port <code>listen</code> by the
+integrated galaxy web server will be the port <code>80</code></p>
+<ul>
+<li>Find the line <code>#host = 127.0.0.1</code> and edit it to <code>host = 0.0.0.0</code>.</li>
+</ul>
+<p>By doing this, we uncomment the line that specifies that the galaxy web server will listen the port <code>80</code>
+of <strong>all available</strong> network interfaces: in practical, you will be able to connect to you GCE VM from Pasteur or
+anywhere else in the world.</p>
+<ul>
+<li>save your edits by pressing the key combination <code>Ctrl</code>+<code>o</code></li>
+<li>
+<p>quit nano by pressiong the key combination <code>Ctrl</code>+<code>x</code></p>
+</li>
+<li>
+<p>Ready for the Big Bang ?</p>
+</li>
+</ul>
+<p>Then type <code>sh run.sh</code> and press the <code>enter</code> key !</p>
+<p>You should see an abundant log scrolling down. Don't worry !
+- All Galaxy dependencies required for the Galaxy server instance are being downloaded and installed
+- The Galaxy computing environment is automatically set up
+- The Galaxy database is automatically upgraded to the latest structure
+- Various tools are upgraded.</p>
+<p>After a minute or so, you should see the log freezing with</p>
+<pre><code>Starting server in PID 3192.
+serving on 0.0.0.0:80 view at http://127.0.0.1:80
+</code></pre>
+
+<ol>
+<li>Connect to your living Galaxy instance</li>
+</ol>
+<p>If so, this is all good, and you can now access to you Galaxy instance in a you web browser window:</p>
+<p>Go back to your Google Cloud Engine control panel. Find the <code>External IP address</code> / <code>Adresse IP externe</code>
+in the 7th column of the Dashbord (to the left of the ssh menu that you used before. And just click on the hyperlink.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../spin_off_VM/" class="btn btn-neutral" title="Spin off a Virtual Machine"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../spin_off_VM/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
