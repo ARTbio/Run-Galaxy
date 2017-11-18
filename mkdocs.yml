@@ -2,5 +2,6 @@ site_name: Run-Galaxy
 pages:
   - Prerequites: index.md
   - Spin off a Virtual Machine: spin_off_VM.md
+  - Install a minimal standalone galaxy server: bare-galaxy.md
 
 theme: readthedocs
