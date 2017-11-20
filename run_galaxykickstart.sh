@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
-
-apt-get install -y python-pip python-dev git htop
+apt-get update -y
+apt-get install -y python-pip python-dev python-setuptools git htop
 pip install -U pip
 pip install ansible==2.2
 ansible --version
@@ -15,4 +15,3 @@ echo "\nSleeping 15 sec before restarting Galaxy server\n"
 echo "zzzz zzzz..."
 sleep 15
 supervisorctl restart galaxy:
-
