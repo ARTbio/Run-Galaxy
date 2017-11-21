@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Install a Galaxy serveur with Ansible and GalaxyKickStart - Run-Galaxy</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Install a Galaxy serveur with Ansible and GalaxyKickStart";
+    var mkdocs_page_input_path = "GalaxyKickStart.md";
+    var mkdocs_page_url = "/GalaxyKickStart/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Run-Galaxy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Prerequites</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../spin_off_VM/">Spin off a Virtual Machine</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bare-galaxy/">Install a minimal standalone galaxy server</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Install a Galaxy serveur with Ansible and GalaxyKickStart</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#installation-of-a-galaxy-server-with-ansible-and-the-galaxykickstart-playbook">Installation of a Galaxy server with Ansible and the GalaxyKickStart playbook</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#what-is-ansible">What is Ansible ?</a></li>
+        
+            <li><a class="toctree-l3" href="#ansible-playbook-galaxykickstart">Ansible playbook - GalaxyKickStart</a></li>
+        
+            <li><a class="toctree-l3" href="#deployment">Deployment</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Run-Galaxy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Install a Galaxy serveur with Ansible and GalaxyKickStart</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="installation-of-a-galaxy-server-with-ansible-and-the-galaxykickstart-playbook">Installation of a Galaxy server with Ansible and the GalaxyKickStart playbook</h2>
+<h3 id="what-is-ansible">What is Ansible ?</h3>
+<p><img alt="Ansible" src="../images/ansible.png" /></p>
+<p>Ansible is an automation engine that automates configuration management and application
+deployment.</p>
+<p>Ansible reads instructions (Tasks) from a playbook and performs the indicated tasks on
+target machines (Hosts), through an ssh connection.</p>
+<p>There is no magics: everything an "administrator" can do using command lines of a linux OS,
+can be automated with ansible that "wraps" these command lines.
+The power of Ansible (and similar orchestration software, ie Puppet, Chief, etc.) comes
+from the abstraction of complex suite of commands in the Ansible syntax.
+Moreover, automation allows to reproduce exactly the desired configuration.
+Finally, Ansible is <code>idempotent</code>: whatever the initial configuration, it brings the target
+to the exact same final state. This is useful to repair a broken configuration.</p>
+<h3 id="ansible-playbook-galaxykickstart">Ansible playbook - GalaxyKickStart</h3>
+<p>The Ansible "language" (Striclty speaking, Ansible language is <em>not</em> a programming language)
+is structured. Thus a playbook is not necessarily a single flat file. Multiple tasks can be gathered in a file, a "role" is the execution of a set of tasks, and a playbook can execute multiple roles.</p>
+<p>GalaxyKickStart is an Ansible playbook that will</p>
+<ul>
+<li>install basic dependencies needed for Galaxy</li>
+<li>Create and manage all the linux users involved in the deployment of Galaxy</li>
+<li>Install and configure the services required for Galaxy:</li>
+<li>postgresql (database engine)</li>
+<li>nginx (web server)</li>
+<li>docker (containers)</li>
+<li>proftpd (ftp server)</li>
+<li>slurm (job manager)</li>
+<li>supervisor (service manager)</li>
+<li>Configure Galaxy for using these services</li>
+<li>Install tools and workflows using the bioblend API.</li>
+</ul>
+<p>The code of the GalaxyKickStart playbook is freely available at the ARTbio GitHub
+Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.com/ARTbio/GalaxyKickStart</a>.</p>
+<h3 id="deployment">Deployment</h3>
+<ul>
+<li>start a GCE VM `2 procs, 7.5Gb RAM, Ubuntu 14.04, 100 Go disk, http enabled</li>
+<li>connect to you VM using the Google ssh console</li>
+<li>start an interactive session as root using the command <code>sudo -i</code></li>
+<li>download the script `</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../bare-galaxy/" class="btn btn-neutral" title="Install a minimal standalone galaxy server"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../bare-galaxy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
