@@ -153,8 +153,68 @@ Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.co
 <li>start a GCE VM `2 procs, 7.5Gb RAM, Ubuntu 14.04, 100 Go disk, http enabled</li>
 <li>connect to you VM using the Google ssh console</li>
 <li>start an interactive session as root using the command <code>sudo -i</code></li>
-<li>download the script `</li>
+<li>download the script <code>run_galaxykickstart.sh</code> using the command `wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_galaxykickstart.sh</li>
+<li>run the script using the command <code>sh run_galaxykickstart.sh</code></li>
 </ul>
+<h4 id="the-run_galaxykickstartsh-script-explained">the run_galaxykickstart.sh script explained</h4>
+<p>NB: in the following code, numbers in line heads should be removed to run the script.</p>
+<pre><code>1  #!/usr/bin/env bash
+2  set -e
+3  apt-get install -y python-pip python-dev python-setuptools git htop
+4  echo &quot;Upgrading pip to v 1.9\n&quot;
+5  pip install -U pip
+6  pip --version
+7  /usr/local/bin/pip install ansible==2.2
+8  ansible --version
+9  git clone https://github.com/ARTbio/GalaxyKickStart.git
+10 cd GalaxyKickStart/
+11 ansible-galaxy install -r requirements_roles.yml -p roles/ -f
+12 echo &quot;\nEditing group_vars/all\n&quot;
+13 sed -i -e 's/galaxy_manage_trackster: true/galaxy_manage_trackster: false/' group_vars/all
+14 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
+15 echo &quot;\nSleeping 15 sec before restarting Galaxy server\n&quot;
+16 echo &quot;zzzz zzzz...&quot;
+17 sleep 15
+18 supervisorctl restart galaxy:
+</code></pre>
+
+<ol>
+<li>The shebang line. Says that it is a script code and that the interpreter to execute the
+code is bash and can be found in the /usr/bin/env environment</li>
+<li>set -e says to the bash interpreter to exit the run at first error (to avoid catastrophes)</li>
+<li>install <code>python-pip</code>, <code>python-dev</code>, <code>python-setuptools</code> (these 3 packages are required to
+install pip), <code>git</code> (to clone and manage GitHub repositories) and <code>htop</code> (a monitoring tool)
+using the package installer <code>apt-get</code></li>
+<li>Is just a command to inform the user about run state. This will prompt
+"Upgrading pip to v 1.9" in the console</li>
+<li>does what is stated before ! : this is the command to upgrade the pip program that was
+installed with installation of <code>python-pip</code>, <code>python-dev</code> and <code>python-setuptools</code>.
+<code>pip</code> is a recursive acronym that can stand for either "Pip Installs Packages" or
+"Pip Installs Python".</li>
+<li>will prompt the version of pip in the console</li>
+<li>install <code>ansible</code>, version 2.2, using <code>pip</code> !</li>
+<li>will prompt the version of ansible in the console</li>
+<li>clone the GalaxyKickStart Repository available at https://github.com/ARTbio/GalaxyKickStart.git,
+creating locally the <code>GalaxyKickStart</code> folder.</li>
+<li>Change directory, ie goes to /root/GalaxyKickStart</li>
+<li>says to ansible to install additional roles (collection of files to control ansible)
+which are not the the GalaxyKickStart repository but whose address is stated in the file
+<code>requirements_roles.yml</code>. These roles will be installed in the subdirectory
+<code>/root/GalaxyKickStart/roles/</code>. NB: <code>ansible-galaxy</code> has <em>nothing</em> to do with Galaxy,
+the name of this ansible command is serendipitous.</li>
+<li>warns about the next command</li>
+<li>This sed command will automatically search and replace the string
+<code>galaxy_manage_trackster: true</code> with the string <code>galaxy_manage_trackster: false</code>
+in the ansible configuration file <code>groups/all</code>.</li>
+<li>triggers the play of the playbook <code>galaxy.yml</code> by ansible. The target host of the playbook
+is defined in the file <code>inventory_files/galaxy-kickstart</code>, as well as how ansible will interact with the target.
+Here, we play the playbook on the same computer (localhost).</li>
+<li>Prompt the effect of the command 17.</li>
+<li>Prompt the effect of the command 17.</li>
+<li>sleep for 15 seconds. This is to let the Galaxy server starting quietly.</li>
+<li>use supervisor to restart the galaxy server: this is to load the more recent configuration
+files that may have been modified by the playbook <em>after</em> the Galaxy server started.</li>
+</ol>
               
             </div>
           </div>
