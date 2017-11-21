@@ -15,6 +15,4 @@ ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
 echo "\nSleeping 15 sec before restarting Galaxy server\n"
 echo "zzzz zzzz..."
 sleep 15
-supervisorct stop galaxy:
-killall uwsgi
-supervisorctl start galaxy:
+supervisorctl restart galaxy:
