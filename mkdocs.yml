@@ -3,5 +3,6 @@ pages:
   - Prerequites: index.md
   - Spin off a Virtual Machine: spin_off_VM.md
   - Install a minimal standalone galaxy server: bare-galaxy.md
+  - Install a Galaxy serveur with Ansible and GalaxyKickStart: GalaxyKickStart.md
 
 theme: readthedocs
