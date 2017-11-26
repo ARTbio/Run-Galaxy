@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Spin off a Virtual Machine - Run-Galaxy</title>
+  <title>Annex 1: Run your personal TP Galaxy server - Run-Galaxy</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Spin off a Virtual Machine";
-    var mkdocs_page_input_path = "spin_off_VM.md";
-    var mkdocs_page_url = "/spin_off_VM/";
+    var mkdocs_page_name = "Annex 1: Run your personal TP Galaxy server";
+    var mkdocs_page_input_path = "GCE_TP_Galaxy.md";
+    var mkdocs_page_url = "/GCE_TP_Galaxy/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -52,18 +52,9 @@
     <a class="" href="..">Prerequites</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Spin off a Virtual Machine</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#spin-off-a-virtual-machine">Spin off a virtual Machine</a></li>
-    
-
-    <li class="toctree-l2"><a href="#connect-to-the-started-virtual-machine">Connect to the started virtual Machine</a></li>
-    
-
-    </ul>
+    <a class="" href="../spin_off_VM/">Spin off a Virtual Machine</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -81,9 +72,18 @@
     <a class="" href="../Docker_GalaxyKickStart/">Install a Galaxy server with Docker</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../GCE_TP_Galaxy/">Annex 1: Run your personal TP Galaxy server</a>
+    <a class="current" href="./">Annex 1: Run your personal TP Galaxy server</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#spin-off-a-virtual-machine">Spin off a virtual Machine</a></li>
+    
+
+    <li class="toctree-l2"><a href="#you-are-ready-to-use-galaxy">YOU ARE READY TO USE GALAXY !</a></li>
+    
+
+    </ul>
 	    </li>
           
         </ul>
@@ -108,7 +108,7 @@
     
       
     
-    <li>Spin off a Virtual Machine</li>
+    <li>Annex 1: Run your personal TP Galaxy server</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -127,44 +127,54 @@
 </li>
 <li>
 <p>Click on the top bar menu the "CREER UNE INSTANCE" panel</p>
-</li>
-<li>Put name "bare-galaxy"</li>
-<li>Choose a Zone (suggestion: <code>europe-west1-c</code>)</li>
-<li>Type de machine: choose 2 vCPU with 7.5 Memory</li>
-<li>Disque de Démarrage: Click on <code>Modifier</code><ul>
-<li>Select <code>Ubuntu 14.04 LTS</code></li>
-<li>At the bottom of the form, put 100 Go for the Disk Size (Taille)</li>
-<li>Leave the selection <code>Disque persistant standard</code> / <code>Standard persistant drive</code></li>
-<li>Click <code>Select</code> / <code>Sélectionner</code></li>
-</ul>
-</li>
-<li>Click <code>Authorize HTTP traffic</code> / <code>Autoriser le traffic HTTP</code></li>
-<li>
-<p>Click <code>Créer</code> / <code>Create</code></p>
-<h3 id="connect-to-the-started-virtual-machine">Connect to the started virtual Machine</h3>
-<p>After a few seconds, the VM turns on "green" and an <code>ssh</code> menu becomes selectable</p>
-<p><img alt="Running instance" src="../images/Running_instance.png" /></p>
+<p><img alt="create instance" src="../images/create_instance.png" /></p>
 </li>
 <li>
-<p>Roll down this <code>ssh</code> menu and select the first option <code>Ouvrir dans la fenêtre du navigateur</code></p>
-<p><img alt="Select ssh session in browser" src="../images/Select_ssh_option.png" /></p>
+<p>Put name <code>my-galaxy-server</code>, Zone <code>europe-west1-b (or c)</code>, Type de machine <code>8 vCPU</code> + <code>30 Go</code> de mémoire.
+     <img alt="zone, cpu and ram" src="../images/instance_naming.png" /></p>
+</li>
+<li>Disque de Démarrage: Click on <code>Modifier</code>
+    <img alt="click on modify startup image" src="../images/modify_startup_image.png" /></li>
+<li>
+<p>Select the top menu <code>images personnalisées</code> (<code>custom images</code>)
+    <img alt="click the images personnalisées menu" src="../images/startup_disk_panel.png" /></p>
 </li>
 <li>
-<p>A shell console pop out and you should now be ready to control your VM with linux command lines</p>
-<p><img alt="OpenningSSH" src="../images/OpeningSSHconnection.png" /></p>
-<p><img alt="OpenningSSH" src="../images/SSHConsole.png" /></p>
+<p>Click on the rolling menu <code>Afficher les images de</code> and select the <code>My Project - main-sunset-133416</code>
+    <img alt="select My Project" src="../images/select_my_project.png" /></p>
+<p>What is important here is the identifier <code>main-sunset-133416</code></p>
 </li>
 <li>
-<p>Try to enter the drosofff@bare-galaxy:~$ <code>sudo -i</code> command and hit the return key.</p>
+<p>Check the button to select <code>image-1</code> (will be <code>galaxy</code> at TP runtime)
+    <img alt="Check Galaxy Image" src="../images/check_galaxy_image.png" /></p>
 </li>
-<li>The unix prompt become <code>root@bare-galaxy:~#</code>, you are mastering your VM as root administrator !</li>
-<li>[Optional] Here, if you do not have to work with the VM, you can turn off the VM and even trash it:<ul>
-<li>in one shot, go back to your VM control panel in the web browser, ensure that the running VM is checked, and press the Trash button in the top menu.</li>
-<li>Confirm that you want to trash the VM and loose everything.</li>
-<li>after a few seconds the VM disappears from the Dashboard.</li>
-</ul>
+<li>
+<p>At the bottom of the same form, choose <code>100 Go</code> for the Disk Size (Taille)
+    <img alt="choose size disk and select out" src="../images/choose_galaxy_disk_size.png" /></p>
+<p>Leave the selection <code>Disque persistant standard</code> / <code>Standard persistant drive</code></p>
+<p>And press the <code>Sélectionner</code> button.</p>
+</li>
+<li>
+<p>Back to the main form, Click <code>Authorize HTTP traffic</code> / <code>Autoriser le traffic HTTP</code>
+    <img alt="Select HTTP traffic" src="../images/http.png" /></p>
+</li>
+<li>Click <code>Créer</code> / <code>Create</code></li>
+<li>
+<p>After ~1 minute or so, the VM turns on "green" and an <code>ssh</code> menu becomes selectable</p>
+<p><img alt="Instance fire up" src="../images/instance_turns_green.png" /></p>
+</li>
+<li>
+<p>Click on the http link provided in the <code>Adress IP externe</code> column
+    You should now be able to access to your own Galaxy server instance.</p>
+</li>
+<li>
+<p>Immediately Log in to your server as the administrator</p>
+<p><img alt="first login" src="../images/Galaxy_first_login.png" /></p>
+<p>And log in with <code>admin@galaxy.org</code> : <code>admin</code></p>
+<p><img alt="authenticate" src="../images/Admin_authentication.png" /></p>
 </li>
 </ol>
+<h3 id="you-are-ready-to-use-galaxy">YOU ARE READY TO USE GALAXY !</h3>
               
             </div>
           </div>
@@ -172,10 +182,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../bare-galaxy/" class="btn btn-neutral float-right" title="Install a minimal standalone galaxy server">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href=".." class="btn btn-neutral" title="Prerequites"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Docker_GalaxyKickStart/" class="btn btn-neutral" title="Install a Galaxy server with Docker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -201,10 +209,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Docker_GalaxyKickStart/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../bare-galaxy/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
