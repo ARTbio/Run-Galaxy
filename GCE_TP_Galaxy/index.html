@@ -79,6 +79,38 @@
             
     <li class="toctree-l2"><a href="#spin-off-a-virtual-machine">Spin off a virtual Machine</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l3" href="#1-go-to-the-google-cloud-dashboard-and-select-compute-engine-on-the-left-hand-menu-bar">1. Go to the Google Cloud Dashboard and select "Compute Engine" on the left hand menu bar</a></li>
+        
+            <li><a class="toctree-l3" href="#2-select-the-submenu-instances-de-vm">2. Select the submenu "Instances de VM"</a></li>
+        
+            <li><a class="toctree-l3" href="#3-click-on-the-top-bar-menu-the-creer-une-instance-panel">3. Click on the top bar menu the "CREER UNE INSTANCE" panel</a></li>
+        
+            <li><a class="toctree-l3" href="#4-put-name-my-galaxy-server-zone-europe-west1-b-or-c-type-de-machine-8-vcpu-30-go-de-memoire">4. Put name my-galaxy-server, Zone europe-west1-b (or c), Type de machine 8 vCPU + 30 Go de mémoire.</a></li>
+        
+            <li><a class="toctree-l3" href="#5-disque-de-demarrage-click-on-modifier">5. Disque de Démarrage: Click on Modifier</a></li>
+        
+            <li><a class="toctree-l3" href="#6-select-the-top-menu-images-personnalisees-custom-images">6. Select the top menu images personnalisées (custom images)</a></li>
+        
+            <li><a class="toctree-l3" href="#7-click-on-the-rolling-menu-afficher-les-images-de-and-select-the-my-project-main-sunset-133416">7. Click on the rolling menu Afficher les images de and select the My Project - main-sunset-133416</a></li>
+        
+            <li><a class="toctree-l3" href="#8-check-the-button-to-select-galaxy-image-pasteur">8. Check the button to select galaxy-image-pasteur</a></li>
+        
+            <li><a class="toctree-l3" href="#9-at-the-bottom-of-the-same-form-choose-100-go-for-the-disk-size-taille-note-that-this-size-should-be-already-selected">9. At the bottom of the same form, choose 100 Go for the Disk Size (Taille). Note that this size should be already selected.</a></li>
+        
+            <li><a class="toctree-l3" href="#10-back-to-the-main-form-click-authorize-http-traffic-autoriser-le-traffic-http">10. Back to the main form, Click Authorize HTTP traffic / Autoriser le traffic HTTP</a></li>
+        
+            <li><a class="toctree-l3" href="#11-click-creer-create">11. Click Créer / Create</a></li>
+        
+            <li><a class="toctree-l3" href="#12-after-1-minute-or-so-the-vm-turns-on-green-and-an-ssh-menu-becomes-selectable">12. After ~1 minute or so, the VM turns on "green" and an ssh menu becomes selectable</a></li>
+        
+            <li><a class="toctree-l3" href="#13-click-on-the-http-link-provided-in-the-adress-ip-externe-column">13. Click on the http link provided in the Adress IP externe column</a></li>
+        
+            <li><a class="toctree-l3" href="#14-immediately-log-in-to-your-server-as-the-administrator">14. Immediately Log in to your server as the administrator</a></li>
+        
+        </ul>
+    
 
     <li class="toctree-l2"><a href="#you-are-ready-to-use-galaxy">YOU ARE READY TO USE GALAXY !</a></li>
     
@@ -119,62 +151,39 @@
             <div class="section">
               
                 <h3 id="spin-off-a-virtual-machine">Spin off a virtual Machine</h3>
-<ol>
-<li>Go to the Google Cloud Dashboard and select "Compute Engine" on the left hand menu bar</li>
-<li>
-<p>Select the submenu "Instances de VM"</p>
+<h5 id="1-go-to-the-google-cloud-dashboard-and-select-compute-engine-on-the-left-hand-menu-bar">1. Go to the Google Cloud Dashboard and select "Compute Engine" on the left hand menu bar</h5>
+<h5 id="2-select-the-submenu-instances-de-vm">2. Select the submenu "Instances de VM"</h5>
 <p><img alt="Instances" src="../images/IntancesVM.png" /></p>
-</li>
-<li>
-<p>Click on the top bar menu the "CREER UNE INSTANCE" panel</p>
+<h5 id="3-click-on-the-top-bar-menu-the-creer-une-instance-panel">3. Click on the top bar menu the "CREER UNE INSTANCE" panel</h5>
 <p><img alt="create instance" src="../images/create_instance.png" /></p>
-</li>
-<li>
-<p>Put name <code>my-galaxy-server</code>, Zone <code>europe-west1-b (or c)</code>, Type de machine <code>8 vCPU</code> + <code>30 Go</code> de mémoire.
-     <img alt="zone, cpu and ram" src="../images/instance_naming.png" /></p>
-</li>
-<li>Disque de Démarrage: Click on <code>Modifier</code>
-    <img alt="click on modify startup image" src="../images/modify_startup_image.png" /></li>
-<li>
-<p>Select the top menu <code>images personnalisées</code> (<code>custom images</code>)
-    <img alt="click the images personnalisées menu" src="../images/startup_disk_panel.png" /></p>
-</li>
-<li>
-<p>Click on the rolling menu <code>Afficher les images de</code> and select the <code>My Project - main-sunset-133416</code>
-    <img alt="select My Project" src="../images/select_my_project.png" /></p>
+<h5 id="4-put-name-my-galaxy-server-zone-europe-west1-b-or-c-type-de-machine-8-vcpu-30-go-de-memoire">4. Put name <code>my-galaxy-server</code>, Zone <code>europe-west1-b (or c)</code>, Type de machine <code>8 vCPU</code> + <code>30 Go</code> de mémoire.</h5>
+<p><img alt="zone, cpu and ram" src="../images/instance_naming.png" /></p>
+<h5 id="5-disque-de-demarrage-click-on-modifier">5. Disque de Démarrage: Click on <code>Modifier</code></h5>
+<p><img alt="click on modify startup image" src="../images/modify_startup_image.png" /></p>
+<h5 id="6-select-the-top-menu-images-personnalisees-custom-images">6. Select the top menu <code>images personnalisées</code> (<code>custom images</code>)</h5>
+<p><img alt="click the images personnalisées menu" src="../images/startup_disk_panel.png" /></p>
+<h5 id="7-click-on-the-rolling-menu-afficher-les-images-de-and-select-the-my-project-main-sunset-133416">7. Click on the rolling menu <code>Afficher les images de</code> and select the <code>My Project - main-sunset-133416</code></h5>
+<p><img alt="select My Project" src="../images/select_my_project.png" /></p>
 <p>What is important here is the identifier <code>main-sunset-133416</code></p>
-</li>
-<li>
-<p>Check the button to select <code>image-1</code> (will be <code>galaxy</code> at TP runtime)
-    <img alt="Check Galaxy Image" src="../images/check_galaxy_image.png" /></p>
-</li>
-<li>
-<p>At the bottom of the same form, choose <code>100 Go</code> for the Disk Size (Taille)
-    <img alt="choose size disk and select out" src="../images/choose_galaxy_disk_size.png" /></p>
-<p>Leave the selection <code>Disque persistant standard</code> / <code>Standard persistant drive</code></p>
-<p>And press the <code>Sélectionner</code> button.</p>
-</li>
-<li>
-<p>Back to the main form, Click <code>Authorize HTTP traffic</code> / <code>Autoriser le traffic HTTP</code>
-    <img alt="Select HTTP traffic" src="../images/http.png" /></p>
-</li>
-<li>Click <code>Créer</code> / <code>Create</code></li>
-<li>
-<p>After ~1 minute or so, the VM turns on "green" and an <code>ssh</code> menu becomes selectable</p>
+<h5 id="8-check-the-button-to-select-galaxy-image-pasteur">8. Check the button to select <code>galaxy-image-pasteur</code></h5>
+<p><img alt="Check Galaxy Image" src="../images/check_galaxy_image.png" /></p>
+<h5 id="9-at-the-bottom-of-the-same-form-choose-100-go-for-the-disk-size-taille-note-that-this-size-should-be-already-selected">9. At the bottom of the same form, choose <code>100 Go</code> for the Disk Size (Taille). Note that this size should be already selected.</h5>
+<p><img alt="choose size disk and select out" src="../images/choose_galaxy_disk_size.png" /></p>
+<p>Click the <code>Sélectionner</code> button to leave the selection <code>Disque persistant standard</code> / <code>Standard persistant drive</code></p>
+<h5 id="10-back-to-the-main-form-click-authorize-http-traffic-autoriser-le-traffic-http">10. Back to the main form, Click <code>Authorize HTTP traffic</code> / <code>Autoriser le traffic HTTP</code></h5>
+<p><img alt="Select HTTP traffic" src="../images/http.png" /></p>
+<h5 id="11-click-creer-create">11. Click <code>Créer</code> / <code>Create</code></h5>
+<h5 id="12-after-1-minute-or-so-the-vm-turns-on-green-and-an-ssh-menu-becomes-selectable">12. After ~1 minute or so, the VM turns on "green" and an <code>ssh</code> menu becomes selectable</h5>
 <p><img alt="Instance fire up" src="../images/instance_turns_green.png" /></p>
-</li>
-<li>
-<p>Click on the http link provided in the <code>Adress IP externe</code> column
-    You should now be able to access to your own Galaxy server instance.</p>
-</li>
-<li>
-<p>Immediately Log in to your server as the administrator</p>
+<h5 id="13-click-on-the-http-link-provided-in-the-adress-ip-externe-column">13. Click on the http link provided in the <code>Adress IP externe</code> column</h5>
+<p>You should now be able to access to your own Galaxy server instance, but not that this
+phase can take an additional minute or so, this is the time to start all the galaxy services
+in the new server instance.</p>
+<h5 id="14-immediately-log-in-to-your-server-as-the-administrator">14. Immediately Log in to your server as the administrator</h5>
 <p><img alt="first login" src="../images/Galaxy_first_login.png" /></p>
 <p>And log in with <code>admin@galaxy.org</code> : <code>admin</code></p>
 <p><img alt="authenticate" src="../images/Admin_authentication.png" /></p>
-</li>
-</ol>
-<h3 id="you-are-ready-to-use-galaxy">YOU ARE READY TO USE GALAXY !</h3>
+<h2 id="you-are-ready-to-use-galaxy">YOU ARE READY TO USE GALAXY !</h2>
               
             </div>
           </div>

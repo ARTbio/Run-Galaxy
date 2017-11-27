@@ -122,13 +122,83 @@
         }, 
         {
             "location": "/GCE_TP_Galaxy/", 
-            "text": "Spin off a virtual Machine\n\n\n\n\nGo to the Google Cloud Dashboard and select \"Compute Engine\" on the left hand menu bar\n\n\n\n\nSelect the submenu \"Instances de VM\"\n\n\n\n\n\n\n\n\nClick on the top bar menu the \"CREER UNE INSTANCE\" panel\n\n\n\n\n\n\n\n\nPut name \nmy-galaxy-server\n, Zone \neurope-west1-b (or c)\n, Type de machine \n8 vCPU\n + \n30 Go\n de m\u00e9moire.\n     \n\n\n\n\nDisque de D\u00e9marrage: Click on \nModifier\n\n    \n\n\n\n\nSelect the top menu \nimages personnalis\u00e9es\n (\ncustom images\n)\n    \n\n\n\n\n\n\nClick on the rolling menu \nAfficher les images de\n and select the \nMy Project - main-sunset-133416\n\n    \n\n\nWhat is important here is the identifier \nmain-sunset-133416\n\n\n\n\n\n\nCheck the button to select \nimage-1\n (will be \ngalaxy\n at TP runtime)\n    \n\n\n\n\n\n\nAt the bottom of the same form, choose \n100 Go\n for the Disk Size (Taille)\n    \n\n\nLeave the selection \nDisque persistant standard\n / \nStandard persistant drive\n\n\nAnd press the \nS\u00e9lectionner\n button.\n\n\n\n\n\n\nBack to the main form, Click \nAuthorize HTTP traffic\n / \nAutoriser le traffic HTTP\n\n    \n\n\n\n\nClick \nCr\u00e9er\n / \nCreate\n\n\n\n\nAfter ~1 minute or so, the VM turns on \"green\" and an \nssh\n menu becomes selectable\n\n\n\n\n\n\n\n\nClick on the http link provided in the \nAdress IP externe\n column\n    You should now be able to access to your own Galaxy server instance.\n\n\n\n\n\n\nImmediately Log in to your server as the administrator\n\n\n\n\nAnd log in with \nadmin@galaxy.org\n : \nadmin\n\n\n\n\n\n\n\n\nYOU ARE READY TO USE GALAXY !", 
+            "text": "Spin off a virtual Machine\n\n\n1. Go to the Google Cloud Dashboard and select \"Compute Engine\" on the left hand menu bar\n\n\n2. Select the submenu \"Instances de VM\"\n\n\n\n\n3. Click on the top bar menu the \"CREER UNE INSTANCE\" panel\n\n\n\n\n4. Put name \nmy-galaxy-server\n, Zone \neurope-west1-b (or c)\n, Type de machine \n8 vCPU\n + \n30 Go\n de m\u00e9moire.\n\n\n\n\n5. Disque de D\u00e9marrage: Click on \nModifier\n\n\n\n\n6. Select the top menu \nimages personnalis\u00e9es\n (\ncustom images\n)\n\n\n\n\n7. Click on the rolling menu \nAfficher les images de\n and select the \nMy Project - main-sunset-133416\n\n\n\n\nWhat is important here is the identifier \nmain-sunset-133416\n\n\n8. Check the button to select \ngalaxy-image-pasteur\n\n\n\n\n9. At the bottom of the same form, choose \n100 Go\n for the Disk Size (Taille). Note that this size should be already selected.\n\n\n\n\nClick the \nS\u00e9lectionner\n button to leave the selection \nDisque persistant standard\n / \nStandard persistant drive\n\n\n10. Back to the main form, Click \nAuthorize HTTP traffic\n / \nAutoriser le traffic HTTP\n\n\n\n\n11. Click \nCr\u00e9er\n / \nCreate\n\n\n12. After ~1 minute or so, the VM turns on \"green\" and an \nssh\n menu becomes selectable\n\n\n\n\n13. Click on the http link provided in the \nAdress IP externe\n column\n\n\nYou should now be able to access to your own Galaxy server instance, but not that this\nphase can take an additional minute or so, this is the time to start all the galaxy services\nin the new server instance.\n\n\n14. Immediately Log in to your server as the administrator\n\n\n\n\nAnd log in with \nadmin@galaxy.org\n : \nadmin\n\n\n\n\nYOU ARE READY TO USE GALAXY !", 
             "title": "Annex 1: Run your personal TP Galaxy server"
         }, 
         {
             "location": "/GCE_TP_Galaxy/#spin-off-a-virtual-machine", 
-            "text": "Go to the Google Cloud Dashboard and select \"Compute Engine\" on the left hand menu bar   Select the submenu \"Instances de VM\"     Click on the top bar menu the \"CREER UNE INSTANCE\" panel     Put name  my-galaxy-server , Zone  europe-west1-b (or c) , Type de machine  8 vCPU  +  30 Go  de m\u00e9moire.\n        Disque de D\u00e9marrage: Click on  Modifier \n       Select the top menu  images personnalis\u00e9es  ( custom images )\n        Click on the rolling menu  Afficher les images de  and select the  My Project - main-sunset-133416 \n      What is important here is the identifier  main-sunset-133416    Check the button to select  image-1  (will be  galaxy  at TP runtime)\n        At the bottom of the same form, choose  100 Go  for the Disk Size (Taille)\n      Leave the selection  Disque persistant standard  /  Standard persistant drive  And press the  S\u00e9lectionner  button.    Back to the main form, Click  Authorize HTTP traffic  /  Autoriser le traffic HTTP \n       Click  Cr\u00e9er  /  Create   After ~1 minute or so, the VM turns on \"green\" and an  ssh  menu becomes selectable     Click on the http link provided in the  Adress IP externe  column\n    You should now be able to access to your own Galaxy server instance.    Immediately Log in to your server as the administrator   And log in with  admin@galaxy.org  :  admin", 
+            "text": "", 
             "title": "Spin off a virtual Machine"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#1-go-to-the-google-cloud-dashboard-and-select-compute-engine-on-the-left-hand-menu-bar", 
+            "text": "", 
+            "title": "1. Go to the Google Cloud Dashboard and select \"Compute Engine\" on the left hand menu bar"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#2-select-the-submenu-instances-de-vm", 
+            "text": "", 
+            "title": "2. Select the submenu \"Instances de VM\""
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#3-click-on-the-top-bar-menu-the-creer-une-instance-panel", 
+            "text": "", 
+            "title": "3. Click on the top bar menu the \"CREER UNE INSTANCE\" panel"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#4-put-name-my-galaxy-server-zone-europe-west1-b-or-c-type-de-machine-8-vcpu-30-go-de-memoire", 
+            "text": "", 
+            "title": "4. Put name my-galaxy-server, Zone europe-west1-b (or c), Type de machine 8 vCPU + 30 Go de m\u00e9moire."
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#5-disque-de-demarrage-click-on-modifier", 
+            "text": "", 
+            "title": "5. Disque de D\u00e9marrage: Click on Modifier"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#6-select-the-top-menu-images-personnalisees-custom-images", 
+            "text": "", 
+            "title": "6. Select the top menu images personnalis\u00e9es (custom images)"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#7-click-on-the-rolling-menu-afficher-les-images-de-and-select-the-my-project-main-sunset-133416", 
+            "text": "What is important here is the identifier  main-sunset-133416", 
+            "title": "7. Click on the rolling menu Afficher les images de and select the My Project - main-sunset-133416"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#8-check-the-button-to-select-galaxy-image-pasteur", 
+            "text": "", 
+            "title": "8. Check the button to select galaxy-image-pasteur"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#9-at-the-bottom-of-the-same-form-choose-100-go-for-the-disk-size-taille-note-that-this-size-should-be-already-selected", 
+            "text": "Click the  S\u00e9lectionner  button to leave the selection  Disque persistant standard  /  Standard persistant drive", 
+            "title": "9. At the bottom of the same form, choose 100 Go for the Disk Size (Taille). Note that this size should be already selected."
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#10-back-to-the-main-form-click-authorize-http-traffic-autoriser-le-traffic-http", 
+            "text": "", 
+            "title": "10. Back to the main form, Click Authorize HTTP traffic / Autoriser le traffic HTTP"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#11-click-creer-create", 
+            "text": "", 
+            "title": "11. Click Cr\u00e9er / Create"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#12-after-1-minute-or-so-the-vm-turns-on-green-and-an-ssh-menu-becomes-selectable", 
+            "text": "", 
+            "title": "12. After ~1 minute or so, the VM turns on \"green\" and an ssh menu becomes selectable"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#13-click-on-the-http-link-provided-in-the-adress-ip-externe-column", 
+            "text": "You should now be able to access to your own Galaxy server instance, but not that this\nphase can take an additional minute or so, this is the time to start all the galaxy services\nin the new server instance.", 
+            "title": "13. Click on the http link provided in the Adress IP externe column"
+        }, 
+        {
+            "location": "/GCE_TP_Galaxy/#14-immediately-log-in-to-your-server-as-the-administrator", 
+            "text": "And log in with  admin@galaxy.org  :  admin", 
+            "title": "14. Immediately Log in to your server as the administrator"
         }, 
         {
             "location": "/GCE_TP_Galaxy/#you-are-ready-to-use-galaxy", 
