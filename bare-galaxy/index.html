@@ -140,34 +140,22 @@ We are going to execute these instruction as the <code>root</code> unix user. Th
 of new programs as well as manipulations of network interfaces is generally permitted only
 to users with administration rights.</p>
 <p>So let's do this step by step:</p>
-<ol>
-<li><code>sudo -i</code></li>
-</ol>
+<h5 id="1-sudo-i">1. <code>sudo -i</code></h5>
 <p>This command open a new "shell" where you are root. You can check this by typing <code>pwd</code> that
 should return <code>/root/</code>, meaning that you are now working in the directory of the <code>root</code> user.</p>
-<ol>
-<li><code>apt-get install -y git</code></li>
-</ol>
+<h5 id="2-apt-get-install-y-git">2. <code>apt-get install -y git</code></h5>
 <p>This command install the <code>git program</code>. The <code>-y</code> option specifies to the <code>apt-get</code> package
 installer that no confirmation is needed for this command.</p>
-<ol>
-<li><code>git clone https://github.com/galaxyproject/galaxy.git</code></li>
-</ol>
+<h5 id="3-git-clone-httpsgithubcomgalaxyprojectgalaxygit">3. <code>git clone https://github.com/galaxyproject/galaxy.git</code></h5>
 <p>This command says to <code>git</code> to <code>clone</code> the code repository located at <code>https://github.com/galaxyproject/galaxy.git</code>.
 You may try to visualize this URL <a href="https://github.com/galaxyproject/galaxy.git">https://github.com/galaxyproject/galaxy.git</a>
 in your web browser.</p>
-<ol>
-<li><code>cd galaxy</code></li>
-</ol>
+<h5 id="4-cd-galaxy">4. <code>cd galaxy</code></h5>
 <p>This command shift you in the <code>galaxy</code> directory that was created by git</p>
-<ol>
-<li><code>cp config/galaxy.ini.sample config/galaxy.ini</code></li>
-</ol>
+<h5 id="5-cp-configgalaxyinisample-configgalaxyini">5. <code>cp config/galaxy.ini.sample config/galaxy.ini</code></h5>
 <p>This command makes a copie of the <code>galaxy.ini.sample</code> file into <code>galaxy.ini</code> - in the
 directory <code>config</code> that is in the <code>galaxy</code> directory.</p>
-<ol>
-<li><code>nano config/galaxy.ini</code></li>
-</ol>
+<h5 id="6-nano-configgalaxyini">6. <code>nano config/galaxy.ini</code></h5>
 <p>With this command, we are going to edit some important settings that are required to run our galaxy instance.</p>
 <ul>
 <li>Find the line <code>#port = 8080</code> and edit it to <code>port = 80</code></li>
@@ -182,30 +170,39 @@ of <strong>all available</strong> network interfaces: in practical, you will be 
 anywhere else in the world.</p>
 <ul>
 <li>save your edits by pressing the key combination <code>Ctrl</code>+<code>o</code></li>
-<li>
-<p>quit nano by pressiong the key combination <code>Ctrl</code>+<code>x</code></p>
-</li>
-<li>
-<p>Ready for the Big Bang ?</p>
-</li>
+<li>quit nano by pressing the key combination <code>Ctrl</code>+<code>x</code></li>
 </ul>
+<h5 id="7-ready-for-the-big-bang">7. Ready for the Big Bang ?</h5>
 <p>Then type <code>sh run.sh</code> and press the <code>enter</code> key !</p>
 <p>You should see an abundant log scrolling down. Don't worry !
 - All Galaxy dependencies required for the Galaxy server instance are being downloaded and installed
 - The Galaxy computing environment is automatically set up
 - The Galaxy database is automatically upgraded to the latest structure
 - Various tools are upgraded.</p>
-<p>After a minute or so, you should see the log freezing with</p>
+<p>After 2 minute or so, you should see the log freezing with</p>
 <pre><code>Starting server in PID 3192.
 serving on 0.0.0.0:80 view at http://127.0.0.1:80
 </code></pre>
 
-<ol>
-<li>Connect to your living Galaxy instance</li>
-</ol>
+<h5 id="8-connect-to-your-living-galaxy-instance">8. Connect to your living Galaxy instance</h5>
 <p>If so, this is all good, and you can now access to you Galaxy instance in a you web browser window:</p>
 <p>Go back to your Google Cloud Engine control panel. Find the <code>External IP address</code> / <code>Adresse IP externe</code>
 in the 7th column of the Dashbord (to the left of the ssh menu that you used before. And just click on the hyperlink.</p>
+<h5 id="9-optional-become-admin-of-your-galaxy-server-instance">9. Optional : become admin of your Galaxy server instance</h5>
+<ul>
+<li>stop your server by <code>Ctrl</code> + <code>c</code> in the console</li>
+<li>Then type <code>nano /home/galaxy/galaxy/config/galaxy.ini</code></li>
+<li>Find <code>admin_users =</code>. For that you may use the search function of nano: <code>Ctrl</code> + <code>w</code>, type <code>admin_users</code> and press the <code>enter</code> key.</li>
+<li>
+<p>Edit by inserting your email address, which will be the admin login:
+    <code>admin_users = moi@ego.org</code> (note that you are not obliged to put a valid email address)</p>
+<p>You can also put multiple users authorized for administration</p>
+<p><code>admin_users = moi@ego.org,monpote@sympa.org,galaxy_admin@galaxyproject.org</code></p>
+</li>
+<li>
+<p>Restart the server by <code>sh run.sh</code></p>
+</li>
+</ul>
               
             </div>
           </div>
