@@ -19,32 +19,32 @@ to users with administration rights.
 
 So let's do this step by step:
 
-1. `sudo -i`
+##### 1. `sudo -i`
 
 This command open a new "shell" where you are root. You can check this by typing `pwd` that
 should return `/root/`, meaning that you are now working in the directory of the `root` user.
 
-2. `apt-get install -y git`
+##### 2. `apt-get install -y git`
 
 This command install the `git program`. The `-y` option specifies to the `apt-get` package
 installer that no confirmation is needed for this command.
 
-3. `git clone https://github.com/galaxyproject/galaxy.git`
+##### 3. `git clone https://github.com/galaxyproject/galaxy.git`
 
 This command says to `git` to `clone` the code repository located at `https://github.com/galaxyproject/galaxy.git`.
 You may try to visualize this URL [https://github.com/galaxyproject/galaxy.git](https://github.com/galaxyproject/galaxy.git)
 in your web browser.
 
-4. `cd galaxy`
+##### 4. `cd galaxy`
 
 This command shift you in the `galaxy` directory that was created by git
 
-5. `cp config/galaxy.ini.sample config/galaxy.ini`
+##### 5. `cp config/galaxy.ini.sample config/galaxy.ini`
 
 This command makes a copie of the `galaxy.ini.sample` file into `galaxy.ini` - in the
 directory `config` that is in the `galaxy` directory.
 
-6. `nano config/galaxy.ini`
+##### 6. `nano config/galaxy.ini`
 
 With this command, we are going to edit some important settings that are required to run our galaxy instance.
 
@@ -60,9 +60,9 @@ of **all available** network interfaces: in practical, you will be able to conne
 anywhere else in the world.
 
 - save your edits by pressing the key combination `Ctrl`+`o`
-- quit nano by pressiong the key combination `Ctrl`+`x`
+- quit nano by pressing the key combination `Ctrl`+`x`
 
-7. Ready for the Big Bang ?
+##### 7. Ready for the Big Bang ?
 
 Then type `sh run.sh` and press the `enter` key !
 
@@ -72,18 +72,31 @@ You should see an abundant log scrolling down. Don't worry !
 - The Galaxy database is automatically upgraded to the latest structure
 - Various tools are upgraded.
 
-After a minute or so, you should see the log freezing with
+After 2 minute or so, you should see the log freezing with
 
 ```
 Starting server in PID 3192.
 serving on 0.0.0.0:80 view at http://127.0.0.1:80
 ```
-8. Connect to your living Galaxy instance
+##### 8. Connect to your living Galaxy instance
 
 If so, this is all good, and you can now access to you Galaxy instance in a you web browser window:
 
 Go back to your Google Cloud Engine control panel. Find the `External IP address` / `Adresse IP externe`
 in the 7th column of the Dashbord (to the left of the ssh menu that you used before. And just click on the hyperlink.
+
+##### 9. Optional : become admin of your Galaxy server instance
+- stop your server by `Ctrl` + `c` in the console
+- Then type `nano /home/galaxy/galaxy/config/galaxy.ini`
+- Find `admin_users =`. For that you may use the search function of nano: `Ctrl` + `w`, type `admin_users` and press the `enter` key.
+- Edit by inserting your email address, which will be the admin login:
+    `admin_users = moi@ego.org` (note that you are not obliged to put a valid email address)
+    
+    You can also put multiple users authorized for administration
+    
+    `admin_users = moi@ego.org,monpote@sympa.org,galaxy_admin@galaxyproject.org`
+
+- Restart the server by `sh run.sh`
 
 
 

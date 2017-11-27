@@ -21,6 +21,18 @@ almost instantly.
 
 ###  GalaxyKickStart Docker **Container**
 
+Instead of using the GalaxyKickStart playbook in a VM, the playbook can be used to build
+a Docker container image that will be an almost exact mirror of the GalaxyKickStart VM
+you have just built.
+
+You are not going to do that today (although you should be able to do it by reading the instructions).
+
+Instead, you are going to
+
+- Install the `docker` system
+- pull the GalaxyKickStart docker container that is deposited in the [`Docker Hub`](https://hub.docker.com/u/artbio/)
+- run this docker container and connect to the deployed GalaxyKickStart server instance
+
 
 
 
