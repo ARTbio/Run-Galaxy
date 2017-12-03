@@ -6,5 +6,6 @@ pages:
   - Install a Galaxy server with Ansible and GalaxyKickStart: GalaxyKickStart.md
   - Install a Galaxy server with Docker: Docker_GalaxyKickStart.md
   - "Annex 1: Run your personal TP Galaxy server": GCE_TP_Galaxy.md
+  - "Annex 2: Galaxy software architecture" : Galaxy_architecture.md
 
 theme: readthedocs
