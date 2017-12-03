@@ -249,6 +249,16 @@
             "location": "/GCE_TP_Galaxy/#you-are-ready-to-use-galaxy", 
             "text": "", 
             "title": "YOU ARE READY TO USE GALAXY !"
+        }, 
+        {
+            "location": "/Galaxy_architecture/", 
+            "text": "Galaxy software built", 
+            "title": "Annex 2: Galaxy software architecture"
+        }, 
+        {
+            "location": "/Galaxy_architecture/#galaxy-software-built", 
+            "text": "", 
+            "title": "Galaxy software built"
         }
     ]
 }
