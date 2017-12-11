@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-
-		
 sudo pip install mkdocs
 mkdir mkdocs_build
 cd mkdocs_build
