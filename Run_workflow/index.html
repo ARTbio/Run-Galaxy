@@ -193,8 +193,8 @@ toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0, versio
 <p>The other lines are redundant, because the workflow is using the same tools at different steps.</p>
 <ul>
 <li>
-<p>So far, so good, the missing tools are reported in the <a href="">To_be_installed.md</a> file in the Run-Galaxy repository
-(or just above in a more complex format)</p>
+<p>So far, so good, the missing tools are reported in the <a href="https://github.com/ARTbio/Run-Galaxy/blob/master/workflows/To_be_installed.md">To_be_installed.md</a>
+file in the Run-Galaxy repository (or just above in a more complex format)</p>
 </li>
 <li>
 <p>Now, click on the workflow menu.</p>
@@ -211,7 +211,68 @@ even see anymore the paths between the various workflow steps !</li>
 </ul>
 <h4 id="installing-missing-tools">Installing missing tools</h4>
 <p>So, we have to install our first three tools in our Galaxy instance:</p>
-<p>```</p>
+<pre><code>- regex_find_replace
+
+  owner: jjohnson
+
+  versions: 0.1.0
+
+- regex_replace
+
+  owner: kellrott
+
+  versions:     1.0.0
+
+- text_processing
+
+  owner: bgruening
+
+  versions: 1.1.0
+</code></pre>
+<ul>
+<li>Click on the <code>Admin</code> top menu</li>
+<li>On the left bar click on <code>Manage installed tools</code></li>
+</ul>
+<p>You'll see a single lonely tool <code>yac_clipper</code>, which you probably already used
+to remove adapter sequences for small-RNA-seq data.</p>
+<ul>
+<li>Now, click the <code>Search Tool Shed</code> menu (again in the left bar)</li>
+<li>Press the <code>Galaxy Main Tool Shed</code> button</li>
+<li>In the search field, copy and paste <code>regex_find_replace</code>, and press the <code>enter</code> key.</li>
+<li>Two tools will show up with exactly the same name.
+    We want the tool owned by <code>jjohnson</code>, so we'll click this one, and select <code>preview and install</code> (No other solution anyway)</li>
+<li>Click the <code>Install to Galaxy</code> button at the top of the screen</li>
+<li>In the <code>Select existing tool panel section:</code> menu, select <code>Text Manipulation</code>.
+Thus, the tools will appears in the section <code>Text Manipulation</code> of the Galaxy tools.</li>
+<li>Click <code>Install</code></li>
+<li>You are going to wait for ~20 sec or so, before seeing the <code>Monitor installing tools...</code> screen.</li>
+<li>Rapidly enough, the Installation status should turn out green. Sometimes, things do not go well.
+If the installation fails, just call the <code>Repository Actions - repair repository</code> menu
+(maybe a good idea to call me too...)</li>
+<li>
+<p>Click again the <code>Manage installed tools</code> menu in the left bar, and look at the newly
+installed tool <code>regex_find_replace</code> in the list.</p>
+</li>
+<li>
+<p>Repeat the same operations for the tool <code>regex_replace</code> owned by <code>kellrott</code> (version <code>1.0.0</code>)</p>
+</li>
+<li>
+<p>Repeat the same operations for the tool <code>text_processing</code> owned by <code>bgruening</code>(version <code>1.1.0</code>)
+   For this last installation, you will see a different panel after clicking <code>Install to Galaxy</code>:
+   If you scroll down a little bit, you should see a list of uninstalled tool dependencies like this:
+   <img alt="uninstalled dependencies" src="../images/uninstalled_dependencies.png" /></p>
+</li>
+</ul>
+<p>These are software packages required to get the tool <code>text_processing</code> working properly.
+   The required packages will be installed by the lately adopted package manager <code>conda.
+   You can further check this by clicking the</code>Display Details` button bellow the Dependency list.</p>
+<p>At this stage, avoid further distraction and do not forget to select tool panel section
+   <code>Text Manipulation</code>, and finally click the <code>Install</code> button.
+   This time, the <code>Monitor installing tool shed repositories</code> will display new steps (in yellow),
+   including the <code>Installing tool dependencies</code> step. The whole process should take longer,
+   about 2 min and 30 secondes (a bit too short for a coffee through).
+- Finally go back a last time to the <code>Manage installed tools</code> panel.
+    <img alt="Installed tools" src="../images/installed_tools.png" /></p>
               
             </div>
           </div>
