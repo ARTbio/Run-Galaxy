@@ -42,10 +42,10 @@ Repository [https://github.com/ARTbio/GalaxyKickStart](https://github.com/ARTbio
 
 ### Deployment
 
-- start a GCE VM `2 procs, 7.5Gb RAM, Ubuntu 14.04, 100 Go disk, http enabled
+- start a GCE VM `2 procs, 7.5Gb RAM, Ubuntu 14.04, 100 Go disk, http enabled`
 - connect to you VM using the Google ssh console
 - start an interactive session as root using the command `sudo -i`
-- download the script `run_galaxykickstart.sh` using the command `wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_galaxykickstart.sh
+- download the script `run_galaxykickstart.sh` using the command `wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_galaxykickstart.sh`
 - run the script using the command `sh run_galaxykickstart.sh`
 
 #### the run_galaxykickstart.sh script explained
