@@ -43,6 +43,14 @@
 
     
     <url>
+     <loc>/Run_workflow/</loc>
+     <lastmod>2017-12-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>/GCE_TP_Galaxy/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>

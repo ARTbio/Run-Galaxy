@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>After deployment use case - Run-Galaxy</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "After deployment use case";
+    var mkdocs_page_input_path = "Run_workflow.md";
+    var mkdocs_page_url = "/Run_workflow/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Run-Galaxy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Prerequites</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../spin_off_VM/">Spin off a Virtual Machine</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bare-galaxy/">Install a minimal standalone galaxy server</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../GalaxyKickStart/">Install a Galaxy server with Ansible and GalaxyKickStart</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Docker_GalaxyKickStart/">Install a Galaxy server with Docker</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">After deployment use case</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#running-a-workflow-in-galaxy">Running a workflow in Galaxy</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#upload-a-workflow-description-file">Upload a workflow description file</a></li>
+        
+            <li><a class="toctree-l3" href="#installing-missing-tools">Installing missing tools</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../GCE_TP_Galaxy/">Annex 1: Run your personal TP Galaxy server</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Galaxy_architecture/">Annex 2: Galaxy software architecture</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Run-Galaxy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>After deployment use case</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="running-a-workflow-in-galaxy">Running a workflow in Galaxy</h2>
+<p>Whether you deployed Galaxy using ansible or docker, you have are now administrating your
+own Galaxy server !</p>
+<p>In this use case, we are going to </p>
+<ul>
+<li>Upload a workflow description file in the Galaxy server instance</li>
+<li>Visualise this workflow and see that tools to execute the workflow are missing</li>
+<li>Install these missing tools</li>
+<li>Eventually run the workflow on input data obtained from a remote public repository.</li>
+</ul>
+<h4 id="upload-a-workflow-description-file">Upload a workflow description file</h4>
+<ul>
+<li>Ensure you are connected to your Galaxy server as an admin (admin@galaxy.org<code>:</code>admin)</li>
+<li>Click the workflow menu</li>
+<li>Click the "Upload or import workflow" button at the top right</li>
+<li>In the <code>Galaxy workflow URL:</code> field, paste the url of the workflow file:</li>
+</ul>
+<p><code>https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/workflows/Galaxy-Workflow-canonical_transposons.gtf_from_transposon_sequence_set.txt.ga</code></p>
+<p>Note that this file is in the <a href="https://github.com/ARTbio/Run-Galaxy">Run-Galaxy</a> repository where all the material for this training
+is hosted</p>
+<ul>
+<li>
+<p>alternatively, you could download the <a href="https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/workflows/Galaxy-Workflow-canonical_transposons.gtf_from_transposon_sequence_set.txt.ga">Galaxy-Workflow-canonical_transposons.gtf_from_transposon_sequence_set.txt.ga</a>
+locally on your computer, and click the <code>Galaxy workflow file:</code> button instead of <code>Galaxy workflow URL:</code></p>
+</li>
+<li>
+<p>Click on the <code>Import</code> button</p>
+</li>
+<li>
+<p>Observe the numerous warning returned by the galaxy server when it imported the workflow file.</p>
+</li>
+</ul>
+<p>This looks like</p>
+<pre><code>Imported, but some steps in this workflow have validation errors. Workflow canonical_transposons.gtf from transposon_sequence_set.txt (imported from uploaded file) imported successfully. The workflow requires the following tools that are not available in this Galaxy instance.You can likely install the required tools from one of the Galaxy tool sheds listed below.
+Tool name toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, id toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
+Tool name toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, id toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
+Tool name toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, id toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, version 0.1.0
+Tool name toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, id toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, version 0.1.0
+Tool name toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, id toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, version 0.1.0
+Tool name toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, id toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, version 0.1.0
+Tool name toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0, id toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0, version 1.1.0
+Tool name toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, id toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
+Tool name toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, id toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
+
+&amp;lt;a href=&amp;#34;https://toolshed.g2.bx.psu.edu/repository/find_tools?galaxy_url=http://35.187.179.31/&amp;amp;tool_id=toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,&amp;#34;&amp;gt;Galaxy Main Tool Shed&amp;lt;/a&amp;gt;
+&amp;lt;a href=&amp;#34;https://testtoolshed.g2.bx.psu.edu/repository/find_tools?galaxy_url=http://35.187.179.31/&amp;amp;tool_id=toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,&amp;#34;&amp;gt;Galaxy Test Tool Shed&amp;lt;/a&amp;gt;
+</code></pre>
+
+<p>in a red scary window</p>
+<p><img alt="import workflow failure" src="../images/failed_import_workflow.png" /></p>
+<p>When you read the warnings, you will see that the workflow was indeed successfully imported.
+However, some tools are missing, namely:</p>
+<pre><code>toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
+toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, version 0.1.0
+toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0, version 1.1.0
+</code></pre>
+
+<p>The other lines are redundant, because the workflow is using the same tools at different steps.</p>
+<ul>
+<li>
+<p>So far, so good, the missing tools are reported in the <a href="">To_be_installed.md</a> file in the Run-Galaxy repository
+(or just above in a more complex format)</p>
+</li>
+<li>
+<p>Now, click on the workflow menu.</p>
+</li>
+</ul>
+<p>You should see the imported workflow in the list:</p>
+<p><img alt="imported workflow" src="../images/imported_workflow.png" /></p>
+<ul>
+<li>Click the workflow and select the <code>Edit</code> option</li>
+<li>Dismiss the warnings (You are already aware of it) by clicking the <code>Continue</code> button</li>
+<li>See again in the editor window, all the missing steps in red. At this stage you can't
+even see anymore the paths between the various workflow steps !</li>
+<li>Click the upper "wheel" icon and select <code>Close</code>, we will come back to this when the missing tools are installed in the Server !</li>
+</ul>
+<h4 id="installing-missing-tools">Installing missing tools</h4>
+<p>So, we have to install our first three tools in our Galaxy instance:</p>
+<p>```</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../GCE_TP_Galaxy/" class="btn btn-neutral float-right" title="Annex 1: Run your personal TP Galaxy server">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Docker_GalaxyKickStart/" class="btn btn-neutral" title="Install a Galaxy server with Docker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Docker_GalaxyKickStart/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../GCE_TP_Galaxy/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
