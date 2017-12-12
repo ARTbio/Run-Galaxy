@@ -1,13 +1,14 @@
 site_name: Run-Galaxy
 pages:
-  - Prerequites: index.md
-  - "Introduction: Why Running Galaxy ?": Running_Galaxy.md
-  - Spin off a Virtual Machine: spin_off_VM.md
+  - "Introduction: Why Running Galaxy ?": index.md
+  - Training Menu: Training_menu.md
   - Install a minimal standalone galaxy server: bare-galaxy.md
   - Install a Galaxy server with Ansible and GalaxyKickStart: GalaxyKickStart.md
   - Install a Galaxy server with Docker: Docker_GalaxyKickStart.md
   - After deployment use case: Run_workflow.md
-  - "Annex 1: Run your personal TP Galaxy server": GCE_TP_Galaxy.md
-  - "Annex 2: Galaxy software architecture" : Galaxy_architecture.md
+  - "Appendix 1: Getting a Google Cloud Engine Account": Google_cloud_Account.md
+  - "Appendix 1: Spin off a Virtual Machine": spin_off_VM.md
+  - "Appendix 2: Run your personal TP Galaxy server": GCE_TP_Galaxy.md
+  - "Appendix 3: Galaxy software architecture" : Galaxy_architecture.md
 
 theme: readthedocs
