@@ -138,7 +138,7 @@ installed tool `regex_find_replace` in the list.
 - Finally go back a last time to the `Manage installed tools` panel:
     
     
-    ![Installed tools](images/installed_tools.png)
+![Installed tools](images/installed_tools.png)
     
     There you see the yac_clipper tool with its three new tool friends... Those tools needed
     to properly run the imported workflow.
