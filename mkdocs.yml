@@ -1,6 +1,7 @@
 site_name: Run-Galaxy
 pages:
   - Prerequites: index.md
+  - "Introduction: Why Running Galaxy ?": Running_Galaxy.md
   - Spin off a Virtual Machine: spin_off_VM.md
   - Install a minimal standalone galaxy server: bare-galaxy.md
   - Install a Galaxy server with Ansible and GalaxyKickStart: GalaxyKickStart.md
