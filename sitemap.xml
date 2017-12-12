@@ -11,15 +11,7 @@
 
     
     <url>
-     <loc>/Running_Galaxy/</loc>
-     <lastmod>2017-12-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/spin_off_VM/</loc>
+     <loc>/Training_menu/</loc>
      <lastmod>2017-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -52,6 +44,22 @@
     
     <url>
      <loc>/Run_workflow/</loc>
+     <lastmod>2017-12-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/Google_cloud_Account/</loc>
+     <lastmod>2017-12-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/spin_off_VM/</loc>
      <lastmod>2017-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>

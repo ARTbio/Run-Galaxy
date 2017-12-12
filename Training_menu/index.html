@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Appendix 3: Galaxy software architecture - Run-Galaxy</title>
+  <title>Training Menu - Run-Galaxy</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Appendix 3: Galaxy software architecture";
-    var mkdocs_page_input_path = "Galaxy_architecture.md";
-    var mkdocs_page_url = "/Galaxy_architecture/";
+    var mkdocs_page_name = "Training Menu";
+    var mkdocs_page_input_path = "Training_menu.md";
+    var mkdocs_page_url = "/Training_menu/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -52,9 +52,21 @@
     <a class="" href="..">Introduction: Why Running Galaxy ?</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../Training_menu/">Training Menu</a>
+    <a class="current" href="./">Training Menu</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#training-menu">Training Menu</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#outline-of-the-training-session">Outline of the training session</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -92,15 +104,9 @@
     <a class="" href="../GCE_TP_Galaxy/">Appendix 2: Run your personal TP Galaxy server</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Appendix 3: Galaxy software architecture</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#galaxy-software-built">Galaxy software built</a></li>
-    
-
-    </ul>
+    <a class="" href="../Galaxy_architecture/">Appendix 3: Galaxy software architecture</a>
 	    </li>
           
         </ul>
@@ -125,7 +131,7 @@
     
       
     
-    <li>Appendix 3: Galaxy software architecture</li>
+    <li>Training Menu</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -135,9 +141,26 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="galaxy-software-built">Galaxy software built</h3>
-<p><img alt="Galaxy_built_overview" src="../images/Galaxy_architecture_overview.png" /></p>
-<p><img alt="Galaxy_built_details" src="../images/galaxeast_architecture.png" /></p>
+                <h2 id="training-menu">Training Menu</h2>
+<p>Three methods of Galaxy server deployment will be explained in this tutorial, which can be
+used with personal computers, clusters of machines or virtual machines in cloud computing
+environment.</p>
+<p>All you need is an ssh access and the control of tcp/ip ports of the target machine.
+These two conditions are far more easily fulfilled with virtual machines in clouds. This is
+the reason why we are going to use
+<a href="../spin_off_VM/">virtual machines in the Google Cloud Engine</a>. </p>
+<h3 id="outline-of-the-training-session">Outline of the training session</h3>
+<hr />
+<h5 id="1-deployment-of-a-galaxy-server-in-a-vm-using-git">1. Deployment of a Galaxy server in a VM using <code>git</code></h5>
+<h5 id="2-deployment-of-a-galaxy-server-using-ansible">2. Deployment of a Galaxy server using <code>Ansible</code></h5>
+<h5 id="3-use-case-of-galaxy-administration">3. Use case of Galaxy administration:</h5>
+<ul>
+<li>Install a computational workflow</li>
+<li>Install tools for its proper execution</li>
+<li>Running the workflow.</li>
+</ul>
+<h5 id="4-deployment-of-a-galaxy-server-using-docker">4. Deployment of a Galaxy server using <code>Docker</code></h5>
+<h5 id="5-packaging-and-distribution-of-a-virtual-machine">5. Packaging and distribution of a virtual machine.</h5>
               
             </div>
           </div>
@@ -145,8 +168,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../bare-galaxy/" class="btn btn-neutral float-right" title="Install a minimal standalone galaxy server">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../GCE_TP_Galaxy/" class="btn btn-neutral" title="Appendix 2: Run your personal TP Galaxy server"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href=".." class="btn btn-neutral" title="Introduction: Why Running Galaxy ?"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -172,8 +197,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../GCE_TP_Galaxy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../bare-galaxy/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

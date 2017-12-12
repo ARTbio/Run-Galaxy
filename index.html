@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="./img/favicon.ico">
-  <title>Prerequites - Run-Galaxy</title>
+  <title>Introduction: Why Running Galaxy ? - Run-Galaxy</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="./css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Prerequites";
+    var mkdocs_page_name = "Introduction: Why Running Galaxy ?";
     var mkdocs_page_input_path = "index.md";
     var mkdocs_page_url = "/";
   </script>
@@ -49,16 +49,10 @@
           
             <li class="toctree-l1 current">
 		
-    <a class="current" href=".">Prerequites</a>
+    <a class="current" href=".">Introduction: Why Running Galaxy ?</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#run-galaxy">Run-Galaxy</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#run-galaxy-training-course">Run Galaxy training course</a></li>
-        
-        </ul>
+    <li class="toctree-l2"><a href="#why-becoming-a-galaxy-administrator-why-running-galaxy">Why becoming a Galaxy administrator / Why Running Galaxy?</a></li>
     
 
     </ul>
@@ -66,12 +60,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="Running_Galaxy/">Introduction: Why Running Galaxy ?</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="spin_off_VM/">Spin off a Virtual Machine</a>
+    <a class="" href="Training_menu/">Training Menu</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -96,12 +85,22 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="GCE_TP_Galaxy/">Annex 1: Run your personal TP Galaxy server</a>
+    <a class="" href="Google_cloud_Account/">Appendix 1: Getting a Google Cloud Engine Account</a>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="Galaxy_architecture/">Annex 2: Galaxy software architecture</a>
+    <a class="" href="spin_off_VM/">Appendix 1: Spin off a Virtual Machine</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="GCE_TP_Galaxy/">Appendix 2: Run your personal TP Galaxy server</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="Galaxy_architecture/">Appendix 3: Galaxy software architecture</a>
 	    </li>
           
         </ul>
@@ -126,7 +125,7 @@
     
       
     
-    <li>Prerequites</li>
+    <li>Introduction: Why Running Galaxy ?</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -136,20 +135,84 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="run-galaxy">Run-Galaxy</h1>
-<h2 id="run-galaxy-training-course">Run Galaxy training course</h2>
-<h3 id="google-cloud-engine">Google Cloud Engine</h3>
+                <h1 id="why-becoming-a-galaxy-administrator-why-running-galaxy">Why becoming a Galaxy administrator / Why <strong>Running</strong> Galaxy?</h1>
+<p>You may be wondering: "Why doing all this geeky IT stuff when I have access to Galaxy
+servers administrated by professional ?"</p>
+<p>It is true that there is a lot of powerful Galaxy instances, and at first, 
+the <a href="https://usegalaxy.org/">main Galaxy instance</a>. The expanding list of
+public galaxy servers is available <a href="https://galaxyproject.org/public-galaxy-servers/">here</a>.</p>
+<p>However, a number of issues listed below (non-exhaustive list) can be successfully addressed
+if you are able to run and administrate your own Galaxy server:</p>
 <ol>
-<li>Prerequisite: a Google account / Gmail account</li>
-<li>Connect to <a href="https://cloud.google.com/">Google Cloud Engine</a></li>
-<li>Click on <code>Essai Gratuit</code> / <code>Free Trial</code></li>
-<li>Enter your Gmail mail address and password</li>
-<li>Review conditions and accept</li>
-<li>Inscription Form:</li>
-<li><code>Entreprise</code> / <code>Company</code> : put anything like "Perso" or "foo/bar"</li>
-<li><code>Ajouter une carte de paiement</code> / <code>Add credit Card</code> or optionally <code>Ajouter un compte bancaire</code> / <code>Bank account</code></li>
-<li>You are in for a free trial of 12 months / 300 $</li>
-<li>go to your <a href="https://console.cloud.google.com/home/dashboard">Google Cloud Console</a> to control your spin off / control your Virtual Machines</li>
+<li>
+<p><strong>Storage/Disk Space.</strong></p>
+<p>Most of Public Galaxy Servers provide their users with a quota that rarely exceed 200-300
+Giga-bytes. Although this may seem a lot, it is not unfrequent that analyses that deal with
+numerous samples require 1 Tera-bytes or more.</p>
+<p>When you administrate your Galaxy server, you control your storage space. Of course,
+since nothing in free in this world, keep in mind that you will have to support for the
+cost of this storage.</p>
+<p><img alt="" src="" /></p>
+</li>
+<li>
+<p><strong>Isolation.</strong></p>
+<p>If you control a Galaxy server for a given analysis project and only for this project,
+you can argue that you benefit from an analysis environment that is isolated.</p>
+<p><img alt="" src="" /></p>
+</li>
+<li>
+<p><strong>Accessibility and Reproducibility</strong></p>
+<p>Whenever you need to give access to collaborators or reviewers to your work, giving access
+to your Galaxy server is enough to provide high-quality transparency and reproducibility.
+This is far better than just sharing public histories, since when you are not administrator,
+you do not have access to all computational details that are logged for Galaxy admins.
+Moreover, if you deploy you Galaxy server in a virtual environment (VM or docker containers)
+you can preserve the whole environment in an archive and redeploy this environment latter
+on in another environment.</p>
+<p><img alt="" src="" /></p>
+</li>
+<li>
+<p><strong>Computational Resources.</strong></p>
+<p>Although Galaxy public servers are generally hosted in high performance computing
+infrastructures, they - by definition - share these resources between users. For instance,
+the main Galaxy server is hosted by
+<a href="https://galaxyproject.org/main/">a network of US supercomputers</a>. Nevertheless, the
+computational walltime for a user to execute standards analyses (BWA, bowtie, Tophat,
+Trinity, etc.) may easily exceed 5 or 6 hours.</p>
+<p>Likewise, some metagenomic or <em>de novo</em> assembly approaches may require a substantial
+amount of memory that is not necessarily provided by public Galaxy server.</p>
+<p><img alt="" src="" /></p>
+</li>
+<li>
+<p><strong>Full control on installed tools</strong></p>
+<p>You may need a particular combination of tools for your analysis, and this combination
+may not be available in any public server. Although Galaxy admin are generally happy to
+install new tools for their users, other considerations that have to be taken into account
+in a public resource may limit installation of new tools: not considered as harmless for
+the server, competing with the public resource, not in the policy of the thematic Galaxy
+server, etc.
+When you administrate your Galaxy server, you can install the tool you need, exactly as
+you wish them.
+You can even modify tools, or code your own tools and test these tools in live in your
+Galaxy instance.
+Last, but not least, when you are administrator, you have access to information on tool
+&amp; workflow runs you cannot access to when you are regular users (some metadata, including
+running times, command lines, etc.)</p>
+<p><img alt="" src="" /></p>
+</li>
+<li>
+<p><strong>Full Control on computational workflows.</strong></p>
+<p>Galaxy workflows can be exchanged between researchers and between Galaxy instances.
+However, to be effective, this interoperability requires that the tools called by an
+imported workflow are installed in the new Galaxy instance.
+You can only do that if your are administrator of this Galaxy instance.</p>
+<p><img alt="" src="" /></p>
+</li>
+<li>
+<p><strong>Help your community.</strong></p>
+<p>Galaxy administration is a very useful expertise: you can greatly
+help your colleagues if you are able to run a Galaxy server for them !</p>
+</li>
 </ol>
               
             </div>
@@ -158,7 +221,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Running_Galaxy/" class="btn btn-neutral float-right" title="Introduction: Why Running Galaxy ?">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="Training_menu/" class="btn btn-neutral float-right" title="Training Menu">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -186,7 +249,7 @@
       
       
       
-        <span style="margin-left: 15px"><a href="Running_Galaxy/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="Training_menu/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -200,5 +263,5 @@
 
 <!--
 MkDocs version : 0.17.2
-Build Date UTC : 2017-12-12 18:01:58
+Build Date UTC : 2017-12-12 23:15:49
 -->
