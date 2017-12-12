@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Introduction: Why Running Galaxy ? - Run-Galaxy</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Introduction: Why Running Galaxy ?";
+    var mkdocs_page_input_path = "Running_Galaxy.md";
+    var mkdocs_page_url = "/Running_Galaxy/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Run-Galaxy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Prerequites</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Introduction: Why Running Galaxy ?</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#why-becoming-a-galaxy-administrator-why-running-galaxy">Why becoming a Galaxy administrator / Why Running Galaxy ?</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#training">Training</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../spin_off_VM/">Spin off a Virtual Machine</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bare-galaxy/">Install a minimal standalone galaxy server</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../GalaxyKickStart/">Install a Galaxy server with Ansible and GalaxyKickStart</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Docker_GalaxyKickStart/">Install a Galaxy server with Docker</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Run_workflow/">After deployment use case</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../GCE_TP_Galaxy/">Annex 1: Run your personal TP Galaxy server</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Galaxy_architecture/">Annex 2: Galaxy software architecture</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Run-Galaxy</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Introduction: Why Running Galaxy ?</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="why-becoming-a-galaxy-administrator-why-running-galaxy">Why becoming a Galaxy administrator / Why <strong>Running</strong> Galaxy ?</h1>
+<p>You may be wondering: "Why doing all this geeky IT stuff when I have access to Galaxy
+servers administrated by professional ?"</p>
+<p>Well, it's true that there are a lot of very powerful Galaxy instances, and at first 
+the <a href="https://usegalaxy.org/">main Galaxy instance</a>. You have also an expanding list of
+public galaxy servers <a href="https://galaxyproject.org/public-galaxy-servers/">here</a>.</p>
+<p>However, bellow are several reasons (not exhaustive list) why you may want to run and
+administrate your own Galaxy server instance:</p>
+<ol>
+<li>
+<p><strong>Storage Space.</strong></p>
+<p>Most of Public Galaxy Servers provide their users with a quota that rarely exceed 200-300
+Giga-bytes. Although this may seem a lot, it is not unfrequent that analyses that deal with
+numerous samples require 1 Tera-bytes or more.
+When you administrate your Galaxy server, you control your storage space. Of course,
+since nothing in free in this world, keep in mind that you will have to support for the
+cost of this storage.</p>
+</li>
+<li>
+<p><strong>Isolation.</strong></p>
+<p>If you control a Galaxy server for a given analysis project and only for this project,
+you can argue that you benefit from an analysis environment that is isolated.</p>
+</li>
+<li>
+<p><strong>Accessibility and Reproducibility</strong></p>
+<p>Whenever you need to give access to collaborators or reviewers to your work, giving access
+to your Galaxy server is enough to provide high-quality transparency and reproducibility.
+This is far better than just sharing public histories, since when you are not administrator,
+you do not have access to all computational details that are logged for Galaxy admins.
+Moreover, if you deploy you Galaxy server in a virtual environment (VM or docker containers)
+you can preserve the whole environment in an archive and redeploy this environment latter
+on in another environment.</p>
+</li>
+<li>
+<p><strong>Computational Resources.</strong></p>
+<p>Although Galaxy public servers are generally hosted in high performance computing
+infrastructures, they - by definition - share these resources between users. For instance,
+the main Galaxy server is hosted by <a href="https://galaxyproject.org/main/">a network of US supercomputers</a>.</p>
+</li>
+<li>
+<p><strong>Full control on installed tools</strong></p>
+<p>You may need a particular combination of tools for your analysis, and this combination
+may not be available in any public server. Although Galaxy admin are generally happy to
+install new tools for their users, other considerations that have to be taken into account
+in a public resource may limit installation of new tools: not considered as harmless for
+the server, competing with the public resource, not in the policy of the thematic Galaxy
+server, etc.
+When you administrate your Galaxy server, you can install the tool you need, exactly as
+you wish them.
+You can even modify tools, or code your own tools and test these tools in live in your
+Galaxy instance.
+Last, but not least, when you are administrator, you have access to information on tool
+&amp; workflow runs you cannot access to when you are regular users (some metadata, including
+running times, command lines, etc.)</p>
+</li>
+<li>
+<p><strong>Full Control on Galaxy workflows.</strong></p>
+<p>Galaxy workflows can be exchanged between researchers and between Galaxy instances.
+However, to be effective, this interoperability requires that the tools called by an
+imported workflow are installed in the new Galaxy instance.
+You can only do that if your are administrator of this Galaxy instance.</p>
+</li>
+<li>
+<p><strong>Help your community.</strong></p>
+<p>Galaxy administration is a very useful expertise: you can greatly
+help your colleagues if you are able to run a Galaxy server for them !</p>
+</li>
+</ol>
+<h2 id="training">Training</h2>
+<p>In this training we are going to</p>
+<ol>
+<li>Start a virtual Machine in Google Cloud Engine (<a href="../spin_off_VM/">Annex 1</a>)</li>
+<li>Deploy a Galaxy server in a VM using <code>git</code></li>
+<li>Deploy a Galaxy server using <code>Ansible</code></li>
+<li>Work at a proper installation of a Galaxy Workflow in a Galaxy instance, as a use case
+    of galaxy administration tasks.</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../spin_off_VM/" class="btn btn-neutral float-right" title="Spin off a Virtual Machine">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Prerequites"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../spin_off_VM/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

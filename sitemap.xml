@@ -11,6 +11,14 @@
 
     
     <url>
+     <loc>/Running_Galaxy/</loc>
+     <lastmod>2017-12-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>/spin_off_VM/</loc>
      <lastmod>2017-12-12</lastmod>
      <changefreq>daily</changefreq>
