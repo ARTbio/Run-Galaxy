@@ -85,6 +85,14 @@
         
             <li><a class="toctree-l3" href="#installing-missing-tools">Installing missing tools</a></li>
         
+            <li><a class="toctree-l3" href="#check-that-the-imported-workflow-now-display-correctly">Check that the imported workflow now display correctly</a></li>
+        
+            <li><a class="toctree-l3" href="#retrieve-the-transposon_set_embltxt-dataset">Retrieve the transposon_set_embl.txt dataset</a></li>
+        
+            <li><a class="toctree-l3" href="#run-the-workflow">Run the workflow</a></li>
+        
+            <li><a class="toctree-l3" href="#discussion-on-workflows">Discussion on workflows</a></li>
+        
         </ul>
     
 
@@ -271,8 +279,42 @@ installed tool <code>regex_find_replace</code> in the list.</p>
    This time, the <code>Monitor installing tool shed repositories</code> will display new steps (in yellow),
    including the <code>Installing tool dependencies</code> step. The whole process should take longer,
    about 2 min and 30 secondes (a bit too short for a coffee through).
-- Finally go back a last time to the <code>Manage installed tools</code> panel.
-    <img alt="Installed tools" src="../images/installed_tools.png" /></p>
+- Finally go back a last time to the <code>Manage installed tools</code> panel:</p>
+<pre><code>![Installed tools](images/installed_tools.png)
+
+There you see the yac_clipper tool with its three new tool friends... Those tools needed
+to properly run the imported workflow.
+</code></pre>
+<h4 id="check-that-the-imported-workflow-now-display-correctly">Check that the imported workflow now display correctly</h4>
+<p>If you click the <code>workflow</code> top menu, you should now be able to edit the imported workflow,
+and see that everything is displaying correctly:</p>
+<p><img alt="clean workflow" src="../images/clean_workflow.png" /></p>
+<p>We can go through the various steps of the workflow and figure out what it is doing.</p>
+<p>This workflow actually performs a suite of find-and-replace text manipulations, starting
+from input data that has been tagged <code>transposon_set_embl.txt</code> and producing a new text
+dataset that is renamed <code>canonical_transposons.gtf</code>.</p>
+<p>We will come back to all these steps after the workflow execution. However, we need to
+retrieve the input data set before running the workflow on these data.</p>
+<h4 id="retrieve-the-transposon_set_embltxt-dataset">Retrieve the <code>transposon_set_embl.txt</code> dataset</h4>
+<ul>
+<li>Create a new history and name it <code>transposon_set_embl.txt manipulation</code></li>
+<li>import the dataset using the <code>Paste/Fetch data</code> mode of the upload manager (the small
+bottom-top arrow icone at the top left of the Galaxy interface). Copy the URL
+<code>https://github.com/cbergman/transposons/raw/master/current/transposon_sequence_set.embl.txt</code>
+in the open field and click the <code>Start</code> button.</li>
+<li>have a close look at the file</li>
+</ul>
+<h4 id="run-the-workflow">Run the workflow</h4>
+<ul>
+<li>Click on the workflow menu</li>
+<li>Click on the workflow and select the Run option</li>
+<li>Leave the <code>Send results to a new history</code> menu to the <code>No</code> option for the moment.</li>
+<li>Just Click the <code>Run workflow</code> button to run the workflow, and look at datasets in the
+history turning from grey to yellow to green. Note: often you don't see the dataset in the
+"yellow" state (running). You just need to refresh the history with the 2-curved-arrows
+icon of the local history menu.</li>
+</ul>
+<h4 id="discussion-on-workflows">Discussion on workflows</h4>
               
             </div>
           </div>
