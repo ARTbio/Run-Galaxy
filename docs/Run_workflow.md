@@ -135,8 +135,52 @@ installed tool `regex_find_replace` in the list.
    This time, the `Monitor installing tool shed repositories` will display new steps (in yellow),
    including the `Installing tool dependencies` step. The whole process should take longer,
    about 2 min and 30 secondes (a bit too short for a coffee through).
-- Finally go back a last time to the `Manage installed tools` panel.
+- Finally go back a last time to the `Manage installed tools` panel:
+    
+    
     ![Installed tools](images/installed_tools.png)
+    
+    There you see the yac_clipper tool with its three new tool friends... Those tools needed
+    to properly run the imported workflow.
+    
+#### Check that the imported workflow now display correctly
+
+If you click the `workflow` top menu, you should now be able to edit the imported workflow,
+and see that everything is displaying correctly:
+
+![clean workflow](images/clean_workflow.png)
+
+We can go through the various steps of the workflow and figure out what it is doing.
+
+This workflow actually performs a suite of find-and-replace text manipulations, starting
+from input data that has been tagged `transposon_set_embl.txt` and producing a new text
+dataset that is renamed `canonical_transposons.gtf`.
+
+We will come back to all these steps after the workflow execution. However, we need to
+retrieve the input data set before running the workflow on these data.
+
+#### Retrieve the `transposon_set_embl.txt` dataset
+
+- Create a new history and name it `transposon_set_embl.txt manipulation`
+- import the dataset using the `Paste/Fetch data` mode of the upload manager (the small
+bottom-top arrow icone at the top left of the Galaxy interface). Copy the URL
+`https://github.com/cbergman/transposons/raw/master/current/transposon_sequence_set.embl.txt`
+in the open field and click the `Start` button.
+- have a close look at the file
+
+#### Run the workflow
+
+- Click on the workflow menu
+- Click on the workflow and select the Run option
+- Leave the `Send results to a new history` menu to the `No` option for the moment.
+- Just Click the `Run workflow` button to run the workflow, and look at datasets in the
+history turning from grey to yellow to green. Note: often you don't see the dataset in the
+"yellow" state (running). You just need to refresh the history with the 2-curved-arrows
+icon of the local history menu.
+
+#### Discussion on workflows
+    
+    
     
 
 
