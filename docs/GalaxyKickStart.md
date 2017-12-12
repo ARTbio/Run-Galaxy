@@ -47,6 +47,10 @@ Repository [https://github.com/ARTbio/GalaxyKickStart](https://github.com/ARTbio
 - start an interactive session as root using the command `sudo -i`
 - download the script `run_galaxykickstart.sh` using the command `wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_galaxykickstart.sh`
 - run the script using the command `sh run_galaxykickstart.sh`
+- Connect to your ansible-deployed "GalaxyKickStart" instance:
+    
+    Just click on the url displayed in your Google Cloud Engine Console.
+
 
 #### the run_galaxykickstart.sh script explained
 
@@ -108,7 +112,6 @@ Here, we play the playbook on the same computer (localhost).
 17. sleep for 15 seconds. This is to let the Galaxy server starting quietly.
 18. use supervisor to restart the galaxy server: this is to load the more recent configuration
 files that may have been modified by the playbook *after* the Galaxy server started.
-
 
 
 

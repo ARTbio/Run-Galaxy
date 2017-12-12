@@ -40,7 +40,11 @@ Instead, you are going to
 - start an interactive session as root using the command `sudo -i`
 - download the script `install_docker.sh` using the command `wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/install_docker.sh`
 - run the script using the command `sh install_docker.sh`
-
+- Connect to your ansible-deployed "GalaxyKickStart" instance:
+    
+    Just click on the url displayed in your Google Cloud Engine Console.
+    
+    
 #### The install_docker.sh script explained
 
 NB: in the following code, numbers in line heads should be removed to run the script.
