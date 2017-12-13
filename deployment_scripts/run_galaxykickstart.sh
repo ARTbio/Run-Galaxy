@@ -12,7 +12,7 @@ ansible-galaxy install -r requirements_roles.yml -p roles/ -f
 echo "\nEditing group_vars/all\n"
 sed -i -e 's/galaxy_manage_trackster: true/galaxy_manage_trackster: false/' group_vars/all
 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
-echo "\nSleeping 15 sec before restarting Galaxy server\n"
+echo "\nSleeping 30 sec before restarting Galaxy server\n"
 echo "zzzz zzzz..."
-sleep 15
+sleep 30
 supervisorctl restart galaxy:
