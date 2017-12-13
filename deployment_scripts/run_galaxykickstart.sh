@@ -14,5 +14,5 @@ sed -i -e 's/galaxy_manage_trackster: true/galaxy_manage_trackster: false/' grou
 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
 echo "\nSleeping 30 sec before restarting Galaxy server\n"
 echo "zzzz zzzz..."
-sleep 30
+sleep 60
 supervisorctl restart galaxy:
