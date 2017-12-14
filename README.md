@@ -1,21 +1,24 @@
-# Run Galaxy training course
+## Run Galaxy training course prerequisite
 
-This doc is available as a [ReadTheDocs web site](https://artbio.github.io/Run-Galaxy/index.html)
+#### 1. To perform the training session, you need to access to the [supporting manual](https://artbio.github.io/Run-Galaxy/index.html)
 
 
-### Google Cloud Engine
-1. Prerequisite: a Google account / Gmail account
+#### 2. You need a Google account at the Google Cloud Engine (GCE)
+1. Prerequisite: a Gmail address
 2. Connect to [Google Cloud Engine](https://cloud.google.com/)
 3. Click on `Essai Gratuit` / `Free Trial`
 4. Enter your Gmail mail address and password
 5. Review conditions and accept
 6. Inscription Form:
   - `Entreprise` / `Company` : put anything like "Perso" or "foo/bar"
-  - `Ajouter une carte de paiement` / `Add credit Card` or optionally `Ajouter un compte bancaire` / `Bank account`
+  - `Ajouter une carte de paiement` / `Add credit Card` or optionally
+    `Ajouter un compte bancaire` / `Bank account`
 7. You are in for a free trial of 12 months / 300 $
-8. go to your [Google Cloud Console](https://console.cloud.google.com/home/dashboard) to control your spin off / control your Virtual Machines
+8. go to your [Google Cloud Console](https://console.cloud.google.com/home/dashboard)
+to control your spin off / control your Virtual Machines
 
-### Spin off a virtual Machine
+#### 3. Finally, you must ensure that you are able to start and connect to a GCE Virtual Machine
+
 1. Go to the Google Cloud Dashboard and select "Compute Engine" on the left hand menu bar
 2. Select the submenu "Instances de VM"
 ![Créer une instance](docs/images/IntancesVM.png)
@@ -31,7 +34,7 @@ This doc is available as a [ReadTheDocs web site](https://artbio.github.io/Run-G
 8. Click `Authorize HTTP traffic` / `Autoriser le traffic HTTP`
 9. Click `Créer` / `Create`
 
-### Connect to the started virtual Machine
+##### Connect to the started virtual Machine
 After a few seconds, the VM turns on "green" and an `ssh` menu becomes selectable
 ![Running instance](docs/images/Running_instance.png)
 

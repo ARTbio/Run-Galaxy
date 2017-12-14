@@ -1,3 +1,6 @@
+This training documentation is coded in this GitHub
+[repository](https://github.com/ARTbio/Run-Galaxy)
+
 # Why becoming a Galaxy administrator / Why **Running** Galaxy?
 
 You may be wondering: "Why doing all this geeky IT stuff when I have access to Galaxy
