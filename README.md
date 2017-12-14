@@ -1,4 +1,4 @@
-## "Run Galaxy" training prerequisite
+## "Run Galaxy" training prerequisites
 
 #### 1. To perform the training session, you need to access to the [supporting manual](https://artbio.github.io/Run-Galaxy/index.html)
 
