@@ -50,6 +50,11 @@ Repository [https://github.com/ARTbio/GalaxyKickStart](https://github.com/ARTbio
 - Connect to your ansible-deployed "GalaxyKickStart" instance:
     
     Just click on the url displayed in your Google Cloud Engine Console.
+    
+- Connect to your server as an admin:
+
+    This time, ansible and the GalaxyKickStart playbook already programmatically registered
+    an admin user. Just use the `admin@galaxy.org:admin` as credentials (user:password)
 
 
 #### the run_galaxykickstart.sh script explained
