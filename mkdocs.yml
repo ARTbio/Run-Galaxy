@@ -10,5 +10,5 @@ pages:
   - "Appendix 1: Spin off a Virtual Machine": spin_off_VM.md
   - "Appendix 2: Run your personal TP Galaxy server": GCE_TP_Galaxy.md
   - "Appendix 3: Galaxy software architecture" : Galaxy_architecture.md
-
+  - Mouse Genetics Theoritical Training (command lines): mouse_genetics_command.md
 theme: readthedocs
