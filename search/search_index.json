@@ -359,6 +359,16 @@
             "location": "/Galaxy_architecture/#galaxy-software-built", 
             "text": "", 
             "title": "Galaxy software built"
+        }, 
+        {
+            "location": "/mouse_genetics_command/", 
+            "text": "Mouse Genetics Training: Command lines\n\n\nll\n\ngunzip GKG-13.fastq.gz\n\nll\n\nmore GKG-13.fastq\n\nwc -l  GKG-13.fastq\n\ngrep -c -e \n^@\n GKG-13.fastq\n\npython\n\ncat  GKG-13.fastq | grep CTGTAGG | wc -l\n\ngrep -c \nCTGTAGG\n GKG-13.fastq\n\ncat  GKG-13.fastq | grep ATCTCGT| wc -l\n\ncat GKG-13.fastq | perl -ne 'print if /^[ATGCN]{22}CTGTAGG/' | wc -l\n\ncat GKG-13.fastq | perl -ne 'if (/^(.+CTGTAGG)/) {print \n$1\\n\n}' | more\n\ncat GKG-13.fastq | perl -ne 'if (/^([GATC]{18,})CTGTAGG/) {$count++; print \n$count\\n\n; print \n$1\\n\n}' \n clipped_GKG13.fasta\n\nbowtie-build ../dmel/Dmel_r5.49.fa Dmel_r5.49\n\nbowtie ../dmel/Dmel_r5.49 -f clipped_GKG13.fasta -v 1 -k 1 -p 6 --al droso_matched_GKG-13.fa --un unmatched_GKG13.fa -S \n GKG13_bowtie_output.sam\n\nsamtools view -Sb GKG13_bowtie_output.sam \n GKG13_bowtie_output.bam\n\nsamtools view -Sb GKG13_bowtie_output.sam | samtools sort -@ 4 - GKG13_bowtie_output_sorted", 
+            "title": "Mouse Genetics Theoritical Training (command lines)"
+        }, 
+        {
+            "location": "/mouse_genetics_command/#mouse-genetics-training-command-lines", 
+            "text": "ll\n\ngunzip GKG-13.fastq.gz\n\nll\n\nmore GKG-13.fastq\n\nwc -l  GKG-13.fastq\n\ngrep -c -e  ^@  GKG-13.fastq\n\npython\n\ncat  GKG-13.fastq | grep CTGTAGG | wc -l\n\ngrep -c  CTGTAGG  GKG-13.fastq\n\ncat  GKG-13.fastq | grep ATCTCGT| wc -l\n\ncat GKG-13.fastq | perl -ne 'print if /^[ATGCN]{22}CTGTAGG/' | wc -l\n\ncat GKG-13.fastq | perl -ne 'if (/^(.+CTGTAGG)/) {print  $1\\n }' | more\n\ncat GKG-13.fastq | perl -ne 'if (/^([GATC]{18,})CTGTAGG/) {$count++; print  $count\\n ; print  $1\\n }'   clipped_GKG13.fasta\n\nbowtie-build ../dmel/Dmel_r5.49.fa Dmel_r5.49\n\nbowtie ../dmel/Dmel_r5.49 -f clipped_GKG13.fasta -v 1 -k 1 -p 6 --al droso_matched_GKG-13.fa --un unmatched_GKG13.fa -S   GKG13_bowtie_output.sam\n\nsamtools view -Sb GKG13_bowtie_output.sam   GKG13_bowtie_output.bam\n\nsamtools view -Sb GKG13_bowtie_output.sam | samtools sort -@ 4 - GKG13_bowtie_output_sorted", 
+            "title": "Mouse Genetics Training: Command lines"
         }
     ]
 }

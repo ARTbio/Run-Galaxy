@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Appendix 1: Getting a Google Cloud Engine Account - Run-Galaxy</title>
+  <title>Mouse Genetics Theoritical Training (command lines) - Run-Galaxy</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Appendix 1: Getting a Google Cloud Engine Account";
-    var mkdocs_page_input_path = "Google_cloud_Account.md";
-    var mkdocs_page_url = "/Google_cloud_Account/";
+    var mkdocs_page_name = "Mouse Genetics Theoritical Training (command lines)";
+    var mkdocs_page_input_path = "mouse_genetics_command.md";
+    var mkdocs_page_url = "/mouse_genetics_command/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -77,21 +77,9 @@
     <a class="" href="../Run_workflow/">After deployment use case</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Appendix 1: Getting a Google Cloud Engine Account</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#run-galaxy">Run-Galaxy</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#run-galaxy-training-course">Run Galaxy training course</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../Google_cloud_Account/">Appendix 1: Getting a Google Cloud Engine Account</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -109,9 +97,15 @@
     <a class="" href="../Galaxy_architecture/">Appendix 3: Galaxy software architecture</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../mouse_genetics_command/">Mouse Genetics Theoritical Training (command lines)</a>
+    <a class="current" href="./">Mouse Genetics Theoritical Training (command lines)</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#mouse-genetics-training-command-lines">Mouse Genetics Training: Command lines</a></li>
+    
+
+    </ul>
 	    </li>
           
         </ul>
@@ -136,7 +130,7 @@
     
       
     
-    <li>Appendix 1: Getting a Google Cloud Engine Account</li>
+    <li>Mouse Genetics Theoritical Training (command lines)</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -146,21 +140,42 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="run-galaxy">Run-Galaxy</h1>
-<h2 id="run-galaxy-training-course">Run Galaxy training course</h2>
-<h3 id="google-cloud-engine">Google Cloud Engine</h3>
-<ol>
-<li>Prerequisite: a Google account / Gmail account</li>
-<li>Connect to <a href="https://cloud.google.com/">Google Cloud Engine</a></li>
-<li>Click on <code>Essai Gratuit</code> / <code>Free Trial</code></li>
-<li>Enter your Gmail mail address and password</li>
-<li>Review conditions and accept</li>
-<li>Inscription Form:</li>
-<li><code>Entreprise</code> / <code>Company</code> : put anything like "Perso" or "foo/bar"</li>
-<li><code>Ajouter une carte de paiement</code> / <code>Add credit Card</code> or optionally <code>Ajouter un compte bancaire</code> / <code>Bank account</code></li>
-<li>You are in for a free trial of 12 months / 300 $</li>
-<li>go to your <a href="https://console.cloud.google.com/home/dashboard">Google Cloud Console</a> to control your spin off / control your Virtual Machines</li>
-</ol>
+                <h3 id="mouse-genetics-training-command-lines">Mouse Genetics Training: Command lines</h3>
+<pre><code>ll
+
+gunzip GKG-13.fastq.gz
+
+ll
+
+more GKG-13.fastq
+
+wc -l  GKG-13.fastq
+
+grep -c -e &quot;^@&quot; GKG-13.fastq
+
+python
+
+cat  GKG-13.fastq | grep CTGTAGG | wc -l
+
+grep -c &quot;CTGTAGG&quot; GKG-13.fastq
+
+cat  GKG-13.fastq | grep ATCTCGT| wc -l
+
+cat GKG-13.fastq | perl -ne 'print if /^[ATGCN]{22}CTGTAGG/' | wc -l
+
+cat GKG-13.fastq | perl -ne 'if (/^(.+CTGTAGG)/) {print &quot;$1\n&quot;}' | more
+
+cat GKG-13.fastq | perl -ne 'if (/^([GATC]{18,})CTGTAGG/) {$count++; print &quot;&gt;$count\n&quot;; print &quot;$1\n&quot;}' &gt; clipped_GKG13.fasta
+
+bowtie-build ../dmel/Dmel_r5.49.fa Dmel_r5.49
+
+bowtie ../dmel/Dmel_r5.49 -f clipped_GKG13.fasta -v 1 -k 1 -p 6 --al droso_matched_GKG-13.fa --un unmatched_GKG13.fa -S &gt; GKG13_bowtie_output.sam
+
+samtools view -Sb GKG13_bowtie_output.sam &gt; GKG13_bowtie_output.bam
+
+samtools view -Sb GKG13_bowtie_output.sam | samtools sort -@ 4 - GKG13_bowtie_output_sorted
+
+</code></pre>
               
             </div>
           </div>
@@ -168,10 +183,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../spin_off_VM/" class="btn btn-neutral float-right" title="Appendix 1: Spin off a Virtual Machine">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../Run_workflow/" class="btn btn-neutral" title="After deployment use case"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Galaxy_architecture/" class="btn btn-neutral" title="Appendix 3: Galaxy software architecture"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -197,10 +210,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../Run_workflow/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Galaxy_architecture/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../spin_off_VM/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
