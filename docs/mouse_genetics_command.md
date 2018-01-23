@@ -1,5 +1,11 @@
 ### Mouse Genetics Training: Command lines
 
+The presentation file for `Deep Seq Data Analysis: Theoretical training` is available
+at the [artbio](http://artbio.fr) website, [here](https://docs.google.com/presentation/d/1csCR1KwuJo1DXdGgWkNJKxBsEmY6PJ-6l1OZmI_qldo/edit#slide=id.p4).
+
+The command lines used for the training are pasted below, by order of appearance.
+
+
 ```
 ll
 
