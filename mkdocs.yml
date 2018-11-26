@@ -1,6 +1,6 @@
 site_name: Run-Galaxy
 pages:
-  - "Introduction: Why Running Galaxy ?": index.md
+  - "Introduction: Why Running Galaxy as an administrator?": index.md
   - Training Menu: Training_menu.md
   - Install a minimal standalone galaxy server: bare-galaxy.md
   - Install a Galaxy server with Ansible and GalaxyKickStart: GalaxyKickStart.md
