@@ -7,7 +7,7 @@ pip install -U pip
 pip --version
 /usr/local/bin/pip install ansible==2.4
 ansible --version
-git clone https://github.com/ARTbio/GalaxyKickStart.git -b biologie_genome_2018
+git clone https://github.com/ARTbio/GalaxyKickStart.git -b biogen2018
 cd GalaxyKickStart/
 ansible-galaxy install -r requirements_roles.yml -p roles/ -f
 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
