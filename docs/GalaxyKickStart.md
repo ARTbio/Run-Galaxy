@@ -64,13 +64,14 @@ NB: in the following code, numbers in line heads should be removed to run the sc
 ```
 #!/usr/bin/env bash
 set -e
-apt-get install -y python-pip python-dev python-setuptools git htop
+apt update -y
+apt install -y python-pip python-dev python-setuptools git htop
 echo "Upgrading pip version"
 pip install -U pip
 pip --version
 /usr/local/bin/pip install ansible==2.4
 ansible --version
-git clone https://github.com/ARTbio/GalaxyKickStart.git -b Upgrading pip version
+git clone https://github.com/ARTbio/GalaxyKickStart.git -b biogen2018
 cd GalaxyKickStart/
 ansible-galaxy install -r requirements_roles.yml -p roles/ -f
 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
@@ -96,7 +97,7 @@ installed with installation of `python-pip`, `python-dev` and `python-setuptools
 7. install `ansible`, version 2.4, using `pip` !
 8. will prompt the version of ansible in the console
 9. clone the GalaxyKickStart Repository available at https://github.com/ARTbio/GalaxyKickStart.git,
-branch `Upgrading pip version`, creating locally the `GalaxyKickStart` folder.
+branch `biogen2018`, creating locally the `GalaxyKickStart` folder.
 10. Change directory, ie goes to /root/GalaxyKickStart
 11. says to ansible to install additional roles (collection of files to control ansible)
 which are not the the GalaxyKickStart repository but whose address is stated in the file
