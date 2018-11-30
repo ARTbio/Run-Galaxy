@@ -63,7 +63,7 @@ NB: in the following code, numbers in line heads should be removed to run the sc
 
 ```
 set -e
-apt update -Y
+apt update -y
 apt install -y python-pip python-dev python-setuptools git htop
 echo "Upgrading pip"
 pip install -U pip
