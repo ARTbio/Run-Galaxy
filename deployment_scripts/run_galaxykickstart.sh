@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+apt update -Y
 apt install -y python-pip python-dev python-setuptools git htop
 echo "Upgrading pip"
 pip install -U pip

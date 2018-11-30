@@ -63,6 +63,7 @@ NB: in the following code, numbers in line heads should be removed to run the sc
 
 ```
 set -e
+apt update -Y
 apt install -y python-pip python-dev python-setuptools git htop
 echo "Upgrading pip"
 pip install -U pip
@@ -79,7 +80,8 @@ sleep 15
 supervisorctl restart galaxy:
 ```
 
-1. The shebang line (`#!`) says that it is a script code that has to be executed
+0. The shebang line (`#!`) says that it is a script code that has to be executed
+1. update apt package database
 by the shell bash which can be found in the /usr/bin/env environment
 2. set -e says to the bash interpreter to exit the run at first error (to avoid catastrophes)
 3. install `python-pip`, `python-dev`, `python-setuptools` (these 3 packages are required to
