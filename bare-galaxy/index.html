@@ -217,20 +217,8 @@ serving on http://127.0.0.1:80
 <p>Go back to your Google Cloud Engine control panel. Find the <code>External IP address</code> / <code>Adresse IP externe</code>
 in the 7th column of the Dashbord (to the left of the ssh menu that you used before. And just click on the hyperlink.</p>
 <h5 id="9-optional-become-admin-of-your-galaxy-server-instance">9. Optional : become admin of your Galaxy server instance</h5>
-<ul>
-<li>stop your server by <code>Ctrl</code> + <code>c</code> in the console</li>
-<li>Then type <code>nano /home/galaxy/galaxy/config/galaxy.ini</code></li>
-<li>Find <code>admin_users =</code>. For that you may use the search function of nano: <code>Ctrl</code> + <code>w</code>, type <code>admin_users</code> and press the <code>enter</code> key.</li>
-<li>
-<p>Edit by inserting your email address, which will be the admin login:
-    <code>admin_users = moi@ego.org</code> (note that you are not obliged to put a valid email address)</p>
-<p>You can also put multiple users authorized for administration</p>
-<p><code>admin_users = moi@ego.org,monpote@sympa.org,galaxy_admin@galaxyproject.org</code></p>
-</li>
-<li>
-<p>Restart the server by <code>sh run.sh</code></p>
-</li>
-</ul>
+<p>register to your instance using the email address you put in the galaxy.yml at step 7
+after login, you will see the admin tab in the top menu of the Galaxy interface</p>
               
             </div>
           </div>
