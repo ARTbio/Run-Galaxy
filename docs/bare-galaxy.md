@@ -89,10 +89,13 @@ If so, this is all good, and you can now access to you Galaxy instance in a you 
 Go back to your Google Cloud Engine control panel. Find the `External IP address` / `Adresse IP externe`
 in the 7th column of the Dashbord (to the left of the ssh menu that you used before. And just click on the hyperlink.
 
-##### 9. Optional : become admin of your Galaxy server instance
+##### 9. Connect as an admin of your Galaxy server instance
 
-register to your instance using the email address you put in the galaxy.yml at step 7
-after login, you will see the admin tab in the top menu of the Galaxy interface
+- Register to your instance using the email address you put in the galaxy.yml at step 7 (menu "Authentification et enregistrement --> Enregistrement)
+- Now that you are registered, you can log in using the same login and password you have chosen.
+- After login, you will see the admin tab in the top menu of the Galaxy interface.
+
+###### You are connected to Galaxy as an admin !
 
 
 
