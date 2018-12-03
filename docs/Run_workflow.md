@@ -78,23 +78,31 @@ even see anymore the paths between the various workflow steps !
 
 So, we have to install our first three tools in our Galaxy instance:
 
-    - regex_find_replace
-    
-      owner: jjohnson
-    
-      versions: 0.1.0
-      
-    - regex_replace
-    
-      owner: kellrott
-    
-      versions: 	1.0.0
-      
-    - text_processing
-    
-      owner: bgruening
-    
-      versions: 1.1.0
+tools:
+- name: regex_replace
+  owner: kellrott
+  revisions:
+  - 9a77d5fca67c
+  tool_panel_section_label: biologie des genomes
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+
+- name: column_regex_substitution
+  owner: blankenberg
+  revisions:
+  - 12b740c4cbc1
+  tool_panel_section_label: biologie des genomes
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+
+- name: regex_find_replace
+  owner: jjohnson
+  revisions:
+  - 9ea374bb0350
+  tool_panel_section_label: biologie des genomes
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+  
+data:
+- url: https://github.com/cbergman/transposons/raw/master/current/transposon_sequence_set.embl.txt
+
 
 - Click on the `Admin` top menu
 - On the left bar click on `Manage installed tools`
@@ -104,9 +112,9 @@ to remove adapter sequences for small-RNA-seq data.
 
 - Now, click the `Search Tool Shed` menu (again in the left bar)
 - Press the `Galaxy Main Tool Shed` button
-- In the search field, copy and paste `regex_find_replace`, and press the `enter` key.
-- Two tools will show up with exactly the same name.
-    We want the tool owned by `jjohnson`, so we'll click this one, and select `preview and install` (No other solution anyway)
+- In the search field, copy and paste `regex_replace`, and press the `enter` key.
+- One tool will show up, owned by `kellrott`.
+    Click this tool, and select `preview and install` (No other solution anyway)
 - Click the `Install to Galaxy` button at the top of the screen
 - In the `Select existing tool panel section:` menu, select `Text Manipulation`.
 Thus, the tools will appears in the section `Text Manipulation` of the Galaxy tools.
@@ -115,26 +123,26 @@ Thus, the tools will appears in the section `Text Manipulation` of the Galaxy to
 - Rapidly enough, the Installation status should turn out green. Sometimes, things do not go well.
 If the installation fails, just call the `Repository Actions - repair repository` menu
 (maybe a good idea to call me too...)
-- Click again the `Manage installed tools` menu in the left bar, and look at the newly
+- Click again the `Manage tools` menu in the left bar, and look at the newly
 installed tool `regex_find_replace` in the list.
 
+- Repeat the same operations for the tool `regex_find_replace` owned by `jjohnson`(version `1.1.0`)
 
-- Repeat the same operations for the tool `regex_replace` owned by `kellrott` (version `1.0.0`)
+- Repeat the same operations for the tool `column_regex_substitution` owned by `blankenberg` (version `0.0.1`)
 
-- Repeat the same operations for the tool `text_processing` owned by `bgruening`(version `1.1.0`)
    For this last installation, you will see a different panel after clicking `Install to Galaxy`:
    If you scroll down a little bit, you should see a list of uninstalled tool dependencies like this:
    ![uninstalled dependencies](images/uninstalled_dependencies.png)
    
-   These are software packages required to get the tool `text_processing` working properly.
-   The required packages will be installed by the lately adopted package manager `conda.
+   These are software packages required to get the tool `column_regex_substitution` working properly.
+   The required package (python 2.7) will be installed by the lately adopted package manager `conda`.
    You can further check this by clicking the `Display Details` button bellow the Dependency list.
    
    At this stage, avoid further distraction and do not forget to select tool panel section
    `Text Manipulation`, and finally click the `Install` button.
    This time, the `Monitor installing tool shed repositories` will display new steps (in yellow),
-   including the `Installing tool dependencies` step. The whole process should take longer,
-   about 2 min and 30 secondes (a bit too short for a coffee through).
+   including the `Installing tool dependencies` step. The whole process may take longer,
+   but not too long in this specific case.
 - Finally go back a last time to the `Manage installed tools` panel:
     
     
