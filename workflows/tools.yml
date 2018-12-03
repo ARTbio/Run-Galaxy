@@ -1,0 +1,25 @@
+tools:
+- name: regex_replace
+  owner: kellrott
+  revisions:
+  - 9a77d5fca67c
+  tool_panel_section_label: biologie des genomes
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+
+- name: column_regex_substitution
+  owner: blankenberg
+  revisions:
+  - 12b740c4cbc1
+  tool_panel_section_label: biologie des genomes
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+
+- name: regex_find_replace
+  owner: jjohnson
+  revisions:
+  - 9ea374bb0350
+  tool_panel_section_label: biologie des genomes
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+  
+data:
+- url: https://github.com/cbergman/transposons/raw/master/current/transposon_sequence_set.embl.txt
+
