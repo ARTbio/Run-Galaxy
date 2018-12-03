@@ -16,17 +16,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>/Run_workflow/</loc>
+     <lastmod>2018-12-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>/GalaxyKickStart/</loc>
      <lastmod>2018-12-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/Docker_GalaxyKickStart/</loc>
-     <lastmod>2018-12-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/Run_workflow/</loc>
      <lastmod>2018-12-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
