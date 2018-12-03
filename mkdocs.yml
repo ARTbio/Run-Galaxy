@@ -3,9 +3,9 @@ pages:
   - "Introduction: Why Running Galaxy as an administrator?": index.md
   - Training Menu: Training_menu.md
   - Install a minimal standalone galaxy server: bare-galaxy.md
+  - After deployment use case: Run_workflow.md
   - Install a Galaxy server with Ansible and GalaxyKickStart: GalaxyKickStart.md
   - Install a Galaxy server with Docker: Docker_GalaxyKickStart.md
-  - After deployment use case: Run_workflow.md
   - "Appendix 1: Getting a Google Cloud Engine Account": Google_cloud_Account.md
   - "Appendix 1: Spin off a Virtual Machine": spin_off_VM.md
   - "Appendix 2: Run your personal TP Galaxy server": GCE_TP_Galaxy.md

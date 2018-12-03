@@ -1,18 +1,18 @@
 # Running a workflow in Galaxy
 
-Whether you deployed Galaxy using git, ansible or docker (next section), you are now administrating your
-own Galaxy server !
 
-In this use case, we are going to 
+## In this use case, we are going to 
 
-- Upload a workflow description file in the Galaxy server instance
-- Visualise this workflow and see that tools to execute the workflow are missing
-- Install these missing tools
-- Eventually run the workflow on input data obtained from a remote public repository.
+- Upload 2 workflow description files in the Galaxy server instance
+- Visualise these workflows and see that tools to execute the workflows are missing
+- *since you are administrating the instance*, install the missing tools
+- Eventually run the workflows on input data obtained from a remote public repository.
 
-#### Upload a workflow description file
+#### Upload workflow description file (.ga)
 
-- Ensure you are connected to your Galaxy server as an admin (admin@galaxy.org`:`admin)
+- Ensure you are connected to your Galaxy server as an admin (the email you have entered
+in the galaxy.yml configuration file and the password to entered for this login when you
+registered for the first time)
 - Click the workflow menu
 - Click the "Upload or import workflow" button at the top right
 - In the `Galaxy workflow URL:` field, paste the url of the workflow file:
@@ -22,44 +22,29 @@ In this use case, we are going to
 Note that this file is in the [Run-Galaxy](https://github.com/ARTbio/Run-Galaxy) repository where all the material for this training
 is hosted
 
-- alternatively, you could download the [Galaxy-Workflow-canonical_transposons.gtf_from_transposon_sequence_set.txt.ga](https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/workflows/Galaxy-Workflow-canonical_transposons.gtf_from_transposon_sequence_set.txt.ga)
-locally on your computer, and click the `Galaxy workflow file:` button instead of `Galaxy workflow URL:`
+- repeat the same operation with the other workflow 
+`https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/workflows/Galaxy-Workflow-Extract_canonical_transposons_fasta.ga`
+
+- (alternatively, you could upload the workflow files from you computer instead of uploading them by URL)
 
 - Click on the `Import` button
 
 - Observe the numerous warning returned by the galaxy server when it imported the workflow file.
-
-This looks like
-```
-Imported, but some steps in this workflow have validation errors. Workflow canonical_transposons.gtf from transposon_sequence_set.txt (imported from uploaded file) imported successfully. The workflow requires the following tools that are not available in this Galaxy instance.You can likely install the required tools from one of the Galaxy tool sheds listed below.
-Tool name toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, id toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
-Tool name toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, id toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
-Tool name toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, id toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, version 0.1.0
-Tool name toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, id toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, version 0.1.0
-Tool name toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, id toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, version 0.1.0
-Tool name toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, id toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, version 0.1.0
-Tool name toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0, id toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0, version 1.1.0
-Tool name toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, id toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
-Tool name toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, id toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
-
-&lt;a href=&#34;https://toolshed.g2.bx.psu.edu/repository/find_tools?galaxy_url=http://35.187.179.31/&amp;tool_id=toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,&#34;&gt;Galaxy Main Tool Shed&lt;/a&gt;
-&lt;a href=&#34;https://testtoolshed.g2.bx.psu.edu/repository/find_tools?galaxy_url=http://35.187.179.31/&amp;tool_id=toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0,toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0,&#34;&gt;Galaxy Test Tool Shed&lt;/a&gt;
-```
 in a red scary window
 
 ![import workflow failure](images/failed_import_workflow.png)
 
 When you read the warnings, you will see that the workflow was indeed successfully imported.
-However, some tools are missing, namely:
+However, tools are missing, namely:
 ```
 toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
-toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regexColumn1/0.1.0, version 0.1.0
-toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0, version 1.1.0
+toolshed.g2.bx.psu.edu/repos/blankenberg/column_regex_substitution/column_regex_substitution/0.1.0, version 0.1.0
+toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regex_find_replace/0.1.0, version 0.1.0
 ```
 
 The other lines are redundant, because the workflow is using the same tools at different steps.
 
-- So far, so good, the missing tools are reported in the [To_be_installed.md](https://github.com/ARTbio/Run-Galaxy/blob/master/workflows/To_be_installed.md)
+- So far, so good, the missing tools are reported in the [tools.yml](https://github.com/ARTbio/Run-Galaxy/blob/master/workflows/tools.yml)
 file in the Run-Galaxy repository (or just above in a more complex format)
 
 - Now, click on the workflow menu.
@@ -100,9 +85,6 @@ tools:
   tool_panel_section_label: biologie des genomes
   tool_shed_url: https://toolshed.g2.bx.psu.edu
   
-data:
-- url: https://github.com/cbergman/transposons/raw/master/current/transposon_sequence_set.embl.txt
-
 
 - Click on the `Admin` top menu
 - On the left bar click on `Manage installed tools`
@@ -148,23 +130,25 @@ installed tool `regex_find_replace` in the list.
     
 ![Installed tools](images/installed_tools.png)
     
-    There you see the yac_clipper tool with its three new tool friends... Those tools needed
-    to properly run the imported workflow.
+    There you see all three tools needed to properly run the imported workflow.
     
-#### Check that the imported workflow now display correctly
+#### Check that the imported workflows now display correctly
 
-If you click the `workflow` top menu, you should now be able to edit the imported workflow,
+If you click the `workflow` top menu, you should now be able to edit the imported workflows,
 and see that everything is displaying correctly:
 
 ![clean workflow](images/clean_workflow.png)
 
-We can go through the various steps of the workflow and figure out what it is doing.
+We can go through the various steps of the workflows and figure out what they are doing.
 
-This workflow actually performs a suite of find-and-replace text manipulations, starting
+The first workflow  performs a suite of find-and-replace text manipulations, starting
 from input data that has been tagged `transposon_set_embl.txt` and producing a new text
 dataset that is renamed `canonical_transposons.gtf`.
 
-We will come back to all these steps after the workflow execution. However, we need to
+The second workflow uses the same input data file `transposon_set_embl.txt` to generate
+a fasta file of canonical_transposon sequences
+
+We will come back to all these steps after the workflows execution. However, we need to
 retrieve the input data set before running the workflow on these data.
 
 #### Retrieve the `transposon_set_embl.txt` dataset
