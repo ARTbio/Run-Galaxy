@@ -163,12 +163,13 @@ in the open field and click the `Start` button.
 #### Run the workflow
 
 - Click on the workflow menu
-- Click on the workflow and select the Run option
+- Click on the first workflow and select the Run option
 - Leave the `Send results to a new history` menu to the `No` option for the moment.
 - Just Click the `Run workflow` button to run the workflow, and look at datasets in the
 history turning from grey to yellow to green. Note: often you don't see the dataset in the
 "yellow" state (running). You just need to refresh the history with the 2-curved-arrows
 icon of the local history menu.
+- repeat the same operation (from the input history) for the second workflow.
 
 #### Discussion on workflows
     
