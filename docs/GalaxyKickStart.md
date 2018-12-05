@@ -57,6 +57,8 @@ The installation is expected to take 10-15 min
 
     This time, ansible and the GalaxyKickStart playbook already programmatically registered
     an admin user. Just use the `admin@galaxy.org:admin` as credentials (user:password)
+    
+    When logged in, see that required tools as well as workflows are already installed !
 
 
 #### the run_galaxykickstart.sh script explained
