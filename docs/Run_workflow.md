@@ -22,15 +22,21 @@ registered for the first time)
 Note that this file is in the [Run-Galaxy](https://github.com/ARTbio/Run-Galaxy) repository where all the material for this training
 is hosted
 
+- Click on the `Import` button
+
 - repeat the same operation with the other workflow 
 `https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/workflows/Galaxy-Workflow-Extract_canonical_transposons_fasta.ga`
 
-- (alternatively, you could upload the workflow files from you computer instead of uploading them by URL)
+(alternatively, you could upload the workflow files from you computer instead of uploading them by URL)
 
-- Click on the `Import` button
 
-- Observe the numerous warning returned by the galaxy server when it imported the workflow file.
-in a red scary window
+- Now, click on the workflows that are showing up in the workflow list:
+
+
+![imported workflow](images/imported_workflows.png)
+
+- Click a workflow and select the `Edit` option
+- Observe the warning window that should look like:
 
 ![import workflow failure](images/failed_import_workflow.png)
 
@@ -41,27 +47,21 @@ toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version
 toolshed.g2.bx.psu.edu/repos/blankenberg/column_regex_substitution/column_regex_substitution/0.1.0, version 0.1.0
 toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regex_find_replace/0.1.0, version 0.1.0
 ```
-
 The other lines are redundant, because the workflow is using the same tools at different steps.
+
+Click on the `Continue` button. You should now see missing tools in red and missing links
+between various workflow steps. Note that some tools are indeed present because they are
+installed by default in the provided Galaxy framework.
+
+- We are going to fix this. Click on the `Continue` button and then the upper "wheel" icon and select `Close`,
+we will come back to the workflow editor when the missing tools are installed in the server.
 
 - So far, so good, the missing tools are reported in the [tools.yml](https://github.com/ARTbio/Run-Galaxy/blob/master/workflows/tools.yml)
 file in the Run-Galaxy repository (or just above in a more complex format)
 
-- Now, click on the workflow menu.
-
-You should see the imported workflow in the list:
-
-![imported workflow](images/imported_workflow.png)
-
-- Click the workflow and select the `Edit` option
-- Dismiss the warnings (You are already aware of it) by clicking the `Continue` button
-- See again in the editor window, all the missing steps in red. At this stage you can't
-even see anymore the paths between the various workflow steps !
-- Click the upper "wheel" icon and select `Close`, we will come back to this when the missing tools are installed in the Server !
-
 #### Installing missing tools
 
-So, we have to install our first three tools in our Galaxy instance:
+Thus, we have to install our first three tools in our Galaxy instance:
 
 tools:
 - name: regex_replace
@@ -87,10 +87,9 @@ tools:
   
 
 - Click on the `Admin` top menu
-- On the left bar click on `Manage installed tools`
+- On the left bar click on `Manage tools`
 
-You'll see a single lonely tool `yac_clipper`, which you probably already used
-to remove adapter sequences for small-RNA-seq data.
+Check that there is actually no installed tools !
 
 - Now, click the `Search Tool Shed` menu (again in the left bar)
 - Press the `Galaxy Main Tool Shed` button
@@ -102,13 +101,12 @@ to remove adapter sequences for small-RNA-seq data.
 Thus, the tools will appears in the section `Text Manipulation` of the Galaxy tools.
 - Click `Install`
 - You are going to wait for ~20 sec or so, before seeing the `Monitor installing tools...` screen.
-- Rapidly enough, the Installation status should turn out green. Sometimes, things do not go well.
-If the installation fails, just call the `Repository Actions - repair repository` menu
-(maybe a good idea to call me too...)
+- Rapidly enough, the Installation status should turn out green.
 - Click again the `Manage tools` menu in the left bar, and look at the newly
 installed tool `regex_find_replace` in the list.
 
-- Repeat the same operations for the tool `regex_find_replace` owned by `jjohnson`(version `1.1.0`)
+- Repeat the same operations for the tool `regex_find_replace` owned by `jjohnson`(version `1.1.0`).
+_Do not take the tool with the same name but owned by `galaxyp`_
 
 - Repeat the same operations for the tool `column_regex_substitution` owned by `blankenberg` (version `0.0.1`)
 
@@ -116,8 +114,8 @@ installed tool `regex_find_replace` in the list.
    If you scroll down a little bit, you should see a list of uninstalled tool dependencies like this:
    ![uninstalled dependencies](images/uninstalled_dependencies.png)
    
-   These are software packages required to get the tool `column_regex_substitution` working properly.
-   The required package (python 2.7) will be installed by the lately adopted package manager `conda`.
+   This is a software package required to get the tool `column_regex_substitution` working properly.
+   The required package (python 2.7) will be installed by the package manager `conda`.
    You can further check this by clicking the `Display Details` button bellow the Dependency list.
    
    At this stage, avoid further distraction and do not forget to select tool panel section
@@ -125,7 +123,7 @@ installed tool `regex_find_replace` in the list.
    This time, the `Monitor installing tool shed repositories` will display new steps (in yellow),
    including the `Installing tool dependencies` step. The whole process may take longer,
    but not too long in this specific case.
-- Finally go back a last time to the `Manage installed tools` panel:
+- Finally go back a last time to the `Manage tools` panel:
     
     
 ![Installed tools](images/installed_tools.png)
@@ -135,13 +133,14 @@ installed tool `regex_find_replace` in the list.
 #### Check that the imported workflows now display correctly
 
 If you click the `workflow` top menu, you should now be able to edit the imported workflows,
-and see that everything is displaying correctly:
+and see that everything is displaying correctly. For the workflow
+`canonical_transposons.gtf from transposon_sequence_set.txt` :
 
 ![clean workflow](images/clean_workflow.png)
 
 We can go through the various steps of the workflows and figure out what they are doing.
 
-The first workflow  performs a suite of find-and-replace text manipulations, starting
+This first workflow  performs a suite of find-and-replace text manipulations, starting
 from input data that has been tagged `transposon_set_embl.txt` and producing a new text
 dataset that is renamed `canonical_transposons.gtf`.
 
@@ -169,9 +168,10 @@ in the open field and click the `Start` button.
 history turning from grey to yellow to green. Note: often you don't see the dataset in the
 "yellow" state (running). You just need to refresh the history with the 2-curved-arrows
 icon of the local history menu.
-- repeat the same operation (from the input history) for the second workflow.
+- repeat the same operation (from the input history) for the second workflow 
+`Extract canonical transposons fasta (imported from uploaded file)`
 
-#### Discussion on workflows
+#### Discussion on workflows and on workflow of workflows
     
     
     
