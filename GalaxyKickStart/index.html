@@ -189,7 +189,9 @@ Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.co
 <li>connect to you VM using the Google ssh console</li>
 <li>start an interactive session as root using the command <code>sudo -i</code></li>
 <li>download the script <code>run_galaxykickstart.sh</code> using the command <code>wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_galaxykickstart.sh</code></li>
-<li>run the script using the command <code>sh run_galaxykickstart.sh</code></li>
+<li>run the script using the command
+<code>sh run_galaxykickstart.sh ; sh run_galaxykickstart.sh</code>
+The installation is expected to take 10-15 min</li>
 <li>
 <p>Connect to your ansible-deployed "GalaxyKickStart" instance:</p>
 <p>Just click on the url displayed in your Google Cloud Engine Console.</p>
@@ -198,6 +200,7 @@ Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.co
 <p>Connect to your server as an admin:</p>
 <p>This time, ansible and the GalaxyKickStart playbook already programmatically registered
 an admin user. Just use the <code>admin@galaxy.org:admin</code> as credentials (user:password)</p>
+<p>When logged in, see that required tools as well as workflows are already installed !</p>
 </li>
 </ul>
 <h4 id="the-run_galaxykickstartsh-script-explained">the run_galaxykickstart.sh script explained</h4>
