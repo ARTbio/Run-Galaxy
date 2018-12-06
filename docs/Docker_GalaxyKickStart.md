@@ -54,6 +54,7 @@ NB: in the following code, numbers in line heads should be removed to run the sc
  1 #!/usr/bin/env sh
  2 set -e
  3 echo "Now pulling the galaxykickstart docker image from DockerHub\n"
+ 3bis supervisorctl stop all
  4 docker pull artbio/biologiegenome
  5 echo "Running galaxykickstart docker container\n"
  6 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
@@ -76,6 +77,7 @@ NB: in the following code, numbers in line heads should be removed to run the sc
 code is sh and can be found in the /usr/bin/env environment
 2. set -e says to the sh interpreter to exit the run at first error (to avoid catastrophes)
 3. prompts "Now pulling the galaxykickstart docker image from DockerHub"
+  bis: stop the galaxy services (galaxy, postgresql, slurm, nginx,...) that were deployed before with ansible
 4. Pulls (Downloads) the Docker Image `artbio/biologiegenome` from
 the [DockerHub repository](https://hub.docker.com/r/artbio/biologiegenome/)
 5. reports this action to the terminal
