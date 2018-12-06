@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 set -e
 echo "Now pulling the galaxykickstart docker image from DockerHub\n"
+supervisorctl stop all
 docker pull artbio/biologiegenome
 echo "Running galaxykickstart docker container\n"
 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
