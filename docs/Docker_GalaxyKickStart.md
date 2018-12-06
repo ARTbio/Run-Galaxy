@@ -51,29 +51,30 @@ in the VM used to deploy GalaxyKickStart.
 NB: in the following code, numbers in line heads should be removed to run the script.
 
 ```
-1  #!/usr/bin/env bash
-2  set -e
-3  echo "Now pulling the galaxykickstart docker image from DockerHub\n"
-4  docker pull artbio/biologiegenome
-5 echo "Running galaxykickstart docker container\n"
-6 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
-7           --privileged=true \
-8           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \
-9           -e GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True \
+ 1 #!/usr/bin/env sh
+ 2 set -e
+ 3 echo "Now pulling the galaxykickstart docker image from DockerHub\n"
+ 4 docker pull artbio/biologiegenome
+ 5 echo "Running galaxykickstart docker container\n"
+ 6 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
+ 7           --privileged=true \
+ 8           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \
+ 9           -e GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True \
 10           -e GALAXY_CONFIG_ENABLE_USER_DELETION=True \
 11           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
 12           -v /tmp/:/tmp/ \
 13           -v /export/:/export \
 14           artbio/biologiegenome`
-15 echo "The artbio/biologiegenome docker container is up and running\n"
-16 echo "Please wait for ~1 minute and interrupt logging when all services are launched\n"
-17 echo "Ctrl-C to stop logging\n\n"
-18 docker logs -f $DOCKER_INSTANCE
+15 echo "The artbio/biologiegenome docker container is deploying...\n"
+16 sleep 90
+17 echo "The artbio/biologiegenome docker container is up and running\n"
+18 docker logs  $DOCKER_INSTANCE
+19 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
 ```
 
 1. The shebang line. Says that it is a script code and that the interpreter to execute the
-code is bash and can be found in the /usr/bin/env environment
-2. set -e says to the bash interpreter to exit the run at first error (to avoid catastrophes)
+code is sh and can be found in the /usr/bin/env environment
+2. set -e says to the sh interpreter to exit the run at first error (to avoid catastrophes)
 3. prompts "Now pulling the galaxykickstart docker image from DockerHub"
 4. Pulls (Downloads) the Docker Image `artbio/biologiegenome` from
 the [DockerHub repository](https://hub.docker.com/r/artbio/biologiegenome/)
@@ -131,13 +132,15 @@ should have by default an /export directory) to an /export directory of the host
 
 14. This is the end of the docker run command. The docker image to be instantiated is specified.
 15. reports to the terminal user
-16. reports to the terminal user
+16. wait 90 sec during the docker container deployment
 17. reports to the terminal user
 18. Now that the docker container is launched, you can access its logs with the command
-`docker logs -f` (-f means continuous logging until keyboard interruption) followed by the
-identification number of the docker container. We have put this ID in the variable `DOCKER_INSTANCE`
+`docker logs ` followed by the identification number of the docker container.
+We have put this ID in the variable `DOCKER_INSTANCE`
 and we access to the content of this variable by prefixing the variable with a `$ `:
 `docker logs -f $DOCKER_INSTANCE`
-
+19. This is just an update of the python package `cryptography` for the galaxy server. You see
+here an example of how a user can interact with the docker container to adjust the services it
+is providing.
 
 
