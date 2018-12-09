@@ -2,7 +2,7 @@
 set -e
 echo "Now pulling the galaxykickstart docker image from DockerHub\n"
 supervisorctl stop all
-docker pull artbio/biologiegenome
+docker pull $1
 echo "Running galaxykickstart docker container\n"
 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
           --privileged=true \
@@ -12,9 +12,9 @@ export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
           -v /tmp/:/tmp/ \
           -v /export/:/export \
-          artbio/biologiegenome`
-echo "The artbio/biologiegenome docker container is deploying...\n"
+          $1`
+echo "The $1 docker container is deploying...\n"
 sleep 90
-echo "The artbio/biologiegenome docker container is up and running\n"
+echo "The $1 docker container is up and running\n"
 docker logs  $DOCKER_INSTANCE
 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
