@@ -19,3 +19,6 @@ echo "The $1 docker container is up and running\n"
 docker logs  $DOCKER_INSTANCE
 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
 docker exec $DOCKER_INSTANCE sudo su galaxy -c 'cd ~/galaxy/config && wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt'
+echo "Galaxy in container will restart to take into account new settings\n"
+sleep 30
+docker exec $DOCKER_INSTANCE sudo supervisorctl restart galaxy:
