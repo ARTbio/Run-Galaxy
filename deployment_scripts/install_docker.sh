@@ -7,7 +7,7 @@ sudo apt-get -y install docker-engine
 echo "Docker system is installed\n"
 echo "Now pulling the galaxykickstart docker image from DockerHub\n"
 docker pull artbio/galaxykickstart
-echo "Running galaxykickstart docker container\n"
+echo "Running $1 docker container\n"
 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
   --privileged=true \
   -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \
