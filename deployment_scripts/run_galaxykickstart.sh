@@ -11,4 +11,5 @@ git clone https://github.com/ARTbio/GalaxyKickStart.git -b $1
 cd GalaxyKickStart/
 ansible-galaxy install -r requirements_roles.yml -p roles/ -f
 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
+su galaxy -c 'cd ~/galaxy/config && wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/'
 echo "end of deployment\n"
