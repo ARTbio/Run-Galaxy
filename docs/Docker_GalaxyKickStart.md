@@ -54,44 +54,44 @@ NB: in the following code, numbers in line heads should be removed to run the sc
  1 #!/usr/bin/env sh
  2 set -e
  3 echo "Now pulling the galaxykickstart docker image from DockerHub\n"
- 3bis supervisorctl stop all
- 4 docker pull artbio/biologiegenome
- 5 echo "Running galaxykickstart docker container\n"
- 6 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
- 7           --privileged=true \
- 8           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \
- 9           -e GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True \
-10           -e GALAXY_CONFIG_ENABLE_USER_DELETION=True \
-11           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
-12           -v /tmp/:/tmp/ \
-13           -v /export/:/export \
-14           artbio/biologiegenome`
-15 echo "The artbio/biologiegenome docker container is deploying...\n"
-16 sleep 90
-17 echo "The artbio/biologiegenome docker container is up and running\n"
-18 docker logs  $DOCKER_INSTANCE
-19 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
+ 4 supervisorctl stop all
+ 5 docker pull $1
+ 6 echo "Running $1 docker container\n"
+ 7 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
+ 8           --privileged=true \
+ 9           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \
+10           -e GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True \
+11           -e GALAXY_CONFIG_ENABLE_USER_DELETION=True \
+12           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
+13           -v /tmp/:/tmp/ \
+14           -v /export/:/export \
+15           $1`
+16 echo "The $1 docker container is deploying...\n"
+17 sleep 90
+18 echo "The $1 docker container is up and running\n"
+19 docker logs  $DOCKER_INSTANCE
+20 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
 ```
 
 1. The shebang line. Says that it is a script code and that the interpreter to execute the
 code is sh and can be found in the /usr/bin/env environment
 2. set -e says to the sh interpreter to exit the run at first error (to avoid catastrophes)
 3. prompts "Now pulling the galaxykickstart docker image from DockerHub"
-  bis: stop the galaxy services (galaxy, postgresql, slurm, nginx,...) that were deployed before with ansible
-4. Pulls (Downloads) the Docker Image `artbio/biologiegenome` from
-the [DockerHub repository](https://hub.docker.com/r/artbio/biologiegenome/)
-5. reports this action to the terminal
-6. Lines 6 to 14 are actually a single command to run an instance of the galaxykickstart
-docker image. Note the `\` at ends of lines 7 to 13: this character `\` specify that the
+4. stop the galaxy services (galaxy, postgresql, slurm, nginx,...) that were deployed before with ansible (to liberate ports)
+5. Pulls (Downloads) the Docker Image specified as parameter to the script (either`artbio/biologiegenome`
+or `artbio/rna-biologie-genome`) from the [DockerHub repository](https://hub.docker.com/r/artbio/biologiegenome/)
+6. reports this action to the terminal
+7. Lines 7 to 15 are actually a single command to run an instance of the galaxykickstart
+docker image. Note the `\` at ends of lines 7 to 14: this character `\` specify that the
 code line is continued without line break for the bash interpreter.
 
-    The line 6 starts with an `export DOCKER_INSTANCE=` instruction. This means that the result
+    The line 7 starts with an `export DOCKER_INSTANCE=` instruction. This means that the result
     of the command between \` after the sign `=` will be put in the environmental variable
     `DOCKER_INSTANCE`, available system-wide.
 
     Now, the docker command (between \`) itself:
 
-    Still in line 11, we have `docker run -d -p 80:80 -p 21:21 -p 8800:8800`.
+    Still in line 7, we have `docker run -d -p 80:80 -p 21:21 -p 8800:8800`.
 
     This means that a container will be run as a deamon (`-d ` option) and that the internal
     TCP/IP ports 80 (web interface) and 21 (ftp interface) of the docker instance will be mapped
@@ -99,28 +99,28 @@ code line is continued without line break for the bash interpreter.
     the host port is specified to the left of the `:` and the docker port is specified to the right
     of the `:`.
     
-7. docker command continued: here we specify that the docker container acquires the root privileges
-8. docker command continued: `-e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True`.
+8. docker command continued: here we specify that the docker container acquires the root privileges
+9. docker command continued: `-e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True`.
 
     The -e option specifies an environmental variable `GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE`
     passed (`e`xported) to the docker container with the value `True`
     `galaxy_manage_trackster: true` with the string `galaxy_manage_trackster: false`
     in the ansible configuration file `groups/all`.
 
-9. The environmental variable `GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE` is exported to
+10. The environmental variable `GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE` is exported to
 the docker container with the value `True`
-10. The environmental variable `GALAXY_CONFIG_ENABLE_USER_DELETION` is exported to
+11. The environmental variable `GALAXY_CONFIG_ENABLE_USER_DELETION` is exported to
 the docker container with the value `True`
-11. The environmental variable `GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES` is exported to
+12. The environmental variable `GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES` is exported to
 the docker container with the value `True`
 
     Note that all these exports in the docker command correspond to advanced boiling/tuning of the docker container.
     You are not obliged to understand the details to get the container properly running.
-12. Now the -v is important, better to understand it !
+13. Now the -v is important, better to understand it !
 
     -v stands for "volume". the `-v` option says to export the /tmp directory of the docker container
     to the /tmp directory of the host.
-13. we also export the /export directory of the container (any docker container has or
+14. we also export the /export directory of the container (any docker container has or
 should have by default an /export directory) to an /export directory of the host (your VM here).
 
     Note that if the /export directory does not exists at docker run runtime, it will be created.
@@ -132,16 +132,17 @@ should have by default an /export directory) to an /export directory of the host
     Now, if you stop and remove the docker container, all exported directory will persist in the host.
     If you don't do that, all operations performed with a container are lost when you stop this container !
 
-14. This is the end of the docker run command. The docker image to be instantiated is specified.
-15. reports to the terminal user
-16. wait 90 sec during the docker container deployment
-17. reports to the terminal user
-18. Now that the docker container is launched, you can access its logs with the command
+15. This is the end of the docker run command. The docker image to be instantiated is specified by $1 variable,
+the parameter passed to the script at runtime.
+16. reports to the terminal user
+17. wait 90 sec during the docker container deployment
+18. reports to the terminal user
+19. Now that the docker container is launched, you can access its logs with the command
 `docker logs ` followed by the identification number of the docker container.
 We have put this ID in the variable `DOCKER_INSTANCE`
 and we access to the content of this variable by prefixing the variable with a `$ `:
-`docker logs -f $DOCKER_INSTANCE`
-19. This is just an update of the python package `cryptography` for the galaxy server. You see
+`docker logs $DOCKER_INSTANCE`
+20. This is just an update of the python package `cryptography` required for the galaxy server. You see
 here an example of how a user can interact with the docker container to adjust the services it
 is providing.
 
