@@ -85,6 +85,9 @@
         </ul>
     
 
+    <li class="toctree-l2"><a href="#usrbinenv-bash">!/usr/bin/env bash</a></li>
+    
+
     </ul>
 	    </li>
           
@@ -189,11 +192,15 @@ Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.co
 <li>connect to you VM using the Google ssh console</li>
 <li>start an interactive session as root using the command <code>sudo -i</code></li>
 <li>download the script <code>run_galaxykickstart.sh</code> using the command <code>wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_galaxykickstart.sh</code></li>
-<li>run the script using the command
-<code>sh run_galaxykickstart.sh ; sh run_galaxykickstart.sh</code>
-The installation is expected to take 10-15 min</li>
 <li>
-<p>Connect to your ansible-deployed "GalaxyKickStart" instance:</p>
+<p>run the script using either the command
+<code>sh run_galaxykickstart.sh biogen2018; sh run_galaxykickstart.sh biogen2018</code>
+<em>OR</em> (to be decided during the training)
+<code>sh run_galaxykickstart.sh pasteur-2018; sh run_galaxykickstart.sh pasteur-2018</code>
+The installation is expected to take about 20 min for <code>biogen2018</code> or ~40 min for <code>pasteur-2018</code></p>
+</li>
+<li>
+<p>When the deployment is finished, connect to your ansible-deployed "GalaxyKickStart" instance:</p>
 <p>Just click on the url displayed in your Google Cloud Engine Console.</p>
 </li>
 <li>
@@ -205,30 +212,26 @@ an admin user. Just use the <code>admin@galaxy.org:admin</code> as credentials (
 </ul>
 <h4 id="the-run_galaxykickstartsh-script-explained">the run_galaxykickstart.sh script explained</h4>
 <p>NB: in the following code, numbers in line heads should be removed to run the script.</p>
-<pre><code>#!/usr/bin/env bash
-set -e
+<p>```</p>
+<h1 id="usrbinenv-bash">!/usr/bin/env bash</h1>
+<p>set -e
 apt update -y
 apt install -y python-pip python-dev python-setuptools git htop
-echo &quot;Upgrading pip&quot;
+echo "Upgrading pip"
 pip install -U pip
 pip --version
 pip install ansible==2.4
 ansible --version
-git clone https://github.com/ARTbio/GalaxyKickStart.git -b biogen2018
+git clone https://github.com/ARTbio/GalaxyKickStart.git -b $1
 cd GalaxyKickStart/
 ansible-galaxy install -r requirements_roles.yml -p roles/ -f
 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
-echo &quot;Sleeping 15 sec before restarting Galaxy server&quot;
-echo &quot;zzzz zzzz...&quot;
-sleep 15
-supervisorctl restart galaxy:
-</code></pre>
-
+echo "end of deployment\n"```</p>
 <ol>
-<li>The shebang line (<code>#!</code>) says that it is a script code that has to be executed</li>
-<li>update apt package database
+<li>The shebang line (<code>#!</code>) says that it is a script code that has to be executed
 by the shell bash which can be found in the /usr/bin/env environment</li>
 <li>set -e says to the bash interpreter to exit the run at first error (to avoid catastrophes)</li>
+<li>update apt package database</li>
 <li>install <code>python-pip</code>, <code>python-dev</code>, <code>python-setuptools</code> (these 3 packages are required to
 install pip), <code>git</code> (to clone and manage GitHub repositories) and <code>htop</code> (a monitoring tool)
 using the package installer <code>apt-get</code></li>
@@ -242,22 +245,17 @@ installed with installation of <code>python-pip</code>, <code>python-dev</code> 
 <li>install <code>ansible</code>, version 2.4, using <code>pip</code> !</li>
 <li>will prompt the version of ansible in the console</li>
 <li>clone the GalaxyKickStart Repository available at https://github.com/ARTbio/GalaxyKickStart.git,
-branch <code>biogen2018</code>, creating locally the <code>GalaxyKickStart</code> folder.</li>
+branch indicated as a parameter in the command line, creating locally the <code>GalaxyKickStart</code> folder.</li>
 <li>Change directory, ie goes to /root/GalaxyKickStart</li>
 <li>says to ansible to install additional roles (collection of files to control ansible)
 which are not the the GalaxyKickStart repository but whose address is stated in the file
 <code>requirements_roles.yml</code>. These roles will be installed in the subdirectory
 <code>/root/GalaxyKickStart/roles/</code>. NB: <code>ansible-galaxy</code> has <em>nothing</em> to do with Galaxy,
 the name of this ansible command is serendipitous.</li>
-<li>warns about the next command</li>
 <li>triggers the play of the playbook <code>galaxy.yml</code> by ansible. The target host of the playbook
 is defined in the file <code>inventory_files/galaxy-kickstart</code>, as well as how ansible will interact with the target.
 Here, we play the playbook on the same computer (localhost).</li>
-<li>Prompt the effect of the command 17.</li>
-<li>Prompt the effect of the command 17.</li>
-<li>sleep for 15 seconds. This is to let the Galaxy server starting quietly.</li>
-<li>use supervisor to restart the galaxy server: this is to load the more recent configuration
-files that may have been modified by the playbook <em>after</em> the Galaxy server started.</li>
+<li>Prompt the end of deployment. Galaxy should be up and running.</li>
 </ol>
               
             </div>

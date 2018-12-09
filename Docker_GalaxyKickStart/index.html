@@ -193,43 +193,43 @@ and connect using the login:password <code>admin@galaxy.org:admin</code></p>
 <pre><code> 1 #!/usr/bin/env sh
  2 set -e
  3 echo &quot;Now pulling the galaxykickstart docker image from DockerHub\n&quot;
- 3bis supervisorctl stop all
- 4 docker pull artbio/biologiegenome
- 5 echo &quot;Running galaxykickstart docker container\n&quot;
- 6 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
- 7           --privileged=true \
- 8           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \
- 9           -e GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True \
-10           -e GALAXY_CONFIG_ENABLE_USER_DELETION=True \
-11           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
-12           -v /tmp/:/tmp/ \
-13           -v /export/:/export \
-14           artbio/biologiegenome`
-15 echo &quot;The artbio/biologiegenome docker container is deploying...\n&quot;
-16 sleep 90
-17 echo &quot;The artbio/biologiegenome docker container is up and running\n&quot;
-18 docker logs  $DOCKER_INSTANCE
-19 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
+ 4 supervisorctl stop all
+ 5 docker pull $1
+ 6 echo &quot;Running $1 docker container\n&quot;
+ 7 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
+ 8           --privileged=true \
+ 9           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \
+10           -e GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True \
+11           -e GALAXY_CONFIG_ENABLE_USER_DELETION=True \
+12           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
+13           -v /tmp/:/tmp/ \
+14           -v /export/:/export \
+15           $1`
+16 echo &quot;The $1 docker container is deploying...\n&quot;
+17 sleep 90
+18 echo &quot;The $1 docker container is up and running\n&quot;
+19 docker logs  $DOCKER_INSTANCE
+20 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
 </code></pre>
 
 <ol>
 <li>The shebang line. Says that it is a script code and that the interpreter to execute the
 code is sh and can be found in the /usr/bin/env environment</li>
 <li>set -e says to the sh interpreter to exit the run at first error (to avoid catastrophes)</li>
-<li>prompts "Now pulling the galaxykickstart docker image from DockerHub"
-  bis: stop the galaxy services (galaxy, postgresql, slurm, nginx,...) that were deployed before with ansible</li>
-<li>Pulls (Downloads) the Docker Image <code>artbio/biologiegenome</code> from
-the <a href="https://hub.docker.com/r/artbio/biologiegenome/">DockerHub repository</a></li>
+<li>prompts "Now pulling the galaxykickstart docker image from DockerHub"</li>
+<li>stop the galaxy services (galaxy, postgresql, slurm, nginx,...) that were deployed before with ansible (to liberate ports)</li>
+<li>Pulls (Downloads) the Docker Image specified as parameter to the script (either<code>artbio/biologiegenome</code>
+or <code>artbio/rna-biologie-genome</code>) from the <a href="https://hub.docker.com/r/artbio/biologiegenome/">DockerHub repository</a></li>
 <li>reports this action to the terminal</li>
 <li>
-<p>Lines 6 to 14 are actually a single command to run an instance of the galaxykickstart
-docker image. Note the <code>\</code> at ends of lines 7 to 13: this character <code>\</code> specify that the
+<p>Lines 7 to 15 are actually a single command to run an instance of the galaxykickstart
+docker image. Note the <code>\</code> at ends of lines 7 to 14: this character <code>\</code> specify that the
 code line is continued without line break for the bash interpreter.</p>
-<p>The line 6 starts with an <code>export DOCKER_INSTANCE=</code> instruction. This means that the result
+<p>The line 7 starts with an <code>export DOCKER_INSTANCE=</code> instruction. This means that the result
 of the command between ` after the sign <code>=</code> will be put in the environmental variable
 <code>DOCKER_INSTANCE</code>, available system-wide.</p>
 <p>Now, the docker command (between `) itself:</p>
-<p>Still in line 11, we have <code>docker run -d -p 80:80 -p 21:21 -p 8800:8800</code>.</p>
+<p>Still in line 7, we have <code>docker run -d -p 80:80 -p 21:21 -p 8800:8800</code>.</p>
 <p>This means that a container will be run as a deamon (<code>-d</code> option) and that the internal
 TCP/IP ports 80 (web interface) and 21 (ftp interface) of the docker instance will be mapped
 to the ports 80 and 21 of your machin (The VM in this case). Note that in the syntax <code>-p 80:80</code>,
@@ -257,10 +257,10 @@ the docker container with the value <code>True</code></li>
 the docker container with the value <code>True</code></p>
 <p>Note that all these exports in the docker command correspond to advanced boiling/tuning of the docker container.
 You are not obliged to understand the details to get the container properly running.
-12. Now the -v is important, better to understand it !</p>
+13. Now the -v is important, better to understand it !</p>
 <p>-v stands for "volume". the <code>-v</code> option says to export the /tmp directory of the docker container
 to the /tmp directory of the host.
-13. we also export the /export directory of the container (any docker container has or
+14. we also export the /export directory of the container (any docker container has or
 should have by default an /export directory) to an /export directory of the host (your VM here).</p>
 <p>Note that if the /export directory does not exists at docker run runtime, it will be created.</p>
 <p>So it is important to understand the -v magics: every directory specified by the -v option will be shared
@@ -270,7 +270,8 @@ the same directory is accessible either from inside the docker container or from
 If you don't do that, all operations performed with a container are lost when you stop this container !</p>
 </li>
 <li>
-<p>This is the end of the docker run command. The docker image to be instantiated is specified.</p>
+<p>This is the end of the docker run command. The docker image to be instantiated is specified by $1 variable,
+the parameter passed to the script at runtime.</p>
 </li>
 <li>reports to the terminal user</li>
 <li>wait 90 sec during the docker container deployment</li>
@@ -279,8 +280,8 @@ If you don't do that, all operations performed with a container are lost when yo
 <code>docker logs</code> followed by the identification number of the docker container.
 We have put this ID in the variable <code>DOCKER_INSTANCE</code>
 and we access to the content of this variable by prefixing the variable with a <code>$</code>:
-<code>docker logs -f $DOCKER_INSTANCE</code></li>
-<li>This is just an update of the python package <code>cryptography</code> for the galaxy server. You see
+<code>docker logs $DOCKER_INSTANCE</code></li>
+<li>This is just an update of the python package <code>cryptography</code> required for the galaxy server. You see
 here an example of how a user can interact with the docker container to adjust the services it
 is providing.</li>
 </ol>
