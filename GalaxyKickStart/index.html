@@ -82,10 +82,9 @@
         
             <li><a class="toctree-l3" href="#deployment">Deployment</a></li>
         
+            <li><a class="toctree-l3" href="#transfert-input-data-to-you-newly-deployed-galaxy-instance-for-you-incoming-analyses">Transfert input data to you newly deployed Galaxy instance (for you incoming analyses)</a></li>
+        
         </ul>
-    
-
-    <li class="toctree-l2"><a href="#usrbinenv-bash">!/usr/bin/env bash</a></li>
     
 
     </ul>
@@ -210,14 +209,23 @@ an admin user. Just use the <code>admin@galaxy.org:admin</code> as credentials (
 <p>When logged in, see that required tools as well as workflows are already installed !</p>
 </li>
 </ul>
+<h3 id="transfert-input-data-to-you-newly-deployed-galaxy-instance-for-you-incoming-analyses">Transfert input data to you newly deployed Galaxy instance (for you incoming analyses)</h3>
+<ul>
+<li>Click on the small wheel at the top right of your Galaxy interface (history menu)</li>
+<li>select the <code>importer depuis un fichier</code> menu (or <code>import from a file</code> if you have the English interface)</li>
+<li>copy this url :</li>
+<li><a href="http://134.158.246.184/history/export_archive?id=f597429621d6eb2b">http://134.158.246.184/history/export_archive?id=f597429621d6eb2b</a></li>
+<li>repeat the same operation with: </li>
+<li><a href="http://134.158.246.184/history/export_archive?id=1cd8e2f6b131e891">http://134.158.246.184/history/export_archive?id=1cd8e2f6b131e891</a></li>
+<li><a href="http://134.158.246.184/history/export_archive?id=ebfb8f50c6abde6d">http://134.158.246.184/history/export_archive?id=ebfb8f50c6abde6d</a></li>
+</ul>
 <h4 id="the-run_galaxykickstartsh-script-explained">the run_galaxykickstart.sh script explained</h4>
 <p>NB: in the following code, numbers in line heads should be removed to run the script.</p>
-<p>```</p>
-<h1 id="usrbinenv-bash">!/usr/bin/env bash</h1>
-<p>set -e
+<pre><code>#!/usr/bin/env bash
+set -e
 apt update -y
 apt install -y python-pip python-dev python-setuptools git htop
-echo "Upgrading pip"
+echo &quot;Upgrading pip&quot;
 pip install -U pip
 pip --version
 pip install ansible==2.4
@@ -226,7 +234,9 @@ git clone https://github.com/ARTbio/GalaxyKickStart.git -b $1
 cd GalaxyKickStart/
 ansible-galaxy install -r requirements_roles.yml -p roles/ -f
 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
-echo "end of deployment\n"```</p>
+echo &quot;end of deployment\n&quot;
+</code></pre>
+
 <ol>
 <li>The shebang line (<code>#!</code>) says that it is a script code that has to be executed
 by the shell bash which can be found in the /usr/bin/env environment</li>
