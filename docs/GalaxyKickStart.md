@@ -62,6 +62,16 @@ The installation is expected to take about 20 min for `biogen2018` or ~40 min fo
     an admin user. Just use the `admin@galaxy.org:admin` as credentials (user:password)
     
     When logged in, see that required tools as well as workflows are already installed !
+    
+### Transfert input data to you newly deployed Galaxy instance (for you incoming analyses)
+
+- Click on the small wheel at the top right of your Galaxy interface (history menu)
+- select the `importer depuis un fichier` menu (or `import from a file` if you have the English interface)
+- copy this url :
+  - [http://134.158.246.184/history/export_archive?id=f597429621d6eb2b](http://134.158.246.184/history/export_archive?id=f597429621d6eb2b)
+- repeat the same operation with: 
+  - [http://134.158.246.184/history/export_archive?id=1cd8e2f6b131e891](http://134.158.246.184/history/export_archive?id=1cd8e2f6b131e891)
+  - [http://134.158.246.184/history/export_archive?id=ebfb8f50c6abde6d](http://134.158.246.184/history/export_archive?id=ebfb8f50c6abde6d)
 
 
 #### the run_galaxykickstart.sh script explained
@@ -82,7 +92,8 @@ git clone https://github.com/ARTbio/GalaxyKickStart.git -b $1
 cd GalaxyKickStart/
 ansible-galaxy install -r requirements_roles.yml -p roles/ -f
 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
-echo "end of deployment\n"```
+echo "end of deployment\n"
+```
 
 0. The shebang line (`#!`) says that it is a script code that has to be executed
 by the shell bash which can be found in the /usr/bin/env environment
