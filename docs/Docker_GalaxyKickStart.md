@@ -73,7 +73,7 @@ NB: in the following code, numbers in line heads should be removed to run the sc
 20 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
 21 docker exec $DOCKER_INSTANCE sudo su galaxy -c 'cd ~/galaxy/config && wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt'
 22 echo "Galaxy in container will restart to take into account new settings\n"
-23 sleep 30
+23 sleep 120
 24 docker exec $DOCKER_INSTANCE sudo supervisorctl restart galaxy:
 ```
 
