@@ -48,8 +48,11 @@ Repository [https://github.com/ARTbio/GalaxyKickStart](https://github.com/ARTbio
 - download the script `run_galaxykickstart.sh` using the command `wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_galaxykickstart.sh`
 - run the script using either the command
 `sh run_galaxykickstart.sh biogen2018; sh run_galaxykickstart.sh biogen2018`
+
 *OR* (to be decided during the training)
+
 `sh run_galaxykickstart.sh pasteur-2018; sh run_galaxykickstart.sh pasteur-2018`
+
 The installation is expected to take about 20 min for `biogen2018` or ~40 min for `pasteur-2018`
 
 - When the deployment is finished, connect to your ansible-deployed "GalaxyKickStart" instance:
