@@ -56,7 +56,7 @@ NB: in the following code, numbers in line heads should be removed to run the sc
  3 echo "Now pulling the galaxykickstart docker image from DockerHub\n"
  4 supervisorctl stop all
  5 docker pull $1
- 6 echo "Running $1 docker container\n"
+ 6 echo "Running galaxykickstart docker container\n"
  7 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
  8           --privileged=true \
  9           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \
@@ -71,6 +71,10 @@ NB: in the following code, numbers in line heads should be removed to run the sc
 18 echo "The $1 docker container is up and running\n"
 19 docker logs  $DOCKER_INSTANCE
 20 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
+21 docker exec $DOCKER_INSTANCE sudo su galaxy -c 'cd ~/galaxy/config && wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt'
+22 echo "Galaxy in container will restart to take into account new settings\n"
+23 sleep 30
+24 docker exec $DOCKER_INSTANCE sudo supervisorctl restart galaxy:
 ```
 
 1. The shebang line. Says that it is a script code and that the interpreter to execute the
@@ -145,5 +149,7 @@ and we access to the content of this variable by prefixing the variable with a `
 20. This is just an update of the python package `cryptography` required for the galaxy server. You see
 here an example of how a user can interact with the docker container to adjust the services it
 is providing.
+21. another update of a configuration file for galaxy (job_conf.xml)
+24. Restart Galaxy inside the container to take the setting changes into consideration
 
 
