@@ -2,7 +2,7 @@
 # run `sh run_docker_analyse_genomes_2019`
 set -e
 echo "Now pulling the artbio/analyse_genomes:2019 docker image from DockerHub\n"
-# supervisorctl stop all
+supervisorctl stop all
 docker pull artbio/analyse_genomes:2019
 echo "Running artbio/analyse_genomes:2019 docker container\n"
 mkdir /galaxy_export /galaxy_tmp && chown 1450:1450 /galaxy_export /galaxy_tmp
