@@ -54,4 +54,4 @@ After a few seconds, the VM turns on "green" and an `ssh` menu becomes selectabl
   - Confirm that you want to trash the VM and loose everything.
   - after a few seconds the VM disappears from the Dashboard.
 
-## To perform the training session, you need now to access to the [supporting manual](https://artbio.github.io/Run-Galaxy/index.html)
+## To perform the training session, you need now to access to the [supporting manual](https://artbio.github.io/startbio/Run-Galaxy/)
