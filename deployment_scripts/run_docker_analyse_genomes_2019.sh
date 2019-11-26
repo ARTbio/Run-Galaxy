@@ -14,7 +14,7 @@ export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
           -v /galaxy_tmp:/tmp \
           -v /galaxy_export:/export \
-          analyse_genomes:2019`
+          artbio/analyse_genomes:2019`
 echo "The analyse_genomes:2019 docker container is deploying...\n"
 echo "Press Ctrl-C to interrupt this log and start using the container...\n"
 docker logs -f  $DOCKER_INSTANCE
