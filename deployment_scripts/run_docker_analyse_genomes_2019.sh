@@ -1,5 +1,5 @@
-#!/usr/bin/env sh
-# run `sh run_docker_analyse_genomes_2019`
+#!/usr/bin/env bash
+# run `bash run_docker_analyse_genomes_2019`
 set -e
 echo "Now pulling the artbio/analyse_genomes:2019 docker image from DockerHub\n"
 supervisorctl stop all
