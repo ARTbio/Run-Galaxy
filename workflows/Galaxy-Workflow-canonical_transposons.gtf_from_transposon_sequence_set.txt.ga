@@ -28,14 +28,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 237.5,
+                "bottom": 405.5,
                 "height": 81,
-                "left": -79.5,
-                "right": 120.5,
-                "top": 156.5,
+                "left": 116,
+                "right": 316,
+                "top": 324.5,
                 "width": 200,
-                "x": -79.5,
-                "y": 156.5
+                "x": 116,
+                "y": 324.5
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -65,14 +65,14 @@
                 }
             ],
             "position": {
-                "bottom": 424.5,
+                "bottom": 592.5,
                 "height": 92,
-                "left": 54.5,
-                "right": 254.5,
-                "top": 332.5,
+                "left": 250,
+                "right": 450,
+                "top": 500.5,
                 "width": 200,
-                "x": 54.5,
-                "y": 332.5
+                "x": 250,
+                "y": 500.5
             },
             "post_job_actions": {
                 "HideDatasetActionout_file1": {
@@ -109,14 +109,14 @@
                 }
             ],
             "position": {
-                "bottom": 530.5,
+                "bottom": 698.5,
                 "height": 112,
-                "left": 263.5,
-                "right": 463.5,
-                "top": 418.5,
+                "left": 459,
+                "right": 659,
+                "top": 586.5,
                 "width": 200,
-                "x": 263.5,
-                "y": 418.5
+                "x": 459,
+                "y": 586.5
             },
             "post_job_actions": {
                 "ChangeDatatypeActionout_file1": {
@@ -166,14 +166,14 @@
                 }
             ],
             "position": {
-                "bottom": 501,
+                "bottom": 669,
                 "height": 112,
-                "left": 522,
-                "right": 722,
-                "top": 389,
+                "left": 717.5,
+                "right": 917.5,
+                "top": 557,
                 "width": 200,
-                "x": 522,
-                "y": 389
+                "x": 717.5,
+                "y": 557
             },
             "post_job_actions": {
                 "HideDatasetActionout_file1": {
@@ -216,14 +216,14 @@
                 }
             ],
             "position": {
-                "bottom": 152.5,
+                "bottom": 320.5,
                 "height": 112,
-                "left": 338,
-                "right": 538,
-                "top": 40.5,
+                "left": 533.5,
+                "right": 733.5,
+                "top": 208.5,
                 "width": 200,
-                "x": 338,
-                "y": 40.5
+                "x": 533.5,
+                "y": 208.5
             },
             "post_job_actions": {
                 "HideDatasetActionout_file1": {
@@ -266,14 +266,14 @@
                 }
             ],
             "position": {
-                "bottom": 279.5,
+                "bottom": 447.5,
                 "height": 112,
-                "left": 552,
-                "right": 752,
-                "top": 167.5,
+                "left": 747.5,
+                "right": 947.5,
+                "top": 335.5,
                 "width": 200,
-                "x": 552,
-                "y": 167.5
+                "x": 747.5,
+                "y": 335.5
             },
             "post_job_actions": {
                 "HideDatasetActionout_file1": {
@@ -316,14 +316,14 @@
                 }
             ],
             "position": {
-                "bottom": 415.5,
+                "bottom": 583.5,
                 "height": 112,
-                "left": 742.5,
-                "right": 942.5,
-                "top": 303.5,
+                "left": 938,
+                "right": 1138,
+                "top": 471.5,
                 "width": 200,
-                "x": 742.5,
-                "y": 303.5
+                "x": 938,
+                "y": 471.5
             },
             "post_job_actions": {
                 "HideDatasetActionout_file1": {
@@ -366,14 +366,14 @@
                 }
             ],
             "position": {
-                "bottom": 552.5,
+                "bottom": 720.5,
                 "height": 92,
-                "left": 904,
-                "right": 1104,
-                "top": 460.5,
+                "left": 1099.5,
+                "right": 1299.5,
+                "top": 628.5,
                 "width": 200,
-                "x": 904,
-                "y": 460.5
+                "x": 1099.5,
+                "y": 628.5
             },
             "post_job_actions": {
                 "HideDatasetActionout_file1": {
@@ -410,14 +410,14 @@
                 }
             ],
             "position": {
-                "bottom": 440.5,
+                "bottom": 608.5,
                 "height": 112,
-                "left": 1186.5,
-                "right": 1386.5,
-                "top": 328.5,
+                "left": 1382,
+                "right": 1582,
+                "top": 496.5,
                 "width": 200,
-                "x": 1186.5,
-                "y": 328.5
+                "x": 1382,
+                "y": 496.5
             },
             "post_job_actions": {
                 "ChangeDatatypeActionout_file1": {
@@ -450,7 +450,7 @@
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "f2bb868f-f893-4f25-9de2-9228e8b9b933"
+                    "uuid": "f0487f48-d6b7-4051-8d0c-483053c8eb24"
                 }
             ]
         }
@@ -458,6 +458,6 @@
     "tags": [
         "Biologiedesg\u00e9nomes"
     ],
-    "uuid": "6a85574e-b1e7-4bfe-b9bd-80698293fe9b",
-    "version": 11
+    "uuid": "2cf4c333-3d9f-4693-b215-bbfc5b905887",
+    "version": 1
 }

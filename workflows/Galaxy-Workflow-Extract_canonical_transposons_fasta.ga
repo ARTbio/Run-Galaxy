@@ -14,6 +14,7 @@
         }
     ],
     "format-version": "0.1",
+    "license": "MIT",
     "name": "Extract canonical transposons fasta",
     "steps": {
         "0": {
@@ -32,14 +33,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 677,
+                "bottom": 756,
                 "height": 81,
-                "left": 303,
-                "right": 503,
-                "top": 596,
+                "left": 437.5,
+                "right": 637.5,
+                "top": 675,
                 "width": 200,
-                "x": 303,
-                "y": 596
+                "x": 437.5,
+                "y": 675
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -69,28 +70,28 @@
                 }
             ],
             "position": {
-                "bottom": 635.5,
+                "bottom": 714.5,
                 "height": 92,
-                "left": 532,
-                "right": 732,
-                "top": 543.5,
+                "left": 665.5,
+                "right": 865.5,
+                "top": 622.5,
                 "width": 200,
-                "x": 532,
-                "y": 543.5
+                "x": 665.5,
+                "y": 622.5
             },
-            "post_job_actions": {},
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
             "tool_id": "Grep1",
             "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"invert\": \"\", \"keep_header\": \"false\", \"pattern\": \"(^ID)|( +[GATCN]{10})\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.0.3",
             "type": "tool",
             "uuid": "f501b244-9502-4481-924a-fff9704f9005",
-            "workflow_outputs": [
-                {
-                    "label": null,
-                    "output_name": "out_file1",
-                    "uuid": "eb6dd7cd-c1d9-4942-9dd2-57f1ac52c5ac"
-                }
-            ]
+            "workflow_outputs": []
         },
         "2": {
             "annotation": "",
@@ -113,16 +114,22 @@
                 }
             ],
             "position": {
-                "bottom": 686.5,
+                "bottom": 765.5,
                 "height": 112,
-                "left": 749.5,
-                "right": 949.5,
-                "top": 574.5,
+                "left": 884,
+                "right": 1084,
+                "top": 653.5,
                 "width": 200,
-                "x": 749.5,
-                "y": 574.5
+                "x": 884,
+                "y": 653.5
             },
-            "post_job_actions": {},
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
             "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
             "tool_shed_repository": {
                 "changeset_revision": "ae8c4b2488e7",
@@ -134,13 +141,7 @@
             "tool_version": "1.0.1",
             "type": "tool",
             "uuid": "83fe6986-7819-4d57-af98-1b63aeed1e64",
-            "workflow_outputs": [
-                {
-                    "label": null,
-                    "output_name": "out_file1",
-                    "uuid": "dddec59c-fd36-4e3f-9606-9b1783af2879"
-                }
-            ]
+            "workflow_outputs": []
         },
         "3": {
             "annotation": "",
@@ -163,16 +164,22 @@
                 }
             ],
             "position": {
-                "bottom": 670.5,
+                "bottom": 749.5,
                 "height": 112,
-                "left": 988.5,
-                "right": 1188.5,
-                "top": 558.5,
+                "left": 1123,
+                "right": 1323,
+                "top": 637.5,
                 "width": 200,
-                "x": 988.5,
-                "y": 558.5
+                "x": 1123,
+                "y": 637.5
             },
-            "post_job_actions": {},
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
             "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
             "tool_shed_repository": {
                 "changeset_revision": "ae8c4b2488e7",
@@ -184,13 +191,7 @@
             "tool_version": "1.0.1",
             "type": "tool",
             "uuid": "679d947e-18f1-451d-b806-556fe6c031c2",
-            "workflow_outputs": [
-                {
-                    "label": null,
-                    "output_name": "out_file1",
-                    "uuid": "ef122599-26d7-466c-875a-233b3da2d333"
-                }
-            ]
+            "workflow_outputs": []
         },
         "4": {
             "annotation": "",
@@ -213,14 +214,14 @@
                 }
             ],
             "position": {
-                "bottom": 648.5,
+                "bottom": 727.5,
                 "height": 112,
-                "left": 1219.5,
-                "right": 1419.5,
-                "top": 536.5,
+                "left": 1354,
+                "right": 1554,
+                "top": 615.5,
                 "width": 200,
-                "x": 1219.5,
-                "y": 536.5
+                "x": 1354,
+                "y": 615.5
             },
             "post_job_actions": {
                 "ChangeDatatypeActionout_file1": {
@@ -253,12 +254,14 @@
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "499884ce-8228-4b7d-ad8d-575802ea1d4d"
+                    "uuid": "db9e42d5-b703-41ab-8de4-0b381165ccae"
                 }
             ]
         }
     },
-    "tags": [],
-    "uuid": "974ba1be-401a-4ecd-b81d-6832d9588856",
+    "tags": [
+        "BiologieDesGenomes"
+    ],
+    "uuid": "b50a004f-de3e-4c20-942d-e97f65416c15",
     "version": 4
 }
