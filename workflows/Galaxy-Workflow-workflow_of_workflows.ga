@@ -27,14 +27,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 451,
+                "bottom": 539,
                 "height": 81,
-                "left": 447,
-                "right": 647,
-                "top": 370,
+                "left": 702.5,
+                "right": 902.5,
+                "top": 458,
                 "width": 200,
-                "x": 447,
-                "y": 370
+                "x": 702.5,
+                "y": 458
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -58,14 +58,14 @@
             "name": "canonical_transposons.gtf from transposon_sequence_set.txt",
             "outputs": [],
             "position": {
-                "bottom": 412.5,
+                "bottom": 500.5,
                 "height": 172,
-                "left": 820.5,
-                "right": 1020.5,
-                "top": 240.5,
+                "left": 1076,
+                "right": 1276,
+                "top": 328.5,
                 "width": 200,
-                "x": 820.5,
-                "y": 240.5
+                "x": 1076,
+                "y": 328.5
             },
             "subworkflow": {
                 "a_galaxy_workflow": "true",
@@ -627,14 +627,14 @@
                 "tags": "",
                 "uuid": "66630ae5-f525-4b5b-b423-3b5cc205d148"
             },
-            "tool_id": "964b37715ec9bd22",
+            "tool_id": "1cd8e2f6b131e891",
             "type": "subworkflow",
             "uuid": "c03fd459-3cda-4244-9626-07a86f14806f",
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "10:outfile",
-                    "uuid": "70df827c-30ce-44f4-9154-ed408acf4d3f"
+                    "uuid": "c9f3c152-3fe7-4dea-b9b1-3f136b1a8249"
                 }
             ]
         },
@@ -653,14 +653,14 @@
             "name": "Extract canonical transposons fasta",
             "outputs": [],
             "position": {
-                "bottom": 574.5,
+                "bottom": 662.5,
                 "height": 132,
-                "left": 821.5,
-                "right": 1021.5,
-                "top": 442.5,
+                "left": 1077,
+                "right": 1277,
+                "top": 530.5,
                 "width": 200,
-                "x": 821.5,
-                "y": 442.5
+                "x": 1077,
+                "y": 530.5
             },
             "subworkflow": {
                 "a_galaxy_workflow": "true",
@@ -920,19 +920,19 @@
                 "tags": "",
                 "uuid": "f99eed53-8d13-49b6-be80-027e7c5605a7"
             },
-            "tool_id": "cbbbf59e8f08c98c",
+            "tool_id": "ebfb8f50c6abde6d",
             "type": "subworkflow",
             "uuid": "2f276ac9-7d39-4262-bf7e-666b74336e97",
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "4:out_file1",
-                    "uuid": "e5b24d50-1cb8-4b7a-bcf7-bf4807b4f70f"
+                    "uuid": "a60404cc-b7a3-46b4-8a21-c6a5581c5f05"
                 }
             ]
         }
     },
     "tags": [],
-    "uuid": "0035f6c1-cf56-4ba3-bcfc-174ace88e163",
-    "version": 3
+    "uuid": "434104ed-7a8a-4083-890f-218f2874b1ac",
+    "version": 1
 }

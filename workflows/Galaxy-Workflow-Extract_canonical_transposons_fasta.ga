@@ -6,6 +6,11 @@
             "class": "Person",
             "identifier": "https://orcid.org/0000-0001-7709-2116",
             "name": ""
+        },
+        {
+            "class": "Person",
+            "identifier": "https://orcid.org/0000-0001-7709-2116",
+            "name": "Christophe Antoniewski"
         }
     ],
     "format-version": "0.1",
@@ -27,20 +32,20 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 630,
+                "bottom": 677,
                 "height": 81,
-                "left": 437,
-                "right": 637,
-                "top": 549,
+                "left": 303,
+                "right": 503,
+                "top": 596,
                 "width": 200,
-                "x": 437,
-                "y": 549
+                "x": 303,
+                "y": 596
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
             "tool_version": null,
             "type": "data_input",
-            "uuid": "9a7ca89e-16d2-45e3-b074-3776b0013e9d",
+            "uuid": "6d2462d5-e0b2-46f5-bfd0-504ac71dc185",
             "workflow_outputs": []
         },
         "1": {
@@ -64,26 +69,26 @@
                 }
             ],
             "position": {
-                "bottom": 513.5,
+                "bottom": 635.5,
                 "height": 92,
-                "left": 661,
-                "right": 861,
-                "top": 421.5,
+                "left": 532,
+                "right": 732,
+                "top": 543.5,
                 "width": 200,
-                "x": 661,
-                "y": 421.5
+                "x": 532,
+                "y": 543.5
             },
             "post_job_actions": {},
             "tool_id": "Grep1",
             "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"invert\": \"\", \"keep_header\": \"false\", \"pattern\": \"(^ID)|( +[GATCN]{10})\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.0.3",
             "type": "tool",
-            "uuid": "56d3b228-091b-4380-9cf6-cad180ab7a17",
+            "uuid": "f501b244-9502-4481-924a-fff9704f9005",
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "01827e02-996d-4b1a-99b6-60fb1b8e8993"
+                    "uuid": "eb6dd7cd-c1d9-4942-9dd2-57f1ac52c5ac"
                 }
             ]
         },
@@ -108,14 +113,14 @@
                 }
             ],
             "position": {
-                "bottom": 639.5,
+                "bottom": 686.5,
                 "height": 112,
-                "left": 882.5,
-                "right": 1082.5,
-                "top": 527.5,
+                "left": 749.5,
+                "right": 949.5,
+                "top": 574.5,
                 "width": 200,
-                "x": 882.5,
-                "y": 527.5
+                "x": 749.5,
+                "y": 574.5
             },
             "post_job_actions": {},
             "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
@@ -128,12 +133,12 @@
             "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"^ID   \", \"replacement\": \">\"}, {\"__index__\": 1, \"pattern\": \"([GATCN]+) \", \"replacement\": \"\\\\1\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.0.1",
             "type": "tool",
-            "uuid": "cbab9d0d-f86a-4f61-bfdc-332606572101",
+            "uuid": "83fe6986-7819-4d57-af98-1b63aeed1e64",
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "3ab73d25-b368-4de3-a58b-98e21341c82b"
+                    "uuid": "dddec59c-fd36-4e3f-9606-9b1783af2879"
                 }
             ]
         },
@@ -158,14 +163,14 @@
                 }
             ],
             "position": {
-                "bottom": 622.5,
+                "bottom": 670.5,
                 "height": 112,
-                "left": 1122.5,
-                "right": 1322.5,
-                "top": 510.5,
+                "left": 988.5,
+                "right": 1188.5,
+                "top": 558.5,
                 "width": 200,
-                "x": 1122.5,
-                "y": 510.5
+                "x": 988.5,
+                "y": 558.5
             },
             "post_job_actions": {},
             "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
@@ -178,12 +183,12 @@
             "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \" +([GATCN]+) +\\\\d+\", \"replacement\": \"\\\\1\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.0.1",
             "type": "tool",
-            "uuid": "d0481f8c-66e2-46ef-9c66-b56ae2f76747",
+            "uuid": "679d947e-18f1-451d-b806-556fe6c031c2",
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "39e74d7d-ff20-43a2-8b3b-f05c3a7569ad"
+                    "uuid": "ef122599-26d7-466c-875a-233b3da2d333"
                 }
             ]
         },
@@ -208,14 +213,14 @@
                 }
             ],
             "position": {
-                "bottom": 602.5,
+                "bottom": 648.5,
                 "height": 112,
-                "left": 1353.5,
-                "right": 1553.5,
-                "top": 490.5,
+                "left": 1219.5,
+                "right": 1419.5,
+                "top": 536.5,
                 "width": 200,
-                "x": 1353.5,
-                "y": 490.5
+                "x": 1219.5,
+                "y": 536.5
             },
             "post_job_actions": {
                 "ChangeDatatypeActionout_file1": {
@@ -243,17 +248,17 @@
             "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \" +.+\", \"replacement\": \"\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.0.1",
             "type": "tool",
-            "uuid": "248508bd-3cd4-41b6-a857-a8c1d91bae18",
+            "uuid": "c1f00b2d-fabf-4da6-a319-c28c4384ef97",
             "workflow_outputs": [
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "f7caad04-14c0-4726-8853-5f3ef9176a94"
+                    "uuid": "499884ce-8228-4b7d-ad8d-575802ea1d4d"
                 }
             ]
         }
     },
     "tags": [],
-    "uuid": "ea10f143-5cf2-4e01-85e6-f47924710343",
-    "version": 9
+    "uuid": "974ba1be-401a-4ecd-b81d-6832d9588856",
+    "version": 4
 }
