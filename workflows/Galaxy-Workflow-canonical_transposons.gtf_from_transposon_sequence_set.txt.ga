@@ -28,14 +28,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 295.5,
+                "bottom": 237.5,
                 "height": 81,
-                "left": -173,
-                "right": 27,
-                "top": 214.5,
+                "left": -79.5,
+                "right": 120.5,
+                "top": 156.5,
                 "width": 200,
-                "x": -173,
-                "y": 214.5
+                "x": -79.5,
+                "y": 156.5
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -65,14 +65,14 @@
                 }
             ],
             "position": {
-                "bottom": 482.5,
+                "bottom": 424.5,
                 "height": 92,
-                "left": -39,
-                "right": 161,
-                "top": 390.5,
+                "left": 54.5,
+                "right": 254.5,
+                "top": 332.5,
                 "width": 200,
-                "x": -39,
-                "y": 390.5
+                "x": 54.5,
+                "y": 332.5
             },
             "post_job_actions": {
                 "HideDatasetActionout_file1": {
@@ -109,16 +109,29 @@
                 }
             ],
             "position": {
-                "bottom": 588.5,
+                "bottom": 530.5,
                 "height": 112,
-                "left": 170,
-                "right": 370,
-                "top": 476.5,
+                "left": 263.5,
+                "right": 463.5,
+                "top": 418.5,
                 "width": 200,
-                "x": 170,
-                "y": 476.5
+                "x": 263.5,
+                "y": 418.5
             },
-            "post_job_actions": {},
+            "post_job_actions": {
+                "ChangeDatatypeActionout_file1": {
+                    "action_arguments": {
+                        "newtype": "tabular"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "out_file1"
+                },
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
             "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
             "tool_shed_repository": {
                 "changeset_revision": "ae8c4b2488e7",
@@ -130,13 +143,7 @@
             "tool_version": "1.0.1",
             "type": "tool",
             "uuid": "ea2c1dbe-87ea-454d-9b78-3e596aa59610",
-            "workflow_outputs": [
-                {
-                    "label": null,
-                    "output_name": "out_file1",
-                    "uuid": "67b52461-6d41-4963-97a6-d31368919948"
-                }
-            ]
+            "workflow_outputs": []
         },
         "3": {
             "annotation": "",
@@ -159,16 +166,22 @@
                 }
             ],
             "position": {
-                "bottom": 558,
+                "bottom": 501,
                 "height": 112,
-                "left": 428.5,
-                "right": 628.5,
-                "top": 446,
+                "left": 522,
+                "right": 722,
+                "top": 389,
                 "width": 200,
-                "x": 428.5,
-                "y": 446
+                "x": 522,
+                "y": 389
             },
-            "post_job_actions": {},
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
             "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
             "tool_shed_repository": {
                 "changeset_revision": "ae8c4b2488e7",
@@ -180,13 +193,7 @@
             "tool_version": "1.0.1",
             "type": "tool",
             "uuid": "05d49688-b5b2-4501-b7de-f135b9528893",
-            "workflow_outputs": [
-                {
-                    "label": null,
-                    "output_name": "out_file1",
-                    "uuid": "026fdcb2-6490-4ea9-813e-fd3f5aa8b0b4"
-                }
-            ]
+            "workflow_outputs": []
         },
         "4": {
             "annotation": "",
@@ -209,16 +216,22 @@
                 }
             ],
             "position": {
-                "bottom": 209.5,
+                "bottom": 152.5,
                 "height": 112,
-                "left": 242.5,
-                "right": 442.5,
-                "top": 97.5,
+                "left": 338,
+                "right": 538,
+                "top": 40.5,
                 "width": 200,
-                "x": 242.5,
-                "y": 97.5
+                "x": 338,
+                "y": 40.5
             },
-            "post_job_actions": {},
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
             "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
             "tool_shed_repository": {
                 "changeset_revision": "ae8c4b2488e7",
@@ -230,13 +243,7 @@
             "tool_version": "1.0.1",
             "type": "tool",
             "uuid": "f4e42eb3-5911-469d-9f79-a2be75a39389",
-            "workflow_outputs": [
-                {
-                    "label": null,
-                    "output_name": "out_file1",
-                    "uuid": "14a38730-ae28-4de7-bd97-553c598fd246"
-                }
-            ]
+            "workflow_outputs": []
         },
         "5": {
             "annotation": "",
@@ -259,16 +266,22 @@
                 }
             ],
             "position": {
-                "bottom": 335.5,
+                "bottom": 279.5,
                 "height": 112,
-                "left": 458.5,
-                "right": 658.5,
-                "top": 223.5,
+                "left": 552,
+                "right": 752,
+                "top": 167.5,
                 "width": 200,
-                "x": 458.5,
-                "y": 223.5
+                "x": 552,
+                "y": 167.5
             },
-            "post_job_actions": {},
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
             "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
             "tool_shed_repository": {
                 "changeset_revision": "ae8c4b2488e7",
@@ -280,13 +293,7 @@
             "tool_version": "1.0.1",
             "type": "tool",
             "uuid": "065508b3-e2d9-4590-82ec-a9b46f28f326",
-            "workflow_outputs": [
-                {
-                    "label": null,
-                    "output_name": "out_file1",
-                    "uuid": "032d7a32-47d2-43e7-a934-58a49dd6cb39"
-                }
-            ]
+            "workflow_outputs": []
         },
         "6": {
             "annotation": "",
@@ -309,16 +316,22 @@
                 }
             ],
             "position": {
-                "bottom": 473.5,
+                "bottom": 415.5,
                 "height": 112,
-                "left": 649,
-                "right": 849,
-                "top": 361.5,
+                "left": 742.5,
+                "right": 942.5,
+                "top": 303.5,
                 "width": 200,
-                "x": 649,
-                "y": 361.5
+                "x": 742.5,
+                "y": 303.5
             },
-            "post_job_actions": {},
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
             "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
             "tool_shed_repository": {
                 "changeset_revision": "ae8c4b2488e7",
@@ -330,13 +343,7 @@
             "tool_version": "1.0.1",
             "type": "tool",
             "uuid": "1f9ffffc-3b74-44d7-89dc-ce6f240fd078",
-            "workflow_outputs": [
-                {
-                    "label": null,
-                    "output_name": "out_file1",
-                    "uuid": "74923992-84ed-40a1-8ec8-6c34784d1253"
-                }
-            ]
+            "workflow_outputs": []
         },
         "7": {
             "annotation": "",
@@ -359,14 +366,14 @@
                 }
             ],
             "position": {
-                "bottom": 610.5,
+                "bottom": 552.5,
                 "height": 92,
-                "left": 810.5,
-                "right": 1010.5,
-                "top": 518.5,
+                "left": 904,
+                "right": 1104,
+                "top": 460.5,
                 "width": 200,
-                "x": 810.5,
-                "y": 518.5
+                "x": 904,
+                "y": 460.5
             },
             "post_job_actions": {
                 "HideDatasetActionout_file1": {
@@ -393,12 +400,7 @@
                     "output_name": "out_file1"
                 }
             },
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Regex Find And Replace",
-                    "name": "input"
-                }
-            ],
+            "inputs": [],
             "label": null,
             "name": "Regex Find And Replace",
             "outputs": [
@@ -408,14 +410,14 @@
                 }
             ],
             "position": {
-                "bottom": 498.5,
+                "bottom": 440.5,
                 "height": 112,
-                "left": 1093,
-                "right": 1293,
-                "top": 386.5,
+                "left": 1186.5,
+                "right": 1386.5,
+                "top": 328.5,
                 "width": 200,
-                "x": 1093,
-                "y": 386.5
+                "x": 1186.5,
+                "y": 328.5
             },
             "post_job_actions": {
                 "ChangeDatatypeActionout_file1": {
@@ -440,7 +442,7 @@
                 "owner": "galaxyp",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"\\\\n\", \"replacement\": \"\\\\t+\\\\t.\\\\n\"}, {\"__index__\": 1, \"pattern\": \"(^.+)(\\\\tcanonical_.+\\\\.)\\\\n\", \"replacement\": \"\\\\1\\\\2\\\\tgene_id \\\"\\\\1\\\"; transcript_id \\\"\\\\1\\\";\\\\n\"}], \"input\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"\\\\n\", \"replacement\": \"\\\\t+\\\\t.\\\\n\"}, {\"__index__\": 1, \"pattern\": \"(^.+)(\\\\tcanonical_.+\\\\.)\\\\n\", \"replacement\": \"\\\\1\\\\2\\\\tgene_id \\\"\\\\1\\\"; transcript_id \\\"\\\\1\\\";\\\\n\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.0.1",
             "type": "tool",
             "uuid": "5cfab50c-9543-49dc-95c4-372875159027",
@@ -448,7 +450,7 @@
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "13922330-169b-4624-a02e-ba7f53a68067"
+                    "uuid": "f2bb868f-f893-4f25-9de2-9228e8b9b933"
                 }
             ]
         }
@@ -456,6 +458,6 @@
     "tags": [
         "Biologiedesg\u00e9nomes"
     ],
-    "uuid": "49138d92-8b63-4b9f-99dc-dfcffb36cf1f",
-    "version": 6
+    "uuid": "6a85574e-b1e7-4bfe-b9bd-80698293fe9b",
+    "version": 11
 }

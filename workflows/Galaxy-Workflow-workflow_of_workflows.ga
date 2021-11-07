@@ -27,14 +27,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 539,
+                "bottom": 640,
                 "height": 81,
-                "left": 702.5,
-                "right": 902.5,
-                "top": 458,
+                "left": 768.5,
+                "right": 968.5,
+                "top": 559,
                 "width": 200,
-                "x": 702.5,
-                "y": 458
+                "x": 768.5,
+                "y": 559
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -58,14 +58,14 @@
             "name": "canonical_transposons.gtf from transposon_sequence_set.txt",
             "outputs": [],
             "position": {
-                "bottom": 500.5,
+                "bottom": 559.5,
                 "height": 172,
-                "left": 1076,
-                "right": 1276,
-                "top": 328.5,
+                "left": 1071.5,
+                "right": 1271.5,
+                "top": 387.5,
                 "width": 200,
-                "x": 1076,
-                "y": 328.5
+                "x": 1071.5,
+                "y": 387.5
             },
             "subworkflow": {
                 "a_galaxy_workflow": "true",
@@ -97,14 +97,14 @@
                         "name": "Input dataset",
                         "outputs": [],
                         "position": {
-                            "bottom": 288.5,
+                            "bottom": 237.5,
                             "height": 81,
-                            "left": 31.5,
-                            "right": 231.5,
-                            "top": 207.5,
+                            "left": -79.5,
+                            "right": 120.5,
+                            "top": 156.5,
                             "width": 200,
-                            "x": 31.5,
-                            "y": 207.5
+                            "x": -79.5,
+                            "y": 156.5
                         },
                         "tool_id": null,
                         "tool_state": "{\"optional\": false}",
@@ -134,14 +134,14 @@
                             }
                         ],
                         "position": {
-                            "bottom": 475.5,
+                            "bottom": 424.5,
                             "height": 92,
-                            "left": 165.5,
-                            "right": 365.5,
-                            "top": 383.5,
+                            "left": 54.5,
+                            "right": 254.5,
+                            "top": 332.5,
                             "width": 200,
-                            "x": 165.5,
-                            "y": 383.5
+                            "x": 54.5,
+                            "y": 332.5
                         },
                         "post_job_actions": {
                             "HideDatasetActionout_file1": {
@@ -159,120 +159,70 @@
                     },
                     "2": {
                         "annotation": "",
-                        "content_id": "toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
                         "errors": null,
                         "id": 2,
                         "input_connections": {
-                            "infile": {
+                            "input": {
                                 "id": 1,
                                 "output_name": "out_file1"
                             }
                         },
                         "inputs": [],
                         "label": null,
-                        "name": "Regex Replace",
+                        "name": "Regex Find And Replace",
                         "outputs": [
                             {
-                                "name": "outfile",
-                                "type": "txt"
+                                "name": "out_file1",
+                                "type": "input"
                             }
                         ],
                         "position": {
-                            "bottom": 605.5,
-                            "height": 92,
-                            "left": 329.5,
-                            "right": 529.5,
-                            "top": 513.5,
+                            "bottom": 530.5,
+                            "height": 112,
+                            "left": 263.5,
+                            "right": 463.5,
+                            "top": 418.5,
                             "width": 200,
-                            "x": 329.5,
-                            "y": 513.5
+                            "x": 263.5,
+                            "y": 418.5
                         },
                         "post_job_actions": {
-                            "HideDatasetActionoutfile": {
-                                "action_arguments": {},
-                                "action_type": "HideDatasetAction",
-                                "output_name": "outfile"
-                            }
-                        },
-                        "tool_id": "toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0",
-                        "tool_shed_repository": {
-                            "changeset_revision": "9a77d5fca67c",
-                            "name": "regex_replace",
-                            "owner": "kellrott",
-                            "tool_shed": "toolshed.g2.bx.psu.edu"
-                        },
-                        "tool_state": "{\"chromInfo\": \"/home/galaxy/galaxy-dist/tool-data/shared/ucsc/chrom/?.len\", \"dot_all\": \"false\", \"ignore_case\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"multiline\": \"false\", \"replace_count\": \"0\", \"replace_str\": \"\", \"search_str\": \"^ID +\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-                        "tool_version": "1.0.0",
-                        "type": "tool",
-                        "uuid": "2ef65284-8ed1-4699-8ab7-0803958fdd9c",
-                        "workflow_outputs": []
-                    },
-                    "3": {
-                        "annotation": "",
-                        "content_id": "toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0",
-                        "errors": null,
-                        "id": 3,
-                        "input_connections": {
-                            "infile": {
-                                "id": 2,
-                                "output_name": "outfile"
-                            }
-                        },
-                        "inputs": [],
-                        "label": null,
-                        "name": "Regex Replace",
-                        "outputs": [
-                            {
-                                "name": "outfile",
-                                "type": "txt"
-                            }
-                        ],
-                        "position": {
-                            "bottom": 725.5,
-                            "height": 92,
-                            "left": 456.5,
-                            "right": 656.5,
-                            "top": 633.5,
-                            "width": 200,
-                            "x": 456.5,
-                            "y": 633.5
-                        },
-                        "post_job_actions": {
-                            "ChangeDatatypeActionoutfile": {
+                            "ChangeDatatypeActionout_file1": {
                                 "action_arguments": {
                                     "newtype": "tabular"
                                 },
                                 "action_type": "ChangeDatatypeAction",
-                                "output_name": "outfile"
+                                "output_name": "out_file1"
                             },
-                            "HideDatasetActionoutfile": {
+                            "HideDatasetActionout_file1": {
                                 "action_arguments": {},
                                 "action_type": "HideDatasetAction",
-                                "output_name": "outfile"
+                                "output_name": "out_file1"
                             }
                         },
-                        "tool_id": "toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0",
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
                         "tool_shed_repository": {
-                            "changeset_revision": "9a77d5fca67c",
-                            "name": "regex_replace",
-                            "owner": "kellrott",
+                            "changeset_revision": "ae8c4b2488e7",
+                            "name": "regex_find_replace",
+                            "owner": "galaxyp",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"dot_all\": \"false\", \"ignore_case\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"multiline\": \"false\", \"replace_count\": \"0\", \"replace_str\": \"\\\\t\", \"search_str\": \" +\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-                        "tool_version": "1.0.0",
+                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"^ID +\", \"replacement\": \"\"}, {\"__index__\": 1, \"pattern\": \" +\", \"replacement\": \"\\\\t\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0.1",
                         "type": "tool",
-                        "uuid": "25afd0ce-2e7d-43f2-b82b-61fdc3da281d",
+                        "uuid": "ea2c1dbe-87ea-454d-9b78-3e596aa59610",
                         "workflow_outputs": []
                     },
-                    "4": {
+                    "3": {
                         "annotation": "",
                         "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
                         "errors": null,
-                        "id": 4,
+                        "id": 3,
                         "input_connections": {
                             "input": {
-                                "id": 3,
-                                "output_name": "outfile"
+                                "id": 2,
+                                "output_name": "out_file1"
                             }
                         },
                         "inputs": [],
@@ -285,14 +235,14 @@
                             }
                         ],
                         "position": {
-                            "bottom": 899,
+                            "bottom": 501,
                             "height": 112,
-                            "left": 900,
-                            "right": 1100,
-                            "top": 787,
+                            "left": 522,
+                            "right": 722,
+                            "top": 389,
                             "width": 200,
-                            "x": 900,
-                            "y": 787
+                            "x": 522,
+                            "y": 389
                         },
                         "post_job_actions": {
                             "HideDatasetActionout_file1": {
@@ -312,6 +262,56 @@
                         "tool_version": "1.0.1",
                         "type": "tool",
                         "uuid": "05d49688-b5b2-4501-b7de-f135b9528893",
+                        "workflow_outputs": []
+                    },
+                    "4": {
+                        "annotation": "",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
+                        "errors": null,
+                        "id": 4,
+                        "input_connections": {
+                            "input": {
+                                "id": 3,
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "inputs": [],
+                        "label": null,
+                        "name": "Column Regex Find And Replace",
+                        "outputs": [
+                            {
+                                "name": "out_file1",
+                                "type": "input"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 152.5,
+                            "height": 112,
+                            "left": 338,
+                            "right": 538,
+                            "top": 40.5,
+                            "width": 200,
+                            "x": 338,
+                            "y": 40.5
+                        },
+                        "post_job_actions": {
+                            "HideDatasetActionout_file1": {
+                                "action_arguments": {},
+                                "action_type": "HideDatasetAction",
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
+                        "tool_shed_repository": {
+                            "changeset_revision": "ae8c4b2488e7",
+                            "name": "regex_find_replace",
+                            "owner": "galaxyp",
+                            "tool_shed": "toolshed.g2.bx.psu.edu"
+                        },
+                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"DNA;\", \"replacement\": \"exon\"}], \"field\": \"3\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0.1",
+                        "type": "tool",
+                        "uuid": "f4e42eb3-5911-469d-9f79-a2be75a39389",
                         "workflow_outputs": []
                     },
                     "5": {
@@ -335,14 +335,14 @@
                             }
                         ],
                         "position": {
-                            "bottom": 202.5,
+                            "bottom": 279.5,
                             "height": 112,
-                            "left": 447,
-                            "right": 647,
-                            "top": 90.5,
+                            "left": 552,
+                            "right": 752,
+                            "top": 167.5,
                             "width": 200,
-                            "x": 447,
-                            "y": 90.5
+                            "x": 552,
+                            "y": 167.5
                         },
                         "post_job_actions": {
                             "HideDatasetActionout_file1": {
@@ -358,10 +358,10 @@
                             "owner": "galaxyp",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"DNA;\", \"replacement\": \"exon\"}], \"field\": \"3\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"INV;\", \"replacement\": \"1\"}, {\"__index__\": 1, \"pattern\": \"SYN;\", \"replacement\": \"1\"}, {\"__index__\": 2, \"pattern\": \"DRO;\", \"replacement\": \"1\"}], \"field\": \"4\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.0.1",
                         "type": "tool",
-                        "uuid": "f4e42eb3-5911-469d-9f79-a2be75a39389",
+                        "uuid": "065508b3-e2d9-4590-82ec-a9b46f28f326",
                         "workflow_outputs": []
                     },
                     "6": {
@@ -385,64 +385,14 @@
                             }
                         ],
                         "position": {
-                            "bottom": 328.5,
+                            "bottom": 415.5,
                             "height": 112,
-                            "left": 664,
-                            "right": 864,
-                            "top": 216.5,
+                            "left": 742.5,
+                            "right": 942.5,
+                            "top": 303.5,
                             "width": 200,
-                            "x": 664,
-                            "y": 216.5
-                        },
-                        "post_job_actions": {
-                            "HideDatasetActionout_file1": {
-                                "action_arguments": {},
-                                "action_type": "HideDatasetAction",
-                                "output_name": "out_file1"
-                            }
-                        },
-                        "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
-                        "tool_shed_repository": {
-                            "changeset_revision": "ae8c4b2488e7",
-                            "name": "regex_find_replace",
-                            "owner": "galaxyp",
-                            "tool_shed": "toolshed.g2.bx.psu.edu"
-                        },
-                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"INV;\", \"replacement\": \"1\"}, {\"__index__\": 1, \"pattern\": \"SYN;\", \"replacement\": \"1\"}, {\"__index__\": 2, \"pattern\": \"DRO;\", \"replacement\": \"1\"}], \"field\": \"4\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-                        "tool_version": "1.0.1",
-                        "type": "tool",
-                        "uuid": "065508b3-e2d9-4590-82ec-a9b46f28f326",
-                        "workflow_outputs": []
-                    },
-                    "7": {
-                        "annotation": "",
-                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
-                        "errors": null,
-                        "id": 7,
-                        "input_connections": {
-                            "input": {
-                                "id": 6,
-                                "output_name": "out_file1"
-                            }
-                        },
-                        "inputs": [],
-                        "label": null,
-                        "name": "Column Regex Find And Replace",
-                        "outputs": [
-                            {
-                                "name": "out_file1",
-                                "type": "input"
-                            }
-                        ],
-                        "position": {
-                            "bottom": 465.5,
-                            "height": 112,
-                            "left": 854.5,
-                            "right": 1054.5,
-                            "top": 353.5,
-                            "width": 200,
-                            "x": 854.5,
-                            "y": 353.5
+                            "x": 742.5,
+                            "y": 303.5
                         },
                         "post_job_actions": {
                             "HideDatasetActionout_file1": {
@@ -464,14 +414,14 @@
                         "uuid": "1f9ffffc-3b74-44d7-89dc-ce6f240fd078",
                         "workflow_outputs": []
                     },
-                    "8": {
+                    "7": {
                         "annotation": "",
                         "content_id": "Cut1",
                         "errors": null,
-                        "id": 8,
+                        "id": 7,
                         "input_connections": {
                             "input": {
-                                "id": 7,
+                                "id": 6,
                                 "output_name": "out_file1"
                             }
                         },
@@ -485,14 +435,14 @@
                             }
                         ],
                         "position": {
-                            "bottom": 604.5,
+                            "bottom": 552.5,
                             "height": 92,
-                            "left": 1016,
-                            "right": 1216,
-                            "top": 512.5,
+                            "left": 904,
+                            "right": 1104,
+                            "top": 460.5,
                             "width": 200,
-                            "x": 1016,
-                            "y": 512.5
+                            "x": 904,
+                            "y": 460.5
                         },
                         "post_job_actions": {
                             "HideDatasetActionout_file1": {
@@ -508,133 +458,83 @@
                         "uuid": "152e7b6c-103c-4ccf-ac7a-6f2edb92ab73",
                         "workflow_outputs": []
                     },
-                    "9": {
+                    "8": {
                         "annotation": "",
-                        "content_id": "toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
                         "errors": null,
-                        "id": 9,
+                        "id": 8,
                         "input_connections": {
-                            "infile": {
-                                "id": 8,
+                            "input": {
+                                "id": 7,
                                 "output_name": "out_file1"
                             }
                         },
                         "inputs": [],
                         "label": null,
-                        "name": "Regex Replace",
+                        "name": "Regex Find And Replace",
                         "outputs": [
                             {
-                                "name": "outfile",
-                                "type": "txt"
+                                "name": "out_file1",
+                                "type": "input"
                             }
                         ],
                         "position": {
-                            "bottom": 736.5,
-                            "height": 92,
-                            "left": 1155,
-                            "right": 1355,
-                            "top": 644.5,
+                            "bottom": 440.5,
+                            "height": 112,
+                            "left": 1186.5,
+                            "right": 1386.5,
+                            "top": 328.5,
                             "width": 200,
-                            "x": 1155,
-                            "y": 644.5
+                            "x": 1186.5,
+                            "y": 328.5
                         },
                         "post_job_actions": {
-                            "HideDatasetActionoutfile": {
-                                "action_arguments": {},
-                                "action_type": "HideDatasetAction",
-                                "output_name": "outfile"
-                            }
-                        },
-                        "tool_id": "toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0",
-                        "tool_shed_repository": {
-                            "changeset_revision": "9a77d5fca67c",
-                            "name": "regex_replace",
-                            "owner": "kellrott",
-                            "tool_shed": "toolshed.g2.bx.psu.edu"
-                        },
-                        "tool_state": "{\"chromInfo\": \"/home/galaxy/galaxy-dist/tool-data/shared/ucsc/chrom/?.len\", \"dot_all\": \"false\", \"ignore_case\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"multiline\": \"false\", \"replace_count\": \"0\", \"replace_str\": \"\\\\t+\\\\t.\\\\n\", \"search_str\": \"\\\\n\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-                        "tool_version": "1.0.0",
-                        "type": "tool",
-                        "uuid": "3eacc027-7752-4174-84d0-bd4f74450b28",
-                        "workflow_outputs": []
-                    },
-                    "10": {
-                        "annotation": "",
-                        "content_id": "toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0",
-                        "errors": null,
-                        "id": 10,
-                        "input_connections": {
-                            "infile": {
-                                "id": 9,
-                                "output_name": "outfile"
-                            }
-                        },
-                        "inputs": [],
-                        "label": null,
-                        "name": "Regex Replace",
-                        "outputs": [
-                            {
-                                "name": "outfile",
-                                "type": "txt"
-                            }
-                        ],
-                        "position": {
-                            "bottom": 869.5,
-                            "height": 92,
-                            "left": 1312.5,
-                            "right": 1512.5,
-                            "top": 777.5,
-                            "width": 200,
-                            "x": 1312.5,
-                            "y": 777.5
-                        },
-                        "post_job_actions": {
-                            "ChangeDatatypeActionoutfile": {
+                            "ChangeDatatypeActionout_file1": {
                                 "action_arguments": {
                                     "newtype": "gtf"
                                 },
                                 "action_type": "ChangeDatatypeAction",
-                                "output_name": "outfile"
+                                "output_name": "out_file1"
                             },
-                            "RenameDatasetActionoutfile": {
+                            "RenameDatasetActionout_file1": {
                                 "action_arguments": {
                                     "newname": "canonical_transposons.gtf"
                                 },
                                 "action_type": "RenameDatasetAction",
-                                "output_name": "outfile"
+                                "output_name": "out_file1"
                             }
                         },
-                        "tool_id": "toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0",
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
                         "tool_shed_repository": {
-                            "changeset_revision": "9a77d5fca67c",
-                            "name": "regex_replace",
-                            "owner": "kellrott",
+                            "changeset_revision": "ae8c4b2488e7",
+                            "name": "regex_find_replace",
+                            "owner": "galaxyp",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"dot_all\": \"false\", \"ignore_case\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"multiline\": \"false\", \"replace_count\": \"0\", \"replace_str\": \"\\\\1\\\\2\\\\tgene_id \\\"\\\\1\\\"; transcript_id \\\"\\\\1\\\";\\\\n\", \"search_str\": \"(^.+)(\\\\tcanonical_.+\\\\.)\\\\n\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-                        "tool_version": "1.0.0",
+                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"\\\\n\", \"replacement\": \"\\\\t+\\\\t.\\\\n\"}, {\"__index__\": 1, \"pattern\": \"(^.+)(\\\\tcanonical_.+\\\\.)\\\\n\", \"replacement\": \"\\\\1\\\\2\\\\tgene_id \\\"\\\\1\\\"; transcript_id \\\"\\\\1\\\";\\\\n\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0.1",
                         "type": "tool",
-                        "uuid": "7ad8a64f-cbe0-49f4-81a0-35ed0797e811",
+                        "uuid": "5cfab50c-9543-49dc-95c4-372875159027",
                         "workflow_outputs": [
                             {
                                 "label": null,
-                                "output_name": "outfile",
-                                "uuid": "2af758db-1d20-4b59-9325-b964f4b4fcbe"
+                                "output_name": "out_file1",
+                                "uuid": "f2bb868f-f893-4f25-9de2-9228e8b9b933"
                             }
                         ]
                     }
                 },
                 "tags": "",
-                "uuid": "66630ae5-f525-4b5b-b423-3b5cc205d148"
+                "uuid": "6a85574e-b1e7-4bfe-b9bd-80698293fe9b"
             },
-            "tool_id": "1cd8e2f6b131e891",
+            "tool_id": "b472e2eb553fa0d1",
             "type": "subworkflow",
-            "uuid": "c03fd459-3cda-4244-9626-07a86f14806f",
+            "uuid": "1eccd43b-0a02-4574-89d5-96232c94c864",
             "workflow_outputs": [
                 {
                     "label": null,
-                    "output_name": "10:outfile",
-                    "uuid": "c9f3c152-3fe7-4dea-b9b1-3f136b1a8249"
+                    "output_name": "8:out_file1",
+                    "uuid": "a50edca2-682e-4fe3-9954-69546a02fd83"
                 }
             ]
         },
@@ -642,7 +542,7 @@
             "annotation": "",
             "id": 2,
             "input_connections": {
-                "Canonical transposon EMBL format": {
+                "transposon_set_embl.txt": {
                     "id": 0,
                     "input_subworkflow_step_id": 0,
                     "output_name": "output"
@@ -650,17 +550,17 @@
             },
             "inputs": [],
             "label": null,
-            "name": "Extract canonical transposons fasta",
+            "name": "canonical_transposons.gtf from transposon_sequence_set.txt",
             "outputs": [],
             "position": {
-                "bottom": 662.5,
-                "height": 132,
-                "left": 1077,
-                "right": 1277,
-                "top": 530.5,
+                "bottom": 773.5,
+                "height": 172,
+                "left": 1067.5,
+                "right": 1267.5,
+                "top": 601.5,
                 "width": 200,
-                "x": 1077,
-                "y": 530.5
+                "x": 1067.5,
+                "y": 601.5
             },
             "subworkflow": {
                 "a_galaxy_workflow": "true",
@@ -669,11 +569,12 @@
                     {
                         "class": "Person",
                         "identifier": "https://orcid.org/0000-0001-7709-2116",
-                        "name": ""
+                        "name": "Christophe Antoniewski"
                     }
                 ],
                 "format-version": "0.1",
-                "name": "Extract canonical transposons fasta",
+                "license": "MIT",
+                "name": "canonical_transposons.gtf from transposon_sequence_set.txt",
                 "steps": {
                     "0": {
                         "annotation": "",
@@ -684,27 +585,27 @@
                         "inputs": [
                             {
                                 "description": "",
-                                "name": "Canonical transposon EMBL format"
+                                "name": "transposon_set_embl.txt"
                             }
                         ],
-                        "label": "Canonical transposon EMBL format",
+                        "label": "transposon_set_embl.txt",
                         "name": "Input dataset",
                         "outputs": [],
                         "position": {
-                            "bottom": 479,
+                            "bottom": 228,
                             "height": 81,
-                            "left": 247.5,
-                            "right": 447.5,
-                            "top": 398,
+                            "left": -155,
+                            "right": 45,
+                            "top": 147,
                             "width": 200,
-                            "x": 247.5,
-                            "y": 398
+                            "x": -155,
+                            "y": 147
                         },
                         "tool_id": null,
                         "tool_state": "{\"optional\": false}",
                         "tool_version": null,
                         "type": "data_input",
-                        "uuid": "9a7ca89e-16d2-45e3-b074-3776b0013e9d",
+                        "uuid": "c4512f62-081b-4a00-b704-e3e856f09a14",
                         "workflow_outputs": []
                     },
                     "1": {
@@ -728,14 +629,14 @@
                             }
                         ],
                         "position": {
-                            "bottom": 362.5,
+                            "bottom": 415,
                             "height": 92,
-                            "left": 471.5,
-                            "right": 671.5,
-                            "top": 270.5,
+                            "left": -21,
+                            "right": 179,
+                            "top": 323,
                             "width": 200,
-                            "x": 471.5,
-                            "y": 270.5
+                            "x": -21,
+                            "y": 323
                         },
                         "post_job_actions": {
                             "HideDatasetActionout_file1": {
@@ -745,10 +646,10 @@
                             }
                         },
                         "tool_id": "Grep1",
-                        "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"invert\": \"\", \"keep_header\": \"false\", \"pattern\": \"(^ID)|( +[GATCN]{10})\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"chromInfo\": \"/home/galaxy/galaxy-dist/tool-data/shared/ucsc/chrom/?.len\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"invert\": \"\", \"keep_header\": \"false\", \"pattern\": \"(^ID)\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.0.3",
                         "type": "tool",
-                        "uuid": "56d3b228-091b-4380-9cf6-cad180ab7a17",
+                        "uuid": "003676f5-ac17-4ebd-b719-0516e3ce0c81",
                         "workflow_outputs": []
                     },
                     "2": {
@@ -772,14 +673,14 @@
                             }
                         ],
                         "position": {
-                            "bottom": 488.5,
+                            "bottom": 522,
                             "height": 112,
-                            "left": 693,
-                            "right": 893,
-                            "top": 376.5,
+                            "left": 189,
+                            "right": 389,
+                            "top": 410,
                             "width": 200,
-                            "x": 693,
-                            "y": 376.5
+                            "x": 189,
+                            "y": 410
                         },
                         "post_job_actions": {
                             "HideDatasetActionout_file1": {
@@ -795,15 +696,15 @@
                             "owner": "galaxyp",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"^ID   \", \"replacement\": \">\"}, {\"__index__\": 1, \"pattern\": \"([GATCN]+) \", \"replacement\": \"\\\\1\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"^ID +\", \"replacement\": \"\"}, {\"__index__\": 1, \"pattern\": \" +\", \"replacement\": \"\\\\t\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.0.1",
                         "type": "tool",
-                        "uuid": "cbab9d0d-f86a-4f61-bfdc-332606572101",
+                        "uuid": "ea2c1dbe-87ea-454d-9b78-3e596aa59610",
                         "workflow_outputs": []
                     },
                     "3": {
                         "annotation": "",
-                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
                         "errors": null,
                         "id": 3,
                         "input_connections": {
@@ -814,7 +715,7 @@
                         },
                         "inputs": [],
                         "label": null,
-                        "name": "Regex Find And Replace",
+                        "name": "Column Regex Find And Replace",
                         "outputs": [
                             {
                                 "name": "out_file1",
@@ -822,14 +723,14 @@
                             }
                         ],
                         "position": {
-                            "bottom": 471.5,
+                            "bottom": 491.5,
                             "height": 112,
-                            "left": 934,
-                            "right": 1134,
-                            "top": 359.5,
+                            "left": 446.5,
+                            "right": 646.5,
+                            "top": 379.5,
                             "width": 200,
-                            "x": 934,
-                            "y": 359.5
+                            "x": 446.5,
+                            "y": 379.5
                         },
                         "post_job_actions": {
                             "HideDatasetActionout_file1": {
@@ -838,27 +739,221 @@
                                 "output_name": "out_file1"
                             }
                         },
-                        "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
                         "tool_shed_repository": {
                             "changeset_revision": "ae8c4b2488e7",
                             "name": "regex_find_replace",
                             "owner": "galaxyp",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \" +([GATCN]+) +\\\\d+\", \"replacement\": \"\\\\1\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \".+\", \"replacement\": \"canonical_TE_v9.44\"}], \"field\": \"2\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.0.1",
                         "type": "tool",
-                        "uuid": "d0481f8c-66e2-46ef-9c66-b56ae2f76747",
+                        "uuid": "05d49688-b5b2-4501-b7de-f135b9528893",
                         "workflow_outputs": []
                     },
                     "4": {
                         "annotation": "",
-                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
                         "errors": null,
                         "id": 4,
                         "input_connections": {
                             "input": {
                                 "id": 3,
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "inputs": [],
+                        "label": null,
+                        "name": "Column Regex Find And Replace",
+                        "outputs": [
+                            {
+                                "name": "out_file1",
+                                "type": "input"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 143,
+                            "height": 112,
+                            "left": 262.5,
+                            "right": 462.5,
+                            "top": 31,
+                            "width": 200,
+                            "x": 262.5,
+                            "y": 31
+                        },
+                        "post_job_actions": {
+                            "HideDatasetActionout_file1": {
+                                "action_arguments": {},
+                                "action_type": "HideDatasetAction",
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
+                        "tool_shed_repository": {
+                            "changeset_revision": "ae8c4b2488e7",
+                            "name": "regex_find_replace",
+                            "owner": "galaxyp",
+                            "tool_shed": "toolshed.g2.bx.psu.edu"
+                        },
+                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"DNA;\", \"replacement\": \"exon\"}], \"field\": \"3\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0.1",
+                        "type": "tool",
+                        "uuid": "f4e42eb3-5911-469d-9f79-a2be75a39389",
+                        "workflow_outputs": []
+                    },
+                    "5": {
+                        "annotation": "",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
+                        "errors": null,
+                        "id": 5,
+                        "input_connections": {
+                            "input": {
+                                "id": 4,
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "inputs": [],
+                        "label": null,
+                        "name": "Column Regex Find And Replace",
+                        "outputs": [
+                            {
+                                "name": "out_file1",
+                                "type": "input"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 268,
+                            "height": 112,
+                            "left": 476.5,
+                            "right": 676.5,
+                            "top": 156,
+                            "width": 200,
+                            "x": 476.5,
+                            "y": 156
+                        },
+                        "post_job_actions": {
+                            "HideDatasetActionout_file1": {
+                                "action_arguments": {},
+                                "action_type": "HideDatasetAction",
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
+                        "tool_shed_repository": {
+                            "changeset_revision": "ae8c4b2488e7",
+                            "name": "regex_find_replace",
+                            "owner": "galaxyp",
+                            "tool_shed": "toolshed.g2.bx.psu.edu"
+                        },
+                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"INV;\", \"replacement\": \"1\"}, {\"__index__\": 1, \"pattern\": \"SYN;\", \"replacement\": \"1\"}, {\"__index__\": 2, \"pattern\": \"DRO;\", \"replacement\": \"1\"}], \"field\": \"4\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0.1",
+                        "type": "tool",
+                        "uuid": "065508b3-e2d9-4590-82ec-a9b46f28f326",
+                        "workflow_outputs": []
+                    },
+                    "6": {
+                        "annotation": "",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
+                        "errors": null,
+                        "id": 6,
+                        "input_connections": {
+                            "input": {
+                                "id": 5,
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "inputs": [],
+                        "label": null,
+                        "name": "Column Regex Find And Replace",
+                        "outputs": [
+                            {
+                                "name": "out_file1",
+                                "type": "input"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 406,
+                            "height": 112,
+                            "left": 667,
+                            "right": 867,
+                            "top": 294,
+                            "width": 200,
+                            "x": 667,
+                            "y": 294
+                        },
+                        "post_job_actions": {
+                            "HideDatasetActionout_file1": {
+                                "action_arguments": {},
+                                "action_type": "HideDatasetAction",
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.1",
+                        "tool_shed_repository": {
+                            "changeset_revision": "ae8c4b2488e7",
+                            "name": "regex_find_replace",
+                            "owner": "galaxyp",
+                            "tool_shed": "toolshed.g2.bx.psu.edu"
+                        },
+                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \".+\", \"replacement\": \".\"}], \"field\": \"6\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0.1",
+                        "type": "tool",
+                        "uuid": "1f9ffffc-3b74-44d7-89dc-ce6f240fd078",
+                        "workflow_outputs": []
+                    },
+                    "7": {
+                        "annotation": "",
+                        "content_id": "Cut1",
+                        "errors": null,
+                        "id": 7,
+                        "input_connections": {
+                            "input": {
+                                "id": 6,
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "inputs": [],
+                        "label": null,
+                        "name": "Cut",
+                        "outputs": [
+                            {
+                                "name": "out_file1",
+                                "type": "tabular"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 543,
+                            "height": 92,
+                            "left": 828.5,
+                            "right": 1028.5,
+                            "top": 451,
+                            "width": 200,
+                            "x": 828.5,
+                            "y": 451
+                        },
+                        "post_job_actions": {
+                            "HideDatasetActionout_file1": {
+                                "action_arguments": {},
+                                "action_type": "HideDatasetAction",
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "tool_id": "Cut1",
+                        "tool_state": "{\"columnList\": \"c1,c2,c3,c4,c5,c6\", \"delimiter\": \"T\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0.2",
+                        "type": "tool",
+                        "uuid": "152e7b6c-103c-4ccf-ac7a-6f2edb92ab73",
+                        "workflow_outputs": []
+                    },
+                    "8": {
+                        "annotation": "",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
+                        "errors": null,
+                        "id": 8,
+                        "input_connections": {
+                            "input": {
+                                "id": 7,
                                 "output_name": "out_file1"
                             }
                         },
@@ -872,26 +967,26 @@
                             }
                         ],
                         "position": {
-                            "bottom": 451.5,
+                            "bottom": 431,
                             "height": 112,
-                            "left": 1164,
-                            "right": 1364,
-                            "top": 339.5,
+                            "left": 1111,
+                            "right": 1311,
+                            "top": 319,
                             "width": 200,
-                            "x": 1164,
-                            "y": 339.5
+                            "x": 1111,
+                            "y": 319
                         },
                         "post_job_actions": {
                             "ChangeDatatypeActionout_file1": {
                                 "action_arguments": {
-                                    "newtype": "fasta"
+                                    "newtype": "gtf"
                                 },
                                 "action_type": "ChangeDatatypeAction",
                                 "output_name": "out_file1"
                             },
                             "RenameDatasetActionout_file1": {
                                 "action_arguments": {
-                                    "newname": "Canonical_transposons.fa"
+                                    "newname": "canonical_transposons.gtf"
                                 },
                                 "action_type": "RenameDatasetAction",
                                 "output_name": "out_file1"
@@ -904,35 +999,35 @@
                             "owner": "galaxyp",
                             "tool_shed": "toolshed.g2.bx.psu.edu"
                         },
-                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \" +.+\", \"replacement\": \"\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"\\\\n\", \"replacement\": \"\\\\t+\\\\t.\\\\n\"}, {\"__index__\": 1, \"pattern\": \"(^.+)(\\\\tcanonical_.+\\\\.)\\\\n\", \"replacement\": \"\\\\1\\\\2\\\\tgene_id \\\"\\\\1\\\"; transcript_id \\\"\\\\1\\\";\\\\n\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
                         "tool_version": "1.0.1",
                         "type": "tool",
-                        "uuid": "248508bd-3cd4-41b6-a857-a8c1d91bae18",
+                        "uuid": "5cfab50c-9543-49dc-95c4-372875159027",
                         "workflow_outputs": [
                             {
                                 "label": null,
                                 "output_name": "out_file1",
-                                "uuid": "a63d646d-a809-492c-a07e-485fdf288d01"
+                                "uuid": "59c3d556-a43f-4c52-a1a8-a018d4e15f01"
                             }
                         ]
                     }
                 },
                 "tags": "",
-                "uuid": "f99eed53-8d13-49b6-be80-027e7c5605a7"
+                "uuid": "e5aa7026-1fd8-4781-ab60-0f5b24322644"
             },
-            "tool_id": "ebfb8f50c6abde6d",
+            "tool_id": "2f94e8ae9edff68a",
             "type": "subworkflow",
-            "uuid": "2f276ac9-7d39-4262-bf7e-666b74336e97",
+            "uuid": "70acea14-8fef-48f5-b502-c462576bb9f2",
             "workflow_outputs": [
                 {
                     "label": null,
-                    "output_name": "4:out_file1",
-                    "uuid": "a60404cc-b7a3-46b4-8a21-c6a5581c5f05"
+                    "output_name": "8:out_file1",
+                    "uuid": "7bc7d7ad-9885-4cba-ace2-17710a190158"
                 }
             ]
         }
     },
     "tags": [],
-    "uuid": "434104ed-7a8a-4083-890f-218f2874b1ac",
-    "version": 1
+    "uuid": "77792cbc-e9e1-4a9c-bf41-f5b236fbebe2",
+    "version": 4
 }
