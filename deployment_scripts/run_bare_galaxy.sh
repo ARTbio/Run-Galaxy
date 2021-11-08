@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 set -e
-apt update -y
-apt install -y python-pip python-dev python-setuptools git htop
-git clone https://github.com/galaxyproject/galaxy.git -b release_18.09
-cd galaxy/
+git clone https://github.com/galaxyproject/galaxy.git -b release_21.05
+cd ~/galaxy/
 cp config/galaxy.yml.sample config/galaxy.yml
 sed -i "s/http: 127.0.0.1:8080/http: 0.0.0.0:80/" config/galaxy.yml
 sed -i "s/#admin_users: ''/admin_users: 'admin@galaxy.org'/" config/galaxy.yml
-sh run.sh
+rm -rf ~/galaxy/client ~/galaxy/static
+cd ~/galaxy && wget https://mydeepseqbucket.s3.amazonaws.com/client.tar.gz \
+    https://mydeepseqbucket.s3.amazonaws.com/static.tar.gz
+cd ~/galaxy && tar -xvf static.tar.gz && tar -xvf client.tar.gz
+if [[ -d "/mnt/mydatalocal" ]]
+    then
+    mv ~/galaxy /mnt/mydatalocal
+    cd /mnt/mydatalocal
+fi
+time sh run.sh
