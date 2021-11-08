@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 set -e
 apt-get update
-apt-get install -y python-pip python-dev htop
-apt-get -y remove docker docker-engine docker.io containerd runc
-apt update
+apt-get -y remove docker docker.io containerd runc
 echo "Installing docker-ce"
 sudo apt-get install -y \
      apt-transport-https \
