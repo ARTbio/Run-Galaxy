@@ -30,6 +30,13 @@ https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/B433xtdmdQqdFYd/d
 https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/B433xtdmdQqdFYd/download?path=%2F&files=Dmel_all-transposon_merge.fasta	Dmel_all-transposon_merge.fasta
 https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/B433xtdmdQqdFYd/download?path=%2F&files=dmel-all-chromosome-r6.18.fasta	dmel-all-chromosome-r6.18.fasta
 
+# cache galaxy clients
+https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/cjeWkNHDG9xPWTd/download?path=%2F&files=bare.client.tar.gz
+https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/cjeWkNHDG9xPWTd/download?path=%2F&files=bare.static.tar.gz
+https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/cjeWkNHDG9xPWTd/download?path=%2F&files=ansible.client.tar.gz
+https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/cjeWkNHDG9xPWTd/download?path=%2F&files=ansible.static.tar.gz
+https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/cjeWkNHDG9xPWTd/download?path=%2F&files=_conda.pigz.tar.gz
+
 
 
 # Amazon S3 share
@@ -63,5 +70,8 @@ https://mydeepseqbucket.s3.amazonaws.com/References/Dmel_all-transposon_merge.fa
 https://mydeepseqbucket.s3.amazonaws.com/References/dmel-all-r6.18.gtf	dmel-all-r6.18.gtf
 
 # cache galaxy client
-https://mydeepseqbucket.s3.amazonaws.com/static.tar.gz
-https://mydeepseqbucket.s3.amazonaws.com/client.tar.gz
+https://mydeepseqbucket.s3.amazonaws.com/bare.client.tar.gz
+https://mydeepseqbucket.s3.amazonaws.com/bare.static.tar.gz
+https://mydeepseqbucket.s3.amazonaws.com/ansible.client.tar.gz
+https://mydeepseqbucket.s3.amazonaws.com/ansible.static.tar.gz
+https://mydeepseqbucket.s3.amazonaws.com/_conda.pigz.tar.gz
