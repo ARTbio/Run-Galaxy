@@ -31,11 +31,11 @@ https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/B433xtdmdQqdFYd/d
 https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/B433xtdmdQqdFYd/download?path=%2F&files=dmel-all-chromosome-r6.18.fasta	dmel-all-chromosome-r6.18.fasta
 
 # cache galaxy clients
-https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/cjeWkNHDG9xPWTd/download?path=%2F&files=bare.client.tar.gz
-https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/cjeWkNHDG9xPWTd/download?path=%2F&files=bare.static.tar.gz
-https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/cjeWkNHDG9xPWTd/download?path=%2F&files=ansible.client.tar.gz
-https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/cjeWkNHDG9xPWTd/download?path=%2F&files=ansible.static.tar.gz
-https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/cjeWkNHDG9xPWTd/download?path=%2F&files=_conda.pigz.tar.gz
+http://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/Crq9DddY2zb3pZ4/download/bare.static.tar.gz
+http://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/QrLMPeYD4tmQSnW/download/bare.client.tar.gz
+http://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/HKnsQR2GFtaK66B/download/ansible.static.tar.gz
+http://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/ZeoBZn6RPLgF9Zf/download/ansible.client.tar.gz
+http://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/s6AAtDwR5at46bb/download/_conda.pigz.tar.gz
 
 
 
