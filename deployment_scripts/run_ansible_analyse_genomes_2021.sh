@@ -11,9 +11,9 @@ cd /home/galaxy/tool_dependencies
 rm -rf _conda
 wget https://mydeepseqbucket.s3.amazonaws.com/_conda.pigz.tar.gz
 apt install -y pigz
+echo "Uncompressing conda archive\n"
 tar -I pigz -xf _conda.pigz.tar.gz
 chown -R galaxy:galaxy _conda
-rm -rf _conda_tar.gz
 cd ~/galaxykickstart
 ansible-playbook -i inventory_files/Analyse_genomes galaxy_tool_install.yml
 echo "end of deployment\n"
