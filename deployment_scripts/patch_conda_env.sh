@@ -3,6 +3,7 @@ set -e
 apt update -y
 apt install -y pigz
 echo "deleting conda env\n"
+cd /home/galaxy/tool_dependencies/
 rm -rf /home/galaxy/tool_dependencies/_conda*
 echo "Dowloading _conda.pigz.tar.gz from Amazon S3\n"
 wget https://mydeepseqbucket.s3.amazonaws.com/_conda.pigz.tar.gz
