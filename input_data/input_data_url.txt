@@ -70,8 +70,8 @@ https://mydeepseqbucket.s3.amazonaws.com/References/Dmel_all-transposon_merge.fa
 https://mydeepseqbucket.s3.amazonaws.com/References/dmel-all-r6.18.gtf	dmel-all-r6.18.gtf
 
 # cache galaxy client
-https://mydeepseqbucket.s3.amazonaws.com/bare.client.tar.gz
-https://mydeepseqbucket.s3.amazonaws.com/bare.static.tar.gz
-https://mydeepseqbucket.s3.amazonaws.com/ansible.client.tar.gz
-https://mydeepseqbucket.s3.amazonaws.com/ansible.static.tar.gz
-https://mydeepseqbucket.s3.amazonaws.com/_conda.pigz.tar.gz
+https://analyse-genomes.s3.eu-west-3.amazonaws.com/bare.client.tar.gz
+https://analyse-genomes.s3.eu-west-3.amazonaws.com/bare.static.tar.gz
+https://analyse-genomes.s3.eu-west-3.amazonaws.com/ansible.client.tar.gz
+https://analyse-genomes.s3.eu-west-3.amazonaws.com/ansible.static.tar.gz
+https://analyse-genomes.s3.eu-west-3.amazonaws.com/_conda.pigz.tar.gz
