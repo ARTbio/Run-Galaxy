@@ -6,7 +6,7 @@ echo "deleting conda env\n"
 cd /home/galaxy/tool_dependencies/
 rm -rf _conda* conda.lock
 echo "Dowloading _conda.pigz.tar.gz from Amazon S3\n"
-wget https://mydeepseqbucket.s3.amazonaws.com/_conda.pigz.tar.gz
+wget https://analyse-genomes.s3.eu-west-3.amazonaws.com/_conda.pigz.tar.gz
 echo "extracting conda archive... zzzz\n"
 tar -I pigz -xf _conda.pigz.tar.gz
 echo "Ensure _conda is owned by galaxy user\n"
